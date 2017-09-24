@@ -1,0 +1,16 @@
+{
+  "name": "mastery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Seré <felipesere@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@material/grid-list": "^0.2.12",
+    "@material/layout-grid": "^0.4.4",
+    "material-components-web": "^0.21.1"
+  }
+}
