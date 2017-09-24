@@ -1,12 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import LearningModule from './LearningModule.js'
+
 
 class Main extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Hello World</h1>
-      </div>
+      <MuiThemeProvider>
+        <LearningModule></LearningModule>
+      </MuiThemeProvider>
     )
   }
 }

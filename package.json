@@ -15,7 +15,8 @@
     "@material/grid-list": "^0.2.12",
     "@material/layout-grid": "^0.4.4",
     "babel-preset-es2016": "^6.24.1",
-    "material-components-web": "^0.21.1"
+    "material-components-web": "^0.21.1",
+    "material-ui": "^0.19.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
