@@ -8,13 +8,19 @@ class LearningModule extends React.Component {
   render() {
     return (
       <Card style={{width: '250px'}}>
-      <CardTitle title={this.props.title} />
-      <CardText>
+      <CardHeader
+         title={this.props.title}
+         subtitle={this.props.subtitle}
+         actAsExpander={true}
+         showExpandableButton={true}
+      />
+
+      <CardText expandable={true}>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tellus vitae neque molestie blandit. Sed lectus felis, egestas in malesuada tempor, rhoncus dapibus nibh.
       </CardText>
       <CardActions>
-      <FlatButton label="Expand" />
-      <RaisedButton label="Done" />
+        <RaisedButton primary={true} label="Done" />
+        <RaisedButton label="Add" />
       </CardActions>
       </Card>
     );

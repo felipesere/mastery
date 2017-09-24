@@ -8,8 +8,7 @@ class Main extends React.Component {
   render() {
     return (
       <MuiThemeProvider>
-        <ModuleCatalog>
-      </ModuleCatalog>
+        <ModuleCatalog></ModuleCatalog>
       </MuiThemeProvider>
     )
   }
