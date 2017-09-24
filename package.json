@@ -9,6 +9,7 @@
   "author": "Felipe Seré <felipesere@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@material/button": "^0.7.0",
     "@material/grid-list": "^0.2.12",
     "@material/layout-grid": "^0.4.4",
     "material-components-web": "^0.21.1"
