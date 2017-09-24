@@ -3,17 +3,22 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const LearningModule = () => (
-  <Card style={{width: '250px'}}>
-    <CardTitle title="Java TTT 3x3" />
-    <CardText>
-      Write a basic Java TTT for the command line.
-    </CardText>
-    <CardActions>
+class LearningModule extends React.Component {
+
+  render() {
+    return (
+      <Card style={{width: '250px'}}>
+      <CardTitle title={this.props.title} />
+      <CardText>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id tellus vitae neque molestie blandit. Sed lectus felis, egestas in malesuada tempor, rhoncus dapibus nibh.
+      </CardText>
+      <CardActions>
       <FlatButton label="Expand" />
       <RaisedButton label="Done" />
-    </CardActions>
-  </Card>
-);
+      </CardActions>
+      </Card>
+    );
+  }
+}
 
 export default LearningModule;
