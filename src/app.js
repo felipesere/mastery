@@ -4,7 +4,6 @@ import ModuleCatalog from './ModuleCatalog.js'
 
 import 'normalize.css'
 
-
 class Main extends React.Component {
   render() {
     let style = {
