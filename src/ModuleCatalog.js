@@ -26,6 +26,18 @@ class ModuleCatalog extends React.Component {
         title: "Java HTTP server",
         subtitle: "A challenge to be experienced!"
       },
+      {
+        title: "Elixir koans",
+        subtitle: "Basic syntax of the language"
+      },
+      {
+        title: "Elixir TTT",
+        subtitle: "Basic Human vs Human"
+      },
+      {
+        title: "Elixir Guilded Rose",
+        subtitle: "Refactoring and pattern matching"
+      },
     ]
 
     let learningModules = modules.map( (module, idx) => {
@@ -34,9 +46,15 @@ class ModuleCatalog extends React.Component {
       );
     });
 
-    
+    let style = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignContent: 'flex-start',
+      justifyContent: 'flex-start',
+    }
+
     return (
-      <div className="module-catalog">
+      <div style={style} className="module-catalog">
       {learningModules}
       </div>
     );

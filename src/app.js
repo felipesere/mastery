@@ -1,15 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ModuleCatalog from './ModuleCatalog.js'
+
+import 'normalize.css'
 
 
 class Main extends React.Component {
   render() {
+    let style = {
+      width: '80%',
+      margin: 'auto'
+    }
     return (
-      <MuiThemeProvider>
+      <div className="container" style={style}>
         <ModuleCatalog></ModuleCatalog>
-      </MuiThemeProvider>
+      </div>
     )
   }
 }

@@ -15,6 +15,10 @@ const config = {
         query: {
           presets: ['es2016', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       }
     ]
   }
