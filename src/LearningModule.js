@@ -38,12 +38,28 @@ class LearningModule extends React.Component {
     )
   }
 
+  color(language) {
+    switch(language) {
+      case 'java':
+        return "#e07c27"
+      case 'elixir':
+        return "#27a8e0"
+      default:
+        return "#7a7a7a"
+    }
+  }
+
   render() {
     let style = {
       margin: '1em',
       width: '250px',
       minWidth: '250px',
-      borderRadius: '5px'
+      borderRadius: '5px',
+      boxShadow: `inset 0 0 2px 4px ${this.color(this.props.module.language)}`
+    }
+
+    let footerStyle = {
+      margin: "0 4 4 4"
     }
 
     let detailsModal = ""
@@ -55,6 +71,7 @@ class LearningModule extends React.Component {
                      </DetailsModal>
     }
 
+
     return (
       <div className="card" style={style}>
         <header className="card-header">
@@ -65,7 +82,7 @@ class LearningModule extends React.Component {
             {this.props.module.subtitle}
           </div>
         </div>
-        <footer className="card-footer">
+        <footer className="card-footer" style={footerStyle} >
           <a onClick={this.openModal} href="#" className="button card-footer-item">Open</a>
         </footer>
         {detailsModal}

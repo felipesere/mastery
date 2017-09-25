@@ -31,10 +31,10 @@ class DetailsModal extends React.Component {
 
     return (
       <div className="content">
-      {name}:
-      <ul>
-      {listItems}
-      </ul>
+        {name}:
+        <ul>
+          {listItems}
+        </ul>
       </div>
     )
   }
