@@ -33,6 +33,7 @@ class LearningModule extends React.Component {
   }
 
   render() {
+
     let style = {
       margin: '1em',
       width: '250px',
