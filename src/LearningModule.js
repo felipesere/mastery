@@ -21,23 +21,6 @@ class LearningModule extends React.Component {
     this.setState({detailsOpen: false})
   }
 
-  _outcomes() {
-    if(this.state.outcomes.length === 0) { return }
-
-    let outcomes = this.state.outcomes.map( (outcome, idx) => {
-      return <li key={idx}>{outcome}</li>
-    });
-
-    return (
-      <div className="content">
-      Outcomes:
-      <ul>
-        {outcomes}
-      </ul>
-      </div>
-    )
-  }
-
   color(language) {
     switch(language) {
       case 'java':
