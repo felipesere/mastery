@@ -24,12 +24,23 @@ class ModuleCatalog extends React.Component {
       {
         title: "Java 4x4 performance",
         subtitle: "Learn the basics of a Java CLI app",
-        language: 'java'
+        language: 'java',
+        outputs: [
+          "A TTT that responds to all user input in less than 2sec.",
+          "A blog post detailing what bottlenecks were found and how."
+        ]
       },
       {
         title: "Java Echo Server",
         subtitle: "What are Sockets and why do they matter?",
-        language: 'java'
+        language: 'java',
+        outputs: [
+          "A server app that will echo any message sent over a socket",
+          "A client app that will send its input to the server"
+        ],
+        outcomes: [
+          "Understand sockets and how to separate your app from them",
+        ]
       },
       {
         title: "Java Chat server",
