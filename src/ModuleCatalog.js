@@ -8,7 +8,17 @@ class ModuleCatalog extends React.Component {
     let modules = [
       {
         title: "Java 3x3 TTT",
-        subtitle: "Learn the basics of a Java CLI app"
+        subtitle: "Learn the basics of a Java CLI app",
+        outputs: [
+          "A basic 3x3 TTT",
+          "100% code coverage",
+          "Human vs Computer",
+          "If possible, unbeatble"
+        ],
+        outcomes: [
+          "Basic understanding of static typing",
+          "Understand how a Java project is structured"
+        ]
       },
       {
         title: "Java 4x4 performance",
@@ -20,7 +30,7 @@ class ModuleCatalog extends React.Component {
       },
       {
         title: "Java Chat server",
-        subtitle: "Talking is fun!"
+        subtitle: "Talking should be a fun exercise."
       },
       {
         title: "Java HTTP server",
@@ -32,7 +42,7 @@ class ModuleCatalog extends React.Component {
       },
       {
         title: "Elixir TTT",
-        subtitle: "Basic Human vs Human"
+        subtitle: "Basic Human vs Human with a cute UI"
       },
       {
         title: "Elixir Guilded Rose",
@@ -42,7 +52,7 @@ class ModuleCatalog extends React.Component {
 
     let learningModules = modules.map( (module, idx) => {
       return (
-        <LearningModule key={idx} title={module.title} subtitle={module.subtitle} ></LearningModule>
+        <LearningModule key={idx} module={module} ></LearningModule>
       );
     });
 
