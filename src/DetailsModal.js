@@ -53,8 +53,7 @@ class DetailsModal extends React.Component {
                 {this.outcomes()}
             </section>
             <footer className="modal-card-foot">
-              <button onClick={this.closeModal} className="button is-success">Save changes</button>
-              <button onClick={this.closeModal} className="button">Cancel</button>
+              <button onClick={this.closeModal} className="button is-info">Close</button>
             </footer>
           </div>
         </div>

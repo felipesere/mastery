@@ -1,8 +1,9 @@
-[
+{"modules":
+  [
   {
     "title": "Java 3x3 TTT",
     "subtitle": "Learn the basics of a Java CLI app",
-    "language": "java",
+    "language": "Java",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -12,12 +13,12 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a Java project is structured"
-      ]
+    ]
   },
   {
     "title": "Java 4x4 performance",
     "subtitle": "Learn the basics of a Java CLI app",
-    "language": "java",
+    "language": "Java",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -26,7 +27,7 @@
   {
     "title": "Java Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "java",
+    "language": "Java",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -38,28 +39,28 @@
   {
     "title": "Java Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "java"
+    "language": "Java"
 
   },
   {
     "title": "Java koans",
     "subtitle": "Basic syntax of the language",
-    "language": "java"
+    "language": "Java"
   },
   {
     "title": "Java Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "java"
+    "language": "Java"
   },
   {
     "title": "Java HTTP server",
     "subtitle": "A challenge to be experienced!",
-    "language": "java"
+    "language": "Java"
   },
   {
     "title": "Ruby 3x3 TTT",
     "subtitle": "Learn the basics of a Ruby CLI app",
-    "language": "ruby",
+    "language": "Ruby",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -69,12 +70,12 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a Ruby project is structured"
-      ]
+    ]
   },
   {
     "title": "Ruby 4x4 performance",
     "subtitle": "Learn the basics of a Ruby CLI app",
-    "language": "ruby",
+    "language": "Ruby",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -83,36 +84,35 @@
   {
     "title": "Ruby Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "ruby",
+    "language": "Ruby",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
     ],
     "outcomes": [
       "Understand sockets and how to separate your app from them"
-      ]
+    ]
   },
   {
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "ruby"
+    "language": "Ruby"
 
   },
   {
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
-    "language": "ruby"
+    "language": "Ruby"
   },
   {
     "title": "Ruby Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "ruby"
-  }
-
+    "language": "Ruby"
+  },
   {
     "title": "Clojure 3x3 TTT",
     "subtitle": "Learn the basics of a Clojure CLI app",
-    "language": "clojure",
+    "language": "Clojure",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -122,12 +122,12 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a Clojure project is structured"
-      ]
+    ]
   },
   {
     "title": "Clojure 4x4 performance",
     "subtitle": "Learn the basics of a Clojure CLI app",
-    "language": "clojure",
+    "language": "Clojure",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -136,36 +136,35 @@
   {
     "title": "Clojure Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "clojure",
+    "language": "Clojure",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
     ],
     "outcomes": [
       "Understand sockets and how to separate your app from them"
-      ]
+    ]
   },
   {
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "clojure"
+    "language": "Clojure"
 
   },
   {
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
-    "language": "clojure"
+    "language": "Clojure"
   },
   {
     "title": "Clojure Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "clojure"
-  }
-
+    "language": "Clojure"
+  },
   {
-    "title": "Javascript 3x3 TTT",
-    "subtitle": "Learn the basics of a Javascript CLI app",
-    "language": "javascript",
+    "title": "JavaScript 3x3 TTT",
+    "subtitle": "Learn the basics of a JavaScript CLI app",
+    "language": "JavaScript",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -174,51 +173,50 @@
     ],
     "outcomes": [
       "Basic understanding of static typing",
-      "Understand how a Javascript project is structured"
-      ]
+      "Understand how a JavaScript project is structured"
+    ]
   },
   {
-    "title": "Javascript 4x4 performance",
-    "subtitle": "Learn the basics of a Javascript CLI app",
-    "language": "javascript",
+    "title": "JavaScript 4x4 performance",
+    "subtitle": "Learn the basics of a JavaScript CLI app",
+    "language": "JavaScript",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
     ]
   },
   {
-    "title": "Javascript Echo Server",
+    "title": "JavaScript Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "javascript",
+    "language": "JavaScript",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
     ],
     "outcomes": [
       "Understand sockets and how to separate your app from them"
-      ]
+    ]
   },
   {
-    "title": "Javascript Chat server",
+    "title": "JavaScript Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "javascript"
+    "language": "JavaScript"
 
   },
   {
-    "title": "Javascript koans",
+    "title": "JavaScript koans",
     "subtitle": "Basic syntax of the language",
-    "language": "javascript"
+    "language": "JavaScript"
   },
   {
-    "title": "Javascript Guilded Rose",
+    "title": "JavaScript Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "javascript"
-  }
-
+    "language": "JavaScript"
+  },
   {
     "title": "Elixir 3x3 TTT",
     "subtitle": "Learn the basics of a Elixir CLI app",
-    "language": "elixir",
+    "language": "Elixir",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -228,12 +226,12 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a Elixir project is structured"
-      ]
+    ]
   },
   {
     "title": "Elixir 4x4 performance",
     "subtitle": "Learn the basics of a Elixir CLI app",
-    "language": "elixir",
+    "language": "Elixir",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -242,32 +240,31 @@
   {
     "title": "Elixir Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "elixir",
+    "language": "Elixir",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
     ],
     "outcomes": [
       "Understand sockets and how to separate your app from them"
-      ]
+    ]
   },
   {
     "title": "Elixir Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "elixir"
+    "language": "Elixir"
 
   },
   {
     "title": "Elixir koans",
     "subtitle": "Basic syntax of the language",
-    "language": "elixir"
+    "language": "Elixir"
   },
   {
     "title": "Elixir Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "elixir"
-  }
-
+    "language": "Elixir"
+  },
   {
     "title": "C# 3x3 TTT",
     "subtitle": "Learn the basics of a C# CLI app",
@@ -281,7 +278,7 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a C# project is structured"
-      ]
+    ]
   },
   {
     "title": "C# 4x4 performance",
@@ -302,7 +299,7 @@
     ],
     "outcomes": [
       "Understand sockets and how to separate your app from them"
-      ]
+    ]
   },
   {
     "title": "C# Chat server",
@@ -319,12 +316,11 @@
     "title": "C# Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "C#"
-  }
-
+  },
   {
     "title": "Scala 3x3 TTT",
     "subtitle": "Learn the basics of a Scala CLI app",
-    "language": "scala",
+    "language": "Scala",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -339,7 +335,7 @@
   {
     "title": "Scala 4x4 performance",
     "subtitle": "Learn the basics of a Scala CLI app",
-    "language": "scala",
+    "language": "Scala",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -348,7 +344,7 @@
   {
     "title": "Scala Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "scala",
+    "language": "Scala",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -360,17 +356,17 @@
   {
     "title": "Scala Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "scala"
+    "language": "Scala"
 
   },
   {
     "title": "Scala koans",
     "subtitle": "Basic syntax of the language",
-    "language": "scala"
+    "language": "Scala"
   },
   {
     "title": "Scala Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "scala"
+    "language": "Scala"
   }
-]
+]}

@@ -1,5 +1,6 @@
 import React from 'react';
 import DetailsModal from './DetailsModal';
+import GitHubColors from 'github-colors';
 
 class LearningModule extends React.Component {
 
@@ -21,17 +22,6 @@ class LearningModule extends React.Component {
     this.setState({detailsOpen: false})
   }
 
-  color(language) {
-    switch(language) {
-      case 'java':
-        return "#e07c27"
-      case 'elixir':
-        return "#27a8e0"
-      default:
-        return "#7a7a7a"
-    }
-  }
-
   render() {
 
     let style = {
@@ -39,7 +29,7 @@ class LearningModule extends React.Component {
       width: '250px',
       minWidth: '250px',
       borderRadius: '5px',
-      boxShadow: `inset 0 0 2px 4px ${this.color(this.props.module.language)}`
+      boxShadow: `inset 0 0 2px 4px ${GitHubColors.get(this.props.module.language).color}`
     }
 
     let footerStyle = {
