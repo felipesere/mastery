@@ -39,23 +39,56 @@
   {
     "title": "Java Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "Java"
-
+    "language": "Java",
+    "outputs": [
+      "A single app that can be started and connected to a second instance of itself",
+      "Both apps should be take and display text like a regular chat"
+    ],
+    "outcomes": [
+      "Deeper understanding of Sockets for back and forth communication",
+      "AUndstand how to abstract away from IO"
+    ]
   },
   {
     "title": "Java koans",
     "subtitle": "Basic syntax of the language",
-    "language": "Java"
+    "language": "Java",
+    "outputs": [
+      "All passing koans from https://github.com/matyb/java-koans",
+      "A blog post highlighting a different between Java and a previously known language"
+    ],
+    "outcomes": [
+      "Basic undstanding of the language, covering functions, classes, types"
+    ]
   },
   {
     "title": "Java Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "Java"
+    "language": "Java",
+    "outputs": [
+      "A repo with a refactored Guilded Rose",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
   },
   {
     "title": "Java HTTP server",
     "subtitle": "A challenge to be experienced!",
-    "language": "Java"
+    "language": "Java",
+    "outputs": [
+      "A server which passes all CobSpec tests",
+      "A repository with high-quality code that you'd be happy to show fellow crafters",
+      "Be prepared to moderate a 15min Q&A about the server and your approach"
+    ],
+    "outcomes": [
+      "A sense for code-design for a project resembling real-life.",
+      "Appretiation for trade-offs that need to be taken balancing time and deliverables."
+    ]
   },
   {
     "title": "Ruby 3x3 TTT",
