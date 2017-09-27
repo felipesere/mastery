@@ -1,15 +1,3 @@
-.top {
-    height: 60px;
-    padding: 10px;
-    border-bottom: 1px solid #8894a0;
-    text-align: center;
-    background: #fff;
-}
-
-.logo {
-    width: 40px;
-}
-
 body {
     background: #f6f7f8;
 }

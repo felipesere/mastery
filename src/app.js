@@ -1,18 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ModuleCatalog from './ModuleCatalog.js'
+import Header from './Header.js'
 
 import 'normalize.css'
 
 class Main extends React.Component {
   render() {
-    let style = {
-      width: '80%',
-      margin: 'auto'
-    }
     return (
-      <div className="container" style={style}>
-        <ModuleCatalog></ModuleCatalog>
+      <div>
+        <Header></Header>
+        <ModuleCatalog className="container is-fluid"></ModuleCatalog>
       </div>
     )
   }
