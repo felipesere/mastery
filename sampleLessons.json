@@ -112,7 +112,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes" : []
   },
   {
     "title": "Ruby Echo Server",
@@ -129,18 +130,24 @@
   {
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "Ruby"
+    "language": "Ruby",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
-    "language": "Ruby"
+    "language": "Ruby",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Ruby Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "Ruby"
+    "language": "Ruby",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Clojure 3x3 TTT",
@@ -164,7 +171,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes": []
   },
   {
     "title": "Clojure Echo Server",
@@ -181,18 +189,24 @@
   {
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "Clojure"
+    "language": "Clojure",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
-    "language": "Clojure"
+    "language": "Clojure",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Clojure Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "Clojure"
+    "language": "Clojure",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "JavaScript 3x3 TTT",
@@ -216,7 +230,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes": []
   },
   {
     "title": "JavaScript Echo Server",
@@ -233,18 +248,24 @@
   {
     "title": "JavaScript Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "JavaScript koans",
     "subtitle": "Basic syntax of the language",
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "JavaScript Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "JavaScript"
+    "language": "JavaScript",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Elixir 3x3 TTT",
@@ -268,7 +289,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes": []
   },
   {
     "title": "Elixir Echo Server",
@@ -285,18 +307,24 @@
   {
     "title": "Elixir Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "Elixir"
+    "language": "Elixir",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "Elixir koans",
     "subtitle": "Basic syntax of the language",
-    "language": "Elixir"
+    "language": "Elixir",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Elixir Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "Elixir"
+    "language": "Elixir",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "C# 3x3 TTT",
@@ -320,7 +348,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes": []
   },
   {
     "title": "C# Echo Server",
@@ -337,18 +366,24 @@
   {
     "title": "C# Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "C#"
+    "language": "C#",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "C# koans",
     "subtitle": "Basic syntax of the language",
-    "language": "C#"
+    "language": "C#",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "C# Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "C#"
+    "language": "C#",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Scala 3x3 TTT",
@@ -372,7 +407,8 @@
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
-    ]
+    ],
+    "outcomes": []
   },
   {
     "title": "Scala Echo Server",
@@ -389,17 +425,23 @@
   {
     "title": "Scala Chat server",
     "subtitle": "Talking should be a fun exercise.",
-    "language": "Scala"
+    "language": "Scala",
+    "outputs": [],
+    "outcomes": []
 
   },
   {
     "title": "Scala koans",
     "subtitle": "Basic syntax of the language",
-    "language": "Scala"
+    "language": "Scala",
+    "outputs": [],
+    "outcomes": []
   },
   {
     "title": "Scala Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
-    "language": "Scala"
+    "language": "Scala",
+    "outputs": [],
+    "outcomes": []
   }
 ]}

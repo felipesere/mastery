@@ -28,10 +28,13 @@ class Main extends React.Component {
 
   onSearch(term) {
     let lower_term = term.toLowerCase()
-    let contains = (elements, term) =>  elements && elements.some(element => element.toLowerCase().includes(term) );
+    let contains = (elements, term) =>  elements.some(element => element.toLowerCase().includes(term) );
 
     let modules = this.state.all_modules.filter( (module) => {
-      return module.title.toLowerCase().includes(term) || contains(module.outputs, term) || contains(module.outcomes, term)
+      return module.title.toLowerCase().includes(term)
+        || module.subtitle.toLowerCase().includes(term)
+        || contains(module.outputs, term)
+        || contains(module.outcomes, term)
     })
 
     this.setState({modules: modules})

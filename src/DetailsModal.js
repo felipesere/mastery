@@ -4,10 +4,6 @@ class DetailsModal extends React.Component {
   constructor(props) {
     super(props)
     this.closeModal = this.closeModal.bind(this)
-    this.state = {
-      outputs: props.outputs || [],
-      outcomes: props.outcomes || [],
-    }
   }
 
   closeModal(e) {
@@ -15,11 +11,11 @@ class DetailsModal extends React.Component {
   }
 
   outcomes() {
-    return this.list(this.state.outcomes, "Outcomes")
+    return this.list(this.props.outcomes, "Outcomes")
   }
 
   outputs() {
-    return this.list(this.state.outputs, "Outputs")
+    return this.list(this.props.outputs, "Outputs")
   }
 
   list(elements, name) {
