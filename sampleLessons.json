@@ -4,6 +4,7 @@
     "title": "Java 3x3 TTT",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -19,6 +20,7 @@
     "title": "Java 4x4 performance",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -28,6 +30,7 @@
     "title": "Java Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -40,6 +43,7 @@
     "title": "Java Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A single app that can be started and connected to a second instance of itself",
       "Both apps should be take and display text like a regular chat"
@@ -53,6 +57,7 @@
     "title": "Java koans",
     "subtitle": "Basic syntax of the language",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "All passing koans from https://github.com/matyb/java-koans",
       "A blog post highlighting a different between Java and a previously known language"
@@ -65,6 +70,7 @@
     "title": "Java Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A repo with a refactored Guilded Rose",
       "A blog post highlighting which SOLID principles your solution adheres to",
@@ -80,6 +86,7 @@
     "title": "Java HTTP server",
     "subtitle": "A challenge to be experienced!",
     "language": "Java",
+    "description": "Bla bla bla",
     "outputs": [
       "A server which passes all CobSpec tests",
       "A repository with high-quality code that you'd be happy to show fellow crafters",
@@ -94,6 +101,7 @@
     "title": "Ruby 3x3 TTT",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -109,6 +117,7 @@
     "title": "Ruby 4x4 performance",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -119,6 +128,7 @@
     "title": "Ruby Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -131,6 +141,7 @@
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -139,6 +150,7 @@
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -146,6 +158,7 @@
     "title": "Ruby Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Ruby",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -153,6 +166,7 @@
     "title": "Clojure 3x3 TTT",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -168,6 +182,7 @@
     "title": "Clojure 4x4 performance",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -178,6 +193,7 @@
     "title": "Clojure Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -190,6 +206,7 @@
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -198,6 +215,7 @@
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -205,6 +223,7 @@
     "title": "Clojure Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Clojure",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -212,6 +231,7 @@
     "title": "JavaScript 3x3 TTT",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -227,6 +247,7 @@
     "title": "JavaScript 4x4 performance",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -237,6 +258,7 @@
     "title": "JavaScript Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "JavaScript",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -249,6 +271,7 @@
     "title": "JavaScript Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "JavaScript",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -256,6 +279,7 @@
   {
     "title": "JavaScript koans",
     "subtitle": "Basic syntax of the language",
+    "description": "Bla bla bla",
     "language": "JavaScript",
     "outputs": [],
     "outcomes": []
@@ -264,6 +288,7 @@
     "title": "JavaScript Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "JavaScript",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -271,6 +296,7 @@
     "title": "Elixir 3x3 TTT",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -286,6 +312,7 @@
     "title": "Elixir 4x4 performance",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -296,6 +323,7 @@
     "title": "Elixir Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -308,6 +336,7 @@
     "title": "Elixir Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -316,6 +345,7 @@
     "title": "Elixir koans",
     "subtitle": "Basic syntax of the language",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -323,6 +353,7 @@
     "title": "Elixir Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Elixir",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -330,6 +361,7 @@
     "title": "C# 3x3 TTT",
     "subtitle": "Learn the basics of a C# CLI app",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -345,6 +377,7 @@
     "title": "C# 4x4 performance",
     "subtitle": "Learn the basics of a C# CLI app",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -355,6 +388,7 @@
     "title": "C# Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -367,6 +401,7 @@
     "title": "C# Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -375,6 +410,7 @@
     "title": "C# koans",
     "subtitle": "Basic syntax of the language",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -382,6 +418,7 @@
     "title": "C# Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "C#",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -389,6 +426,7 @@
     "title": "Scala 3x3 TTT",
     "subtitle": "Learn the basics of a Scala CLI app",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -404,6 +442,7 @@
     "title": "Scala 4x4 performance",
     "subtitle": "Learn the basics of a Scala CLI app",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
       "A blog post detailing what bottlenecks were found and how."
@@ -414,6 +453,7 @@
     "title": "Scala Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -426,6 +466,7 @@
     "title": "Scala Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
 
@@ -434,6 +475,7 @@
     "title": "Scala koans",
     "subtitle": "Basic syntax of the language",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   },
@@ -441,6 +483,7 @@
     "title": "Scala Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Scala",
+    "description": "Bla bla bla",
     "outputs": [],
     "outcomes": []
   }

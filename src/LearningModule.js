@@ -39,6 +39,7 @@ class LearningModule extends React.Component {
     let detailsModal = ""
     if( this.state.detailsOpen ) {
       detailsModal = <DetailsModal title={this.props.module.title}
+                            description={this.props.module.description}
                             outputs={this.props.module.outputs}
                             outcomes={this.props.module.outcomes}
                             onClose={this.closeModal}>

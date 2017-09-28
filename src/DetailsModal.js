@@ -45,6 +45,7 @@ class DetailsModal extends React.Component {
                <button onClick={this.closeModal} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
+                {this.props.description}
                 {this.outputs()}
                 {this.outcomes()}
             </section>
