@@ -4,7 +4,7 @@
     "title": "Java 3x3 TTT",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Write a basic 3x3 Tic-Tac-Toe in Java. It is enough to support a human and a computer player. Make sure that the computer can not be beaten.",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -20,11 +20,15 @@
     "title": "Java 4x4 performance",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Expand your previous TTT to support 4x4. Make sure to *keep performance in mind*. How fast does it need to be usable? Also, which changes were anticipated and which came through testing?",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
-      "A blog post detailing what bottlenecks were found and how."
-    ]
+      "A blog post detailing what bottlenecks were found and how...",
+      "...or a blogpost about which design changes were needed."
+    ],
+    "outcomes": [
+      "An understanding for design",
+      "How to use Java performance measurement tools and what to be on the lookout for."]
   },
   {
     "title": "Java Echo Server",

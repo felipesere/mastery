@@ -1,3 +1,4 @@
+import Marked from 'marked';
 import React from 'react';
 
 class DetailsModal extends React.Component {
@@ -36,6 +37,7 @@ class DetailsModal extends React.Component {
   }
 
   render() {
+    let description = {__html: Marked(this.props.description)}
     return (
         <div className="modal is-active">
           <div className="modal-background"></div>
@@ -45,7 +47,7 @@ class DetailsModal extends React.Component {
                <button onClick={this.closeModal} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
-                {this.props.description}
+                <div className="description" dangerouslySetInnerHTML={description}></div>
                 {this.outputs()}
                 {this.outcomes()}
             </section>
