@@ -6,4 +6,4 @@
 
 `npm run watch` to continously watch the JS files for changes and reload.
 
-`npm run server` to run the necessary data server.
+`npm run dataserver` to run the necessary data server.

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack-dev-server --content-base dist",
-    "server": "./node_modules/.bin/json-server --watch sampleLessons.json"
+    "dataserver": "./node_modules/.bin/json-server --watch sampleLessons.json"
   },
   "author": "Felipe Seré <felipesere@gmail.com>",
   "license": "ISC",
