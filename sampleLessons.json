@@ -34,7 +34,7 @@
     "title": "Java Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Write simple server that simply _echoes anything_ that is sent to it, essentially a parrot. Seperately write a small client app, that takes and input and displays the output from the server.",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -85,6 +85,14 @@
       "An appreciation for refactoring techniques",
       "An appreciation for a workflow that allows you to alwasy 'stay green'"
     ]
+  },
+  {
+    "title": "Java Video Store Refactoring",
+    "subtitle": "",
+    "language": "Java",
+    "description": "Bla bla bla",
+    "outputs": [ "Something..." ],
+    "outcomes": [ "...else." ]
   },
   {
     "title": "Java HTTP server",
