@@ -1,7 +1,15 @@
-body {
-    background: #f6f7f8;
+.card {
+    background: #f1f1f1;
+    margin: 1em;
+    width: 250px;
+    min-width: 250px;
+    border-radius: 5px;
 }
 
 .description {
   margin-bottom: 20px;
+}
+
+footer.card-footer {
+  margin: 0 4 4 4;
 }

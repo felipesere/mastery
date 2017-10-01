@@ -25,15 +25,7 @@ class LearningModule extends React.Component {
   render() {
 
     let style = {
-      margin: '1em',
-      width: '250px',
-      minWidth: '250px',
-      borderRadius: '5px',
-      boxShadow: `inset 0 0 2px 4px ${GitHubColors.get(this.props.module.language).color}`
-    }
-
-    let footerStyle = {
-      margin: "0 4 4 4"
+      boxShadow: `inset 0 0 0px 4px ${GitHubColors.get(this.props.module.language).color}`
     }
 
     let detailsModal = ""
@@ -57,7 +49,7 @@ class LearningModule extends React.Component {
             {this.props.module.subtitle}
           </div>
         </div>
-        <footer className="card-footer" style={footerStyle} >
+        <footer className="card-footer">
           <a onClick={this.openModal} href="#" className="button card-footer-item">Open</a>
         </footer>
         {detailsModal}
