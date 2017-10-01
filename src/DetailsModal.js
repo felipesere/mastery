@@ -1,5 +1,6 @@
-import Marked from 'marked';
 import React from 'react';
+import Markdown from './Markdown.js';
+import List from './List.js';
 
 class DetailsModal extends React.Component {
   constructor(props) {
@@ -11,33 +12,8 @@ class DetailsModal extends React.Component {
     this.props.onClose(e)
   }
 
-  outcomes() {
-    return this.list(this.props.outcomes, "Outcomes")
-  }
-
-  outputs() {
-    return this.list(this.props.outputs, "Outputs")
-  }
-
-  list(elements, name) {
-    if(elements.length === 0) { return }
-
-    let listItems = elements.map( (element, idx) => {
-      return <li key={idx}>{element}</li>
-    });
-
-    return (
-      <div className="content">
-        {name}:
-        <ul>
-          {listItems}
-        </ul>
-      </div>
-    )
-  }
-
   render() {
-    let description = {__html: Marked(this.props.description)}
+    let description = this.props.description;
     return (
         <div className="modal is-active">
           <div className="modal-background"></div>
@@ -47,9 +23,9 @@ class DetailsModal extends React.Component {
                <button onClick={this.closeModal} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
-                <div className="description" dangerouslySetInnerHTML={description}></div>
-                {this.outputs()}
-                {this.outcomes()}
+              <Markdown className="description" text={description}></Markdown>
+              <List elements={this.props.outputs} name="Outputs"></List>
+              <List elements={this.props.outcomes} name="Outcomes"></List>
             </section>
             <footer className="modal-card-foot">
               <button onClick={this.closeModal} className="button is-info">Close</button>
