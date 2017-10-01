@@ -13,19 +13,19 @@ class DetailsModal extends React.Component {
   }
 
   render() {
-    let description = this.props.description;
+    let description = this.props.module.description;
     return (
         <div className="modal is-active">
           <div className="modal-background"></div>
             <div className="modal-card">
             <header className="modal-card-head">
-               <p className="modal-card-title">{this.props.title}</p>
+               <p className="modal-card-title">{this.props.module.title}</p>
                <button onClick={this.closeModal} className="delete" aria-label="close"></button>
             </header>
             <section className="modal-card-body">
               <Markdown className="description" text={description}></Markdown>
-              <List elements={this.props.outputs} name="Outputs"></List>
-              <List elements={this.props.outcomes} name="Outcomes"></List>
+              <List elements={this.props.module.outputs} name="Outputs"></List>
+              <List elements={this.props.module.outcomes} name="Outcomes"></List>
             </section>
             <footer className="modal-card-foot">
               <button onClick={this.closeModal} className="button is-info">Close</button>

@@ -30,14 +30,8 @@ class LearningModule extends React.Component {
 
     let detailsModal = ""
     if( this.state.detailsOpen ) {
-      detailsModal = <DetailsModal title={this.props.module.title}
-                            description={this.props.module.description}
-                            outputs={this.props.module.outputs}
-                            outcomes={this.props.module.outcomes}
-                            onClose={this.closeModal}>
-                     </DetailsModal>
+      detailsModal = <DetailsModal module={this.props.module} onClose={this.closeModal}></DetailsModal>
     }
-
 
     return (
       <div className="card" style={style}>
