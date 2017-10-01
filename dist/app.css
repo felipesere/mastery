@@ -4,12 +4,18 @@
     width: 250px;
     min-width: 250px;
     border-radius: 5px;
-}
-
-.description {
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 footer.card-footer {
   margin: 0 4 4 4;
+}
+
+.card .card-content {
+  flex-grow: 1;
+}
+
+.description {
+  margin-bottom: 20px;
 }
