@@ -25,7 +25,7 @@ class LearningModule extends React.Component {
   render() {
 
     let style = {
-      boxShadow: `inset 0 0 0px 4px ${GitHubColors.get(this.props.module.language).color}`
+      border: `4px solid ${GitHubColors.get(this.props.module.language).color}`
     }
 
     let detailsModal = ""
