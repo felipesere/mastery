@@ -1,3 +1,7 @@
 {
-  "root": "dist/"
+  "root": "dist/",
+  "routes": {
+    "/*.html": "index.html",
+    "/modules": "../sampleLessons.json"
+  }
 }
