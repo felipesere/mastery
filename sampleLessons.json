@@ -1,5 +1,4 @@
-{"modules":
-  [
+[
   {
     "title": "Java 3x3 TTT",
     "subtitle": "Learn the basics of a Java CLI app",
@@ -369,4 +368,4 @@
     "outputs": [],
     "outcomes": []
   }
-]}
+]
