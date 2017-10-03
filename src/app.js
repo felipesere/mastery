@@ -16,7 +16,7 @@ class Main extends React.Component {
     this.onSearch = this.onSearch.bind(this)
 
     // This will need tweaking for local development!
-    fetch("https://path2mastery.herokuapp.com/modules")
+    fetch(MODULES_URL)
       .then(r => r.json())
       .then(modules =>  this.setModules(modules))
   }

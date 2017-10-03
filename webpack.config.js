@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 const config = {
   entry: './src/app.js',
@@ -21,7 +22,12 @@ const config = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'MODULES_URL': JSON.stringify(process.env.MODULES_URL || 'http://localhost:3000/modules')
+    })
+  ]
 }
 
 module.exports = config
