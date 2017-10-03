@@ -8,7 +8,7 @@
     "build": "webpack",
     "watch": "webpack-dev-server --content-base dist",
     "dataserver": "./node_modules/.bin/json-server --watch sampleLessons.json",
-    "postinstall": "./node_modules/.bin/webpack"
+    "heroku-postbuild": "./node_modules/.bin/webpack"
   },
   "author": "Felipe Seré <felipesere@gmail.com>",
   "license": "ISC",
