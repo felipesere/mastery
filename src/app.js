@@ -15,7 +15,8 @@ class Main extends React.Component {
     }
     this.onSearch = this.onSearch.bind(this)
 
-    fetch("http://localhost:3000/modules")
+    // This will need tweaking for local development!
+    fetch("https://path2mastery.herokuapp.com/modules")
       .then(r => r.json())
       .then(modules =>  this.setModules(modules))
   }
