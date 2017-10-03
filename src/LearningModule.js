@@ -15,17 +15,18 @@ class LearningModule extends React.Component {
   openModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: true})
+    this.props.openModal()
   }
 
   closeModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: false})
+    this.props.closeModal()
   }
 
   render() {
-
     let style = {
-      border: `4px solid ${GitHubColors.get(this.props.module.language).color}`
+      border: `4px solid ${GitHubColors.get(this.props.module.language).color}`,
     }
 
     let detailsModal = ""
@@ -33,8 +34,13 @@ class LearningModule extends React.Component {
       detailsModal = <DetailsModal module={this.props.module} onClose={this.closeModal}></DetailsModal>
     }
 
+    let cardKind = "card"
+    if ( this.props.animated == true ) {
+      cardKind = "card card-animated";
+    }
+
     return (
-      <div className="card" style={style}>
+      <div className={cardKind} style={style}>
         <header className="card-header">
           <p className="card-header-title is-centered">{this.props.module.title}</p>
         </header>

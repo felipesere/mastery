@@ -5,12 +5,26 @@ class ModuleCatalog extends React.Component {
 
   constructor(props) {
     super(props)
+    this.state = {viewingDetails: false}
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+
+  openModal() {
+    this.setState({viewingDetails: true})
+  }
+
+  closeModal() {
+    this.setState({viewingDetails: false})
   }
 
   render() {
     let learningModules = this.props.modules.map( (module, idx) => {
       return (
-        <LearningModule key={idx} module={module} ></LearningModule>
+        <LearningModule
+           openModal={this.openModal}
+           closeModal={this.closeModal}
+           key={idx} module={module} animated={!this.state.viewingDetails} ></LearningModule>
       );
     });
 
