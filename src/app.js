@@ -32,11 +32,11 @@ class Main extends React.Component {
     let contains = (elements, term) =>  elements.some(element => element.toLowerCase().includes(term) );
 
     let modules = this.state.all_modules.filter( (module) => {
-      return module.title.toLowerCase().includes(term)
-        || module.subtitle.toLowerCase().includes(term)
-        || module.description.toLowerCase().includes(term)
-        || contains(module.outputs, term)
-        || contains(module.outcomes, term)
+      return module.title.toLowerCase().includes(lower_term)
+        || module.subtitle.toLowerCase().includes(lower_term)
+        || module.description.toLowerCase().includes(lower_term)
+        || contains(module.outputs, lower_term)
+        || contains(module.outcomes, lower_term)
     })
 
     this.setState({modules: modules})
