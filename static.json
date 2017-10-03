@@ -3,5 +3,11 @@
   "routes": {
     "/*.html": "index.html",
     "/modules": "../sampleLessons.json"
+  },
+  "headers": {
+    "/modules": {
+       "Access-Control-Allow-Origin": "*",
+       "Content-Type": "application/json"
+    }
   }
 }
