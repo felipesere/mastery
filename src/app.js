@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ModuleCatalog from './ModuleCatalog.js'
-import Header from './Header.js'
-
+import ModuleCatalog from './ModuleCatalog'
+import Header from './Header'
+import Git from './Git'
 import Filtering from './Filtering'
+
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import 'normalize.css'
 
@@ -37,11 +39,16 @@ class Main extends React.Component {
     return (
       <div>
         <Header search={this.onSearch}></Header>
-        <ModuleCatalog modules={this.state.modules} className="container is-fluid"></ModuleCatalog>
+
+      <Route exact path="/" render={() => <ModuleCatalog modules={this.state.modules} className="container is-fluid"/>} />
+      <Route path="/healthcheck" render={() => <Git/>} />
       </div>
     )
   }
 }
 
 const app = document.getElementById('app')
-ReactDOM.render(<Main />, app)
+ReactDOM.render(<BrowserRouter>
+                  <Main />
+                </BrowserRouter>
+  , app)

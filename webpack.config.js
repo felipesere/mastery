@@ -1,5 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
+const GitRevisionPlugin = require('git-revision-webpack-plugin')
+
+const git = new GitRevisionPlugin()
 
 const config = {
   entry: './src/app.js',
@@ -25,7 +28,8 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'MODULES_URL': JSON.stringify(process.env.MODULES_URL || 'http://localhost:3000/modules')
+      'MODULES_URL': JSON.stringify(process.env.MODULES_URL || 'http://localhost:3000/modules'),
+      'COMMIT_HASH': JSON.stringify(git.commithash()),
     })
   ]
 }
