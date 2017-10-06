@@ -29,7 +29,7 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'MODULES_URL': JSON.stringify(process.env.MODULES_URL || 'http://localhost:3000/modules'),
-      'COMMIT_HASH': JSON.stringify(git.commithash()),
+      'COMMIT_HASH': JSON.stringify(process.env.SOURCE_VERSION || JSON.stringify(git.commithash())),
     })
   ]
 }
