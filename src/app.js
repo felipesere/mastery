@@ -14,7 +14,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      modules: [],
+      displayed_moduled: [],
       all_modules: []
     }
     this.onSearch = this.onSearch.bind(this)
@@ -26,22 +26,21 @@ class Main extends React.Component {
 
   setModules(modules) {
     this.setState({all_modules: modules,
-                   modules: modules})
+                   displayed_moduled: modules})
   }
 
   onSearch(term) {
     let modules = Filtering.filter(this.state.all_modules, term);
 
-    this.setState({modules: modules})
+    this.setState({displayed_moduled: modules})
   }
 
   render() {
     return (
       <div>
         <Header search={this.onSearch}></Header>
-
-      <Route exact path="/" render={() => <ModuleCatalog modules={this.state.modules} className="container is-fluid"/>} />
-      <Route path="/healthcheck" render={() => <Git/>} />
+        <Route exact path="/" render={() => <ModuleCatalog modules={this.state.displayed_moduled} className="container is-fluid"/>} />
+        <Route path="/healthcheck" render={() => <Git/>} />
       </div>
     )
   }
