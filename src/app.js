@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import ModuleCatalog from './ModuleCatalog.js'
 import Header from './Header.js'
 
+import Filtering from './Filtering'
+
 import 'normalize.css'
 
 class Main extends React.Component {
@@ -25,18 +27,8 @@ class Main extends React.Component {
                    modules: modules})
   }
 
-
   onSearch(term) {
-    let lower_term = term.toLowerCase()
-    let contains = (elements, term) =>  elements.some(element => element.toLowerCase().includes(term) );
-
-    let modules = this.state.all_modules.filter( (module) => {
-      return module.title.toLowerCase().includes(lower_term)
-        || module.subtitle.toLowerCase().includes(lower_term)
-        || module.description.toLowerCase().includes(lower_term)
-        || contains(module.outputs, lower_term)
-        || contains(module.outcomes, lower_term)
-    })
+    let modules = Filtering.filter(this.state.all_modules, term);
 
     this.setState({modules: modules})
   }
