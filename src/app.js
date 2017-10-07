@@ -49,7 +49,7 @@ class Main extends React.Component {
         display: 'flex',
       }
       return (
-        <div>
+        <div style={style}>
           <Path modules={this.state.selected_modules} className="container is-fluid" />
           <ModuleCatalog modules={this.state.displayed_modules}
                          selectModule={this.onAddModule} className="container is-fluid"/>
