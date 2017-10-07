@@ -24,22 +24,23 @@ class ModuleCatalog extends React.Component {
         <LearningModule
            openModal={this.openModal}
            closeModal={this.closeModal}
-           key={idx} module={module} animated={!this.state.viewingDetails} ></LearningModule>
-      );
-    });
+           selectModule={this.props.selectModule}
+           key={idx} module={module} animated={!this.state.viewingDetails} />
+      )
+    })
 
     let style = {
       display: 'flex',
       flexWrap: 'wrap',
       alignContent: 'flex-start',
-      justifyContent: 'flex-start',
+      justifyContent: 'center',
     }
 
     return (
-      <div style={style} className="module-catalog">
+      <div style={style}>
       {learningModules}
       </div>
-    );
+    )
   }
 }
 

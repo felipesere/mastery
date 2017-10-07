@@ -31,7 +31,9 @@ class LearningModule extends React.Component {
 
     let detailsModal = ""
     if( this.state.detailsOpen ) {
-      detailsModal = <DetailsModal module={this.props.module} onClose={this.closeModal}></DetailsModal>
+      detailsModal = <DetailsModal module={this.props.module}
+                                   onClose={this.closeModal}
+                                   selectModule={this.props.selectModule} />
     }
 
     let cardKind = "card"

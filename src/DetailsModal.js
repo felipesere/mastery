@@ -6,10 +6,16 @@ class DetailsModal extends React.Component {
   constructor(props) {
     super(props)
     this.closeModal = this.closeModal.bind(this)
+    this.addModule = this.addModule.bind(this)
   }
 
   closeModal(e) {
     this.props.onClose(e)
+  }
+
+  addModule(e) {
+    this.props.selectModule(this.props.module)
+    this.closeModal(e)
   }
 
   render() {
@@ -28,6 +34,7 @@ class DetailsModal extends React.Component {
               <List elements={this.props.module.outcomes} name="Outcomes"></List>
             </section>
             <footer className="modal-card-foot">
+              <button onClick={this.addModule} className="button">Add</button>
               <button onClick={this.closeModal} className="button is-info">Close</button>
             </footer>
           </div>
