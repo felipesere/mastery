@@ -34,8 +34,12 @@ class DetailsModal extends React.Component {
               <List elements={this.props.module.outcomes} name="Outcomes"></List>
             </section>
             <footer className="modal-card-foot">
-              <button onClick={this.addModule} className="button">Add</button>
-              <button onClick={this.closeModal} className="button is-info">Close</button>
+      {this.props.selectModule &&
+        <button onClick={this.addModule} className="button">Add</button>
+      }
+      {this.props.removeModule &&
+        <button onClick={this.props.removeModule} className="button is-info">Remove</button>
+      }
             </footer>
           </div>
         </div>

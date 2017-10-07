@@ -15,13 +15,17 @@ class LearningModule extends React.Component {
   openModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: true})
-    this.props.openModal()
+    if(this.props.openModal) {
+      this.props.openModal()
+    }
   }
 
   closeModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: false})
-    this.props.closeModal()
+    if(this.props.closeModal) {
+      this.props.closeModal()
+    }
   }
 
   render() {
@@ -33,7 +37,8 @@ class LearningModule extends React.Component {
     if( this.state.detailsOpen ) {
       detailsModal = <DetailsModal module={this.props.module}
                                    onClose={this.closeModal}
-                                   selectModule={this.props.selectModule} />
+                                   selectModule={this.props.selectModule}
+                                   removeModule={this.props.removeModule} />
     }
 
     let cardKind = "card"

@@ -21,6 +21,7 @@ class Main extends React.Component {
     }
     this.onSearch = this.onSearch.bind(this)
     this.onAddModule = this.onAddModule.bind(this)
+    this.onRemoveModule = this.onRemoveModule.bind(this)
 
     fetch(MODULES_URL)
       .then(r => r.json())
@@ -43,6 +44,11 @@ class Main extends React.Component {
     this.setState({selected_modules: this.state.selected_modules})
   }
 
+  onRemoveModule(index) {
+    this.state.selected_modules.splice(index, 1)
+    this.setState({selected_modules: this.state.selected_modules})
+  }
+
   render() {
     let catalogAndSidebar = () => {
       let style = {
@@ -50,9 +56,12 @@ class Main extends React.Component {
       }
       return (
         <div style={style}>
-          <Path modules={this.state.selected_modules} className="container is-fluid" />
+          <Path modules={this.state.selected_modules}
+                         className="container is-fluid"
+                         removeModule={this.onRemoveModule} />
           <ModuleCatalog modules={this.state.displayed_modules}
-                         selectModule={this.onAddModule} className="container is-fluid"/>
+                         selectModule={this.onAddModule}
+                         className="container is-fluid"/>
         </div>
       )
     }
