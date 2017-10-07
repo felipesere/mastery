@@ -8,8 +8,9 @@ export default class Path extends React.Component {
   }
 
   render() {
+    let visibiity = "visibile"
     if(this.props.modules.length == 0) {
-      return (null)
+      visibiity = "hidden"
     }
 
     // TODO improve
@@ -21,7 +22,7 @@ export default class Path extends React.Component {
 
 
     return (
-      <div className="path">
+      <div className={`path ${visibiity}`}>
         {learningModules}
       </div>
     )
