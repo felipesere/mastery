@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Ruby 3x3 TTT",
+    "subtitle": "Learn the basics of a Ruby CLI app",
+    "language": "Ruby",
+    "description": "lesson description",
+    "outputs": [
+      "Human vs Computer",
+      "If possible, unbeatable"
+    ],
+    "outcomes": [
+      "Understand how a Ruby project is structured"
+    ]
+  }
+]
