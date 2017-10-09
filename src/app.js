@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ModuleCatalog from './ModuleCatalog'
 import Header from './Header'
-import Git from './Git'
+import Healthcheck from './Healthcheck'
 import Filtering from './Filtering'
 import Path from './Path'
 
@@ -69,7 +69,7 @@ class Main extends React.Component {
       <div>
         <Header search={this.onSearch}></Header>
         <Route exact path="/" render={catalogAndSidebar} />
-        <Route path="/healthcheck" render={() => <Git/>} />
+        <Route path="/healthcheck" render={() => <Healthcheck/>} />
       </div>
     )
   }
