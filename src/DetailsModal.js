@@ -20,7 +20,7 @@ export default class DetailsModal extends React.Component {
   }
 
   render() {
-    const description = this.props.module.description;
+    const description = this.props.module.description
     return (
       <div className="modal is-active">
         <div className="modal-background"></div>
@@ -46,6 +46,6 @@ export default class DetailsModal extends React.Component {
           </footer>
         </div>
       </div>
-    );
+    )
   }
 }

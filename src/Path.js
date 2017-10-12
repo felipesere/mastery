@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import LearningModule from './LearningModule'
 
 export default class Path extends React.Component {
@@ -8,7 +8,7 @@ export default class Path extends React.Component {
   }
 
   render() {
-    const visibiity = 'visibile'
+    let visibiity = 'visibile'
     if (this.props.modules.length === 0) {
       visibiity = 'hidden'
     }

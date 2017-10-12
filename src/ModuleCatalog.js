@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import LearningModule from './LearningModule.js'
 
-export class ModuleCatalog extends React.Component {
+export default class ModuleCatalog extends React.Component {
 
   constructor(props) {
     super(props)

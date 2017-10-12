@@ -1,6 +1,6 @@
-import React from 'react';
-import DetailsModal from './DetailsModal';
-import GitHubColors from 'github-colors';
+import React from 'react'
+import DetailsModal from './DetailsModal'
+import GitHubColors from 'github-colors'
 
 export default class LearningModule extends React.Component {
 
@@ -43,9 +43,9 @@ export default class LearningModule extends React.Component {
       />
     }
 
-    const cardKind = 'card'
+    let cardKind = 'card'
     if (this.props.animated === true) {
-      cardKind = 'card card-animated';
+      cardKind = 'card card-animated'
     }
 
     return (
@@ -63,6 +63,6 @@ export default class LearningModule extends React.Component {
         </footer>
         {detailsModal}
       </div>
-    );
+    )
   }
 }

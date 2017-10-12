@@ -17,7 +17,7 @@
     "brace-style": [2, "1tbs", {"allowSingleLine": true}],
     "comma-style": [2, "last"],
     "func-style": 0,
-    "semi": 0,
+    "semi": ["error", "never"],
     "quotes": [2, "single", "avoid-escape"],
     "indent": [2, 2, {"SwitchCase": 1}],
     "dot-location": [2, "property"],

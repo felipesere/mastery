@@ -2,7 +2,7 @@ export default class Filtering {
   static filter(modules, term) {
     const lower_term = term.toLowerCase()
 
-    const contains = (elements, term) =>  elements.some(element => element.toLowerCase().includes(term));
+    const contains = (elements, term) =>  elements.some(element => element.toLowerCase().includes(term))
 
     return modules.filter((module) => {
       return module.title.toLowerCase().includes(lower_term)

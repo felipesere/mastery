@@ -34,7 +34,7 @@ class Main extends React.Component {
   }
 
   onSearch(term) {
-    const modules = Filtering.filter(this.state.all_modules, term);
+    const modules = Filtering.filter(this.state.all_modules, term)
 
     this.setState({displayed_modules: modules})
   }
@@ -67,6 +67,7 @@ class Main extends React.Component {
         </div>
       )
     }
+
     return (
       <div>
         <Header search={this.onSearch}></Header>
@@ -78,4 +79,6 @@ class Main extends React.Component {
 }
 
 const app = document.getElementById('app')
-ReactDOM.render(<BrowserRouter> <Main /> </BrowserRouter>, app)
+ReactDOM.render(<BrowserRouter>
+  <Main />
+</BrowserRouter>, app)
