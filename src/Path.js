@@ -17,7 +17,7 @@ export default class Path extends React.Component {
     let learningModules = this.props.modules.map( (module, idx) => {
       let removeItself = () => this.props.removeModule(idx)
       return (
-        <LearningModule key={idx}
+        <LearningModule key={module.title}
                         module={module}
                         animated={false}
                         removeModule={removeItself}/>
