@@ -23,18 +23,18 @@ class Main extends React.Component {
     this.onAddModule = this.onAddModule.bind(this)
     this.onRemoveModule = this.onRemoveModule.bind(this)
 
+    /* global MODULES_URL */
     fetch(MODULES_URL)
       .then(r => r.json())
       .then(modules =>  this.setModules(modules))
   }
 
   setModules(modules) {
-    this.setState({all_modules: modules,
-                   displayed_modules: modules})
+    this.setState({all_modules: modules, displayed_modules: modules})
   }
 
   onSearch(term) {
-    let modules = Filtering.filter(this.state.all_modules, term);
+    const modules = Filtering.filter(this.state.all_modules, term);
 
     this.setState({displayed_modules: modules})
   }
@@ -50,18 +50,20 @@ class Main extends React.Component {
   }
 
   render() {
-    let catalogAndSidebar = () => {
-      let style = {
+    const catalogAndSidebar = () => {
+      const style = {
         display: 'flex',
       }
       return (
         <div style={style}>
-          <Path modules={this.state.selected_modules}
-                         className="container is-fluid"
-                         removeModule={this.onRemoveModule} />
-          <ModuleCatalog modules={this.state.displayed_modules}
-                         selectModule={this.onAddModule}
-                         className="container is-fluid"/>
+          <Path
+            modules={this.state.selected_modules}
+            className="container is-fluid"
+            removeModule={this.onRemoveModule} />
+          <ModuleCatalog
+            modules={this.state.displayed_modules}
+            selectModule={this.onAddModule}
+            className="container is-fluid"/>
         </div>
       )
     }
@@ -76,7 +78,4 @@ class Main extends React.Component {
 }
 
 const app = document.getElementById('app')
-ReactDOM.render(<BrowserRouter>
-                  <Main />
-                </BrowserRouter>
-  , app)
+ReactDOM.render(<BrowserRouter> <Main /> </BrowserRouter>, app)

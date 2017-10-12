@@ -1,5 +1,6 @@
 import React from 'react'
 
+/* global COMMIT_HASH, BUILD_TIME */
 var sha = COMMIT_HASH
 var time = BUILD_TIME
 

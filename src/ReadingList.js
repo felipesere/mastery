@@ -7,10 +7,10 @@ export default class ReadingList extends React.Component {
   }
 
   render() {
-    let material = this.props.material;
-    if(material === undefined || material.length === 0) { return (null) }
+    const material = this.props.material;
+    if (material === undefined || material.length === 0) { return (null) }
 
-    let listItems = material.map( (element, idx) => {
+    const listItems = material.map((element, idx) => {
       return <li key={idx}><Markdown text={element} /></li>
     });
 

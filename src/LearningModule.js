@@ -2,7 +2,7 @@ import React from 'react';
 import DetailsModal from './DetailsModal';
 import GitHubColors from 'github-colors';
 
-class LearningModule extends React.Component {
+export default class LearningModule extends React.Component {
 
   constructor(props) {
     super(props)
@@ -15,7 +15,7 @@ class LearningModule extends React.Component {
   openModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: true})
-    if(this.props.openModal) {
+    if (this.props.openModal) {
       this.props.openModal()
     }
   }
@@ -23,27 +23,29 @@ class LearningModule extends React.Component {
   closeModal(e) {
     e.preventDefault()
     this.setState({detailsOpen: false})
-    if(this.props.closeModal) {
+    if (this.props.closeModal) {
       this.props.closeModal()
     }
   }
 
   render() {
-    let style = {
+    const style = {
       border: `4px solid ${GitHubColors.get(this.props.module.language).color}`,
     }
 
-    let detailsModal = ""
-    if( this.state.detailsOpen ) {
-      detailsModal = <DetailsModal module={this.props.module}
-                                   onClose={this.closeModal}
-                                   selectModule={this.props.selectModule}
-                                   removeModule={this.props.removeModule} />
+    let detailsModal = ''
+    if (this.state.detailsOpen) {
+      detailsModal = <DetailsModal
+        module={this.props.module}
+        onClose={this.closeModal}
+        selectModule={this.props.selectModule}
+        removeModule={this.props.removeModule}
+      />
     }
 
-    let cardKind = "card"
-    if ( this.props.animated == true ) {
-      cardKind = "card card-animated";
+    const cardKind = 'card'
+    if (this.props.animated === true) {
+      cardKind = 'card card-animated';
     }
 
     return (
@@ -64,5 +66,3 @@ class LearningModule extends React.Component {
     );
   }
 }
-
-export default LearningModule;

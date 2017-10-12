@@ -20,32 +20,32 @@ export default class DetailsModal extends React.Component {
   }
 
   render() {
-    let description = this.props.module.description;
+    const description = this.props.module.description;
     return (
-        <div className="modal is-active">
-          <div className="modal-background"></div>
-            <div className="modal-card">
-            <header className="modal-card-head">
-               <p className="modal-card-title">{this.props.module.title}</p>
-               <button onClick={this.closeModal} className="delete" aria-label="close"></button>
-            </header>
-            <section className="modal-card-body">
-              <Markdown className="description" text={description}></Markdown>
-              <List elements={this.props.module.outputs} name="Outputs"></List>
-              <List elements={this.props.module.outcomes} name="Outcomes"></List>
-              <ReadingList material={this.props.module.reading} />
-            </section>
+      <div className="modal is-active">
+        <div className="modal-background"></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">{this.props.module.title}</p>
+            <button onClick={this.closeModal} className="delete" aria-label="close"></button>
+          </header>
+          <section className="modal-card-body">
+            <Markdown className="description" text={description}></Markdown>
+            <List elements={this.props.module.outputs} name="Outputs"></List>
+            <List elements={this.props.module.outcomes} name="Outcomes"></List>
+            <ReadingList material={this.props.module.reading} />
+          </section>
 
-            <footer className="modal-card-foot">
-              {this.props.selectModule &&
-                  <button onClick={this.addModule} className="button">Add</button>
-              }
-              {this.props.removeModule &&
-                  <button onClick={this.props.removeModule} className="button is-info">Remove</button>
-              }
-            </footer>
-          </div>
+          <footer className="modal-card-foot">
+            {this.props.selectModule &&
+                <button onClick={this.addModule} className="button">Add</button>
+            }
+            {this.props.removeModule &&
+                <button onClick={this.props.removeModule} className="button is-info">Remove</button>
+            }
+          </footer>
         </div>
+      </div>
     );
   }
 }

@@ -8,22 +8,20 @@ export default class Path extends React.Component {
   }
 
   render() {
-    let visibiity = "visibile"
-    if(this.props.modules.length == 0) {
-      visibiity = "hidden"
+    const visibiity = 'visibile'
+    if (this.props.modules.length === 0) {
+      visibiity = 'hidden'
     }
 
-    // TODO improve
-    let learningModules = this.props.modules.map( (module, idx) => {
-      let removeItself = () => this.props.removeModule(idx)
+    const learningModules = this.props.modules.map((module, idx) => {
+      const removeItself = () => this.props.removeModule(idx)
       return (
         <LearningModule key={module.title}
-                        module={module}
-                        animated={false}
-                        removeModule={removeItself}/>
+          module={module}
+          animated={false}
+          removeModule={removeItself}/>
       )
     })
-
 
     return (
       <div className={`path ${visibiity}`}>

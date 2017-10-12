@@ -1,7 +1,7 @@
 import React from 'react';
 import LearningModule from './LearningModule.js'
 
-class ModuleCatalog extends React.Component {
+export class ModuleCatalog extends React.Component {
 
   constructor(props) {
     super(props)
@@ -19,17 +19,17 @@ class ModuleCatalog extends React.Component {
   }
 
   render() {
-    let learningModules = this.props.modules.map( (module, idx) => {
+    const learningModules = this.props.modules.map((module, idx) => {
       return (
         <LearningModule
-           openModal={this.openModal}
-           closeModal={this.closeModal}
-           selectModule={this.props.selectModule}
-           key={idx} module={module} animated={!this.state.viewingDetails} />
+          openModal={this.openModal}
+          closeModal={this.closeModal}
+          selectModule={this.props.selectModule}
+          key={idx} module={module} animated={!this.state.viewingDetails} />
       )
     })
 
-    let style = {
+    const style = {
       display: 'flex',
       flexWrap: 'wrap',
       alignContent: 'flex-start',
@@ -38,10 +38,8 @@ class ModuleCatalog extends React.Component {
 
     return (
       <div style={style}>
-      {learningModules}
+        {learningModules}
       </div>
     )
   }
 }
-
-export default ModuleCatalog;
