@@ -1,10 +1,9 @@
 {
   "root": "dist/",
   "routes": {
-    "/*.html": "index.html",
-    "/modules": "../sampleLessons.json"
+    "/modules": "../sampleLessons.json",
+    "/**": "index.html"
   },
-
   "headers": {
     "/modules": {
        "Access-Control-Allow-Origin": "*",
