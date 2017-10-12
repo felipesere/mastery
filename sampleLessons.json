@@ -13,6 +13,9 @@
     "outcomes": [
       "Basic understanding of static typing",
       "Understand how a Java project is structured"
+    ],
+    "reading": [
+      "_Growing Object-Oriented Software Guided by Tests_ by Nat Pryce and Steve Freeman"
     ]
   },
   {

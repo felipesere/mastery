@@ -1,8 +1,9 @@
-import React from 'react';
-import Markdown from './Markdown.js';
-import List from './List.js';
+import React from 'react'
+import Markdown from './Markdown'
+import List from './List'
+import ReadingList from './ReadingList'
 
-class DetailsModal extends React.Component {
+export default class DetailsModal extends React.Component {
   constructor(props) {
     super(props)
     this.closeModal = this.closeModal.bind(this)
@@ -32,19 +33,19 @@ class DetailsModal extends React.Component {
               <Markdown className="description" text={description}></Markdown>
               <List elements={this.props.module.outputs} name="Outputs"></List>
               <List elements={this.props.module.outcomes} name="Outcomes"></List>
+              <ReadingList material={this.props.module.reading} />
             </section>
+
             <footer className="modal-card-foot">
-      {this.props.selectModule &&
-        <button onClick={this.addModule} className="button">Add</button>
-      }
-      {this.props.removeModule &&
-        <button onClick={this.props.removeModule} className="button is-info">Remove</button>
-      }
+              {this.props.selectModule &&
+                  <button onClick={this.addModule} className="button">Add</button>
+              }
+              {this.props.removeModule &&
+                  <button onClick={this.props.removeModule} className="button is-info">Remove</button>
+              }
             </footer>
           </div>
         </div>
     );
   }
 }
-
-export default DetailsModal;

@@ -1,5 +1,5 @@
-import Marked from 'marked';
-import React from 'react';
+import Marked from 'marked'
+import React from 'react'
 
 export default class Markdown extends React.Component {
   render() {
