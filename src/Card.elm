@@ -1,14 +1,14 @@
 module Card exposing (..)
 
-import Lesson exposing (Lesson)
+import Lesson exposing (LessonExtras)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 
-render: a -> Lesson -> Html a
-render external lesson =
-  div []
+render: a -> LessonExtras -> Html a
+render external {lesson} =
+  div [class "card"]
   [ header [ class "card-header"]
           [
             p [ class "card-header-title is-centered"] [text lesson.title]

@@ -7,7 +7,7 @@ import Style exposing (..)
 import Lesson exposing (..)
 import Card exposing (render)
 
-render: List Lesson -> a -> Html a
+render: List LessonExtras -> a -> Html a
 render lessons external =
   div [ class "container is-fluid", style flexible ]
     (List.map (Card.render external) lessons)
