@@ -5,33 +5,20 @@ import Lesson exposing (..)
 import ModuleCatalog exposing (..)
 import Http
 
-type alias Model = List LessonExtras
+import Backend
+
+type alias Model = List Lesson
 
 type Msg = None | LoadModules (Result Http.Error (List Lesson))
 
 init: (Model, Cmd Msg)
-init = ([], send)
-
-send: Cmd Msg
-send =
-  Http.send LoadModules loadLessons
-
-loadLessons: Http.Request (List Lesson)
-loadLessons =
-  Http.get "http://localhost:3000/modules" Lesson.decodeList
+init = ([], Backend.get LoadModules)
 
 update: Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
     None -> (model, Cmd.none)
-    LoadModules result -> (extraftFrom result, Cmd.none)
-
-
-extraftFrom: Result Http.Error (List Lesson) -> Model
-extraftFrom result =
-  case result of
-    Ok(lessons) -> List.map (Lesson.defaults) lessons
-    _ -> []
+    LoadModules result -> (Result.withDefault [] result, Cmd.none)
 
 view: Model -> Html Msg
 view model =

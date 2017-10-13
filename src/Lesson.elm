@@ -8,19 +8,6 @@ type alias Lesson =
     , subtitle: String
   }
 
-type alias LessonExtras =
-  {
-    lesson: Lesson
-    , detailsOpen: Bool
-  }
-
-defaults: Lesson -> LessonExtras
-defaults lesson =
-  {
-    lesson = lesson
-    , detailsOpen = False
-  }
-
 decode: Decode.Decoder Lesson
 decode =
   Decode.map2 Lesson

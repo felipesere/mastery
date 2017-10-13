@@ -1,13 +1,13 @@
 module Card exposing (..)
 
-import Lesson exposing (LessonExtras)
+import Lesson exposing (Lesson)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 
-render: a -> LessonExtras -> Html a
-render external {lesson} =
+render: a -> Lesson -> Html a
+render external lesson =
   div [class "card"]
   [ header [ class "card-header"]
           [
