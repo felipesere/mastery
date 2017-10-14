@@ -1,21 +1,22 @@
 module ModuleCatalog exposing (..)
 
+import Card exposing (render)
 import Html exposing (..)
 import Html.Attributes exposing (class, style)
+import Lesson exposing (..)
 import Style exposing (..)
 
-import Lesson exposing (..)
-import Card exposing (render)
 
-render: List Lesson.Lesson -> a -> Html a
+render : List Lesson.Lesson -> a -> Html a
 render lessons external =
-  div [ class "container is-fluid", style flexible ]
-    (List.map (Card.render external) lessons)
+    div [ class "container is-fluid", style flexible ]
+        (List.map (Card.render external) lessons)
 
-flexible: List Style
+
+flexible : List Style
 flexible =
-  [ display "flex"
+    [ display "flex"
     , flexWrap wrap
     , alignContent flexStart
     , justifyContent center
-  ]
+    ]
