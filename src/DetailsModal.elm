@@ -36,9 +36,21 @@ body : Lesson -> Html a
 body lesson =
     Html.section [ class "modal-card-body" ]
         [ Markdown.toHtml [ class "description" ] lesson.description
-        , p [] [ Html.text "Outputs" ]
+        , outputs "Outputs" lesson.outputs
         , p [] [ Html.text "Outcomes" ]
         , p [] [ Html.text "Reading material" ]
+        ]
+
+
+outputs : String -> List String -> Html a
+outputs name elements =
+    let
+        items =
+            List.map (\e -> Html.li [] [ Html.text e ]) elements
+    in
+    div [ class "content" ]
+        [ Html.text name
+        , ul [] items
         ]
 
 
