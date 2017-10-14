@@ -6,8 +6,8 @@ import Html.Events exposing (onClick)
 import Lesson exposing (Lesson)
 
 
-render : a -> Lesson -> Html a
-render msg lesson =
+view : a -> Lesson -> Html a
+view msg lesson =
     div [ class "card" ]
         [ header [ class "card-header" ]
             [ p [ class "card-header-title is-centered" ] [ text lesson.title ]

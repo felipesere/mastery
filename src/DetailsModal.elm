@@ -9,8 +9,8 @@ import Messages exposing (..)
 import ReadingList
 
 
-render : Maybe ModalState -> Html Msg
-render maybeState =
+view : Maybe ModalState -> Html Msg
+view maybeState =
     maybeState
         |> Maybe.map real
         |> Maybe.withDefault (div [] [])
@@ -66,7 +66,7 @@ body lesson =
         [ Markdown.toHtml [ class "description" ] lesson.description
         , list "Outputs" lesson.outputs
         , list "Outcomes" lesson.outcomes
-        , ReadingList.render lesson.readingMaterial
+        , ReadingList.view lesson.readingMaterial
         ]
 
 

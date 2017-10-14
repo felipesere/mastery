@@ -1,12 +1,12 @@
-module ReadingList exposing (render)
+module ReadingList exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Markdown
 
 
-render : List String -> Html a
-render material =
+view : List String -> Html a
+view material =
     case material of
         [] ->
             div [] []

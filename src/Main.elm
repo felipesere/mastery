@@ -42,9 +42,9 @@ update msg model =
 view : Model -> Html.Html Msg
 view model =
     Html.div []
-        [ Path.render model.selectedLessons
-        , ModuleCatalog.render model.lessons
-        , DetailsModal.render model.modal
+        [ Path.view model.selectedLessons
+        , ModuleCatalog.view model.lessons
+        , DetailsModal.view model.modal
         ]
 
 

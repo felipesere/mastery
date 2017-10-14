@@ -7,8 +7,8 @@ import Lesson exposing (Lesson)
 import Messages exposing (..)
 
 
-render : List Lesson -> Html Messages.Msg
-render lessons =
+view : List Lesson -> Html Messages.Msg
+view lessons =
     case lessons of
         [] ->
             div [] []
@@ -19,4 +19,4 @@ render lessons =
 
 normal : List Lesson -> List (Html Messages.Msg)
 normal lessons =
-    List.map (\lesson -> Card.render (ShowDetails WithRemove lesson.id) lesson) lessons
+    List.map (\lesson -> Card.view (ShowDetails WithRemove lesson.id) lesson) lessons
