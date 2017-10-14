@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Lesson exposing (Lesson)
+import Markdown
 
 
 render : a -> Lesson -> Html a
@@ -34,7 +35,7 @@ header close lesson =
 body : Lesson -> Html a
 body lesson =
     Html.section [ class "modal-card-body" ]
-        [ p [ class "description" ] [ Html.text "The description" ]
+        [ Markdown.toHtml [ class "description" ] lesson.description
         , p [] [ Html.text "Outputs" ]
         , p [] [ Html.text "Outcomes" ]
         , p [] [ Html.text "Reading material" ]
