@@ -1,20 +1,12 @@
 module Main exposing (..)
 
+import AppState exposing (..)
 import Backend
 import DetailsModal
-import Html exposing (..)
-import Lesson exposing (..)
-import List.Extra
+import Html
 import Messages exposing (..)
-import ModuleCatalog exposing (..)
+import ModuleCatalog
 import Path
-
-
-type alias Model =
-    { lessons : List Lesson
-    , selectedLessons : List Lesson
-    , modal : Maybe ModalState
-    }
 
 
 type alias Msg =
@@ -23,10 +15,7 @@ type alias Msg =
 
 init : ( Model, Cmd Msg )
 init =
-    ( { lessons = []
-      , selectedLessons = []
-      , modal = Nothing
-      }
+    ( AppState.initial
     , Backend.get LoadModules
     )
 
@@ -34,67 +23,28 @@ init =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        None ->
-            ( model, Cmd.none )
-
         LoadModules result ->
-            ( { lessons = Result.withDefault [] result
-              , selectedLessons = []
-              , modal = Nothing
-              }
-            , Cmd.none
-            )
+            ( { model | lessons = Result.withDefault [] result }, Cmd.none )
 
         ShowDetails options id ->
-            let
-                modalState =
-                    model.lessons
-                        |> List.Extra.find (\l -> l.id == id)
-                        |> Maybe.map (\lesson -> { lesson = lesson, options = options })
-            in
-            ( { model | modal = modalState }, Cmd.none )
+            ( model |> AppState.openDetails id options, Cmd.none )
 
         CloseDetails ->
-            ( model |> closeDetails, Cmd.none )
+            ( model |> AppState.closeDetails, Cmd.none )
 
         Select lesson ->
-            ( model |> select lesson |> closeDetails, Cmd.none )
+            ( model |> AppState.select lesson |> AppState.closeDetails, Cmd.none )
 
         Remove id ->
-            ( model |> remove id |> closeDetails, Cmd.none )
+            ( model |> AppState.remove id |> AppState.closeDetails, Cmd.none )
 
 
-remove : LessonId -> Model -> Model
-remove id model =
-    let
-        selectedLessons =
-            List.filter (\l -> l.id /= id) model.selectedLessons
-    in
-    { model | selectedLessons = selectedLessons }
-
-
-select : Lesson -> Model -> Model
-select lesson model =
-    { model | selectedLessons = lesson :: model.selectedLessons }
-
-
-closeDetails : Model -> Model
-closeDetails model =
-    { model | modal = Nothing }
-
-
-view : Model -> Html Msg
+view : Model -> Html.Html Msg
 view model =
-    let
-        modal =
-            model.modal
-                |> Maybe.map DetailsModal.render
-                |> Maybe.withDefault (div [] [])
-    in
-    div []
+    Html.div []
         [ Path.render model.selectedLessons
         , ModuleCatalog.render model.lessons
-        , modal
+        , DetailsModal.render model.modal
         ]
 
 

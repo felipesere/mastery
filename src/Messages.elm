@@ -10,15 +10,14 @@ type alias ModalState =
     }
 
 
+type DetailsOptions
+    = WithAdd
+    | WithRemove
+
+
 type Msg
-    = None
-    | LoadModules (Result Http.Error (List Lesson))
+    = LoadModules (Result Http.Error (List Lesson))
     | ShowDetails DetailsOptions LessonId
     | CloseDetails
     | Select Lesson
     | Remove LessonId
-
-
-type DetailsOptions
-    = WithAdd
-    | WithRemove

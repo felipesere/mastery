@@ -9,8 +9,15 @@ import Messages exposing (..)
 import ReadingList
 
 
-render : ModalState -> Html Msg
-render modal =
+render : Maybe ModalState -> Html Msg
+render maybeState =
+    maybeState
+        |> Maybe.map real
+        |> Maybe.withDefault (div [] [])
+
+
+real : ModalState -> Html Msg
+real modal =
     div [ class "modal is-active" ]
         [ background
         , card modal
