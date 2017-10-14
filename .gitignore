@@ -1,4 +1,4 @@
 /node_modules
 /dist/bundle.js
-/elm-stuff
+**/elm-stuff
 app.js

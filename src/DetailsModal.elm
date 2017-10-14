@@ -5,6 +5,7 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Lesson exposing (Lesson)
 import Markdown
+import ReadingList
 
 
 render : a -> Lesson -> Html a
@@ -36,14 +37,14 @@ body : Lesson -> Html a
 body lesson =
     Html.section [ class "modal-card-body" ]
         [ Markdown.toHtml [ class "description" ] lesson.description
-        , outputs "Outputs" lesson.outputs
-        , p [] [ Html.text "Outcomes" ]
-        , p [] [ Html.text "Reading material" ]
+        , list "Outputs" lesson.outputs
+        , list "Outcomes" lesson.outcomes
+        , ReadingList.render lesson.readingMaterial
         ]
 
 
-outputs : String -> List String -> Html a
-outputs name elements =
+list : String -> List String -> Html a
+list name elements =
     let
         items =
             List.map (\e -> Html.li [] [ Html.text e ]) elements
