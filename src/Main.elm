@@ -85,22 +85,12 @@ closeDetails model =
     { model | lessonDetails = Nothing }
 
 
-chooseModal : Messages.DetailsOptions -> (Lesson -> Html Messages.Msg)
-chooseModal details =
-    case details of
-        Messages.WithAdd ->
-            DetailsModal.render CloseDetails Select
-
-        Messages.WithRemove ->
-            DetailsModal.render2 CloseDetails Remove
-
-
 view : Model -> Html Msg
 view model =
     let
         modal =
             model.lessonDetails
-                |> Maybe.map (chooseModal model.modalOptions)
+                |> Maybe.map (DetailsModal.render model.modalOptions)
                 |> Maybe.withDefault (div [] [])
     in
     div []

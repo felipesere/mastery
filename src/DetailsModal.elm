@@ -9,59 +9,47 @@ import Messages exposing (..)
 import ReadingList
 
 
-render : a -> (Lesson -> a) -> Lesson -> Html a
-render close select lesson =
+render : DetailsOptions -> Lesson -> Html Msg
+render options lesson =
     div [ class "modal is-active" ]
         [ background
-        , card WithAdd close (select lesson) lesson
+        , card options lesson
         ]
 
 
-render2 : a -> (LessonId -> a) -> Lesson -> Html a
-render2 close remove lesson =
-    div [ class "modal is-active" ]
-        [ background
-        , card WithRemove close (remove lesson.id) lesson
-        ]
-
-
-footer : DetailsOptions -> a -> Html a
-footer options select =
+card : DetailsOptions -> Lesson -> Html Msg
+card options lesson =
     let
         button =
             case options of
                 WithAdd ->
-                    add select
+                    add (Select lesson)
 
                 WithRemove ->
-                    remove select
+                    remove (Remove lesson.id)
     in
-    Html.footer [ class "modal-card-foot" ]
-        [ button ]
+    div [ class "modal-card" ]
+        [ header lesson
+        , body lesson
+        , footer button
+        ]
 
 
+add : Msg -> Html Msg
 add select =
     button [ onClick select, class "button" ] [ Html.text "Add" ]
 
 
+remove : Msg -> Html Msg
 remove remove =
     button [ onClick remove, class "button is-info" ] [ Html.text "Remove" ]
 
 
-card : DetailsOptions -> a -> a -> Lesson -> Html a
-card options close select lesson =
-    div [ class "modal-card" ]
-        [ header close lesson
-        , body lesson
-        , footer options select
-        ]
-
-
-header : a -> Lesson -> Html a
-header close lesson =
+header : Lesson -> Html Msg
+header lesson =
     Html.header [ class "modal-card-head" ]
         [ p [ class "modal-card-title" ] [ Html.text lesson.title ]
-        , button [ onClick close, class "delete" ] []
+        , button [ onClick CloseDetails, class "delete" ] []
         ]
 
 
@@ -73,6 +61,12 @@ body lesson =
         , list "Outcomes" lesson.outcomes
         , ReadingList.render lesson.readingMaterial
         ]
+
+
+footer : Html Msg -> Html Msg
+footer button =
+    Html.footer [ class "modal-card-foot" ]
+        [ button ]
 
 
 list : String -> List String -> Html a
