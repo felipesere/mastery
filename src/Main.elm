@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Backend
-import Debug
 import DetailsModal
 import Html exposing (..)
 import Lesson exposing (..)
@@ -14,8 +13,7 @@ import Path
 type alias Model =
     { lessons : List Lesson
     , selectedLessons : List Lesson
-    , lessonDetails : Maybe Lesson
-    , modalOptions : Messages.DetailsOptions
+    , modal : Maybe ModalState
     }
 
 
@@ -27,8 +25,7 @@ init : ( Model, Cmd Msg )
 init =
     ( { lessons = []
       , selectedLessons = []
-      , lessonDetails = Nothing
-      , modalOptions = Messages.WithAdd
+      , modal = Nothing
       }
     , Backend.get LoadModules
     )
@@ -43,18 +40,19 @@ update msg model =
         LoadModules result ->
             ( { lessons = Result.withDefault [] result
               , selectedLessons = []
-              , lessonDetails = Nothing
-              , modalOptions = Messages.WithAdd
+              , modal = Nothing
               }
             , Cmd.none
             )
 
         ShowDetails options id ->
             let
-                details =
-                    List.Extra.find (\l -> l.id == id) model.lessons
+                modalState =
+                    model.lessons
+                        |> List.Extra.find (\l -> l.id == id)
+                        |> Maybe.map (\lesson -> { lesson = lesson, options = options })
             in
-            ( { model | lessonDetails = details, modalOptions = options }, Cmd.none )
+            ( { model | modal = modalState }, Cmd.none )
 
         CloseDetails ->
             ( model |> closeDetails, Cmd.none )
@@ -82,15 +80,15 @@ select lesson model =
 
 closeDetails : Model -> Model
 closeDetails model =
-    { model | lessonDetails = Nothing }
+    { model | modal = Nothing }
 
 
 view : Model -> Html Msg
 view model =
     let
         modal =
-            model.lessonDetails
-                |> Maybe.map (DetailsModal.render model.modalOptions)
+            model.modal
+                |> Maybe.map DetailsModal.render
                 |> Maybe.withDefault (div [] [])
     in
     div []

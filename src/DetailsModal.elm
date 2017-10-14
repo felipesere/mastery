@@ -9,16 +9,16 @@ import Messages exposing (..)
 import ReadingList
 
 
-render : DetailsOptions -> Lesson -> Html Msg
-render options lesson =
+render : ModalState -> Html Msg
+render modal =
     div [ class "modal is-active" ]
         [ background
-        , card options lesson
+        , card modal
         ]
 
 
-card : DetailsOptions -> Lesson -> Html Msg
-card options lesson =
+card : ModalState -> Html Msg
+card { options, lesson } =
     let
         button =
             case options of
