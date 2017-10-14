@@ -8,20 +8,20 @@ import Markdown
 import ReadingList
 
 
-render : a -> Lesson -> Html a
-render close lesson =
+render : a -> (Lesson -> a) -> Lesson -> Html a
+render close select lesson =
     div [ class "modal is-active" ]
         [ background
-        , card close lesson
+        , card close select lesson
         ]
 
 
-card : a -> Lesson -> Html a
-card close lesson =
+card : a -> (Lesson -> a) -> Lesson -> Html a
+card close select lesson =
     div [ class "modal-card" ]
         [ header close lesson
         , body lesson
-        , footer
+        , footer (select lesson)
         ]
 
 
@@ -55,10 +55,10 @@ list name elements =
         ]
 
 
-footer : Html a
-footer =
+footer : a -> Html a
+footer select =
     Html.footer [ class "modal-card-foot" ]
-        [ button [ class "button" ] [ Html.text "Add" ]
+        [ button [ onClick select, class "button" ] [ Html.text "Add" ]
         , button [ class "button is-info" ] [ Html.text "Remove" ]
         ]
 
