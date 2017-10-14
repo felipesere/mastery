@@ -3,8 +3,9 @@ module DetailsModal exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
-import Lesson exposing (Lesson, LessonId)
+import Lesson exposing (..)
 import Markdown
+import Messages exposing (..)
 import ReadingList
 
 
@@ -12,7 +13,7 @@ render : a -> (Lesson -> a) -> Lesson -> Html a
 render close select lesson =
     div [ class "modal is-active" ]
         [ background
-        , card close select lesson
+        , card WithAdd close (select lesson) lesson
         ]
 
 
@@ -20,32 +21,39 @@ render2 : a -> (LessonId -> a) -> Lesson -> Html a
 render2 close remove lesson =
     div [ class "modal is-active" ]
         [ background
-        , card2 close (remove lesson.id) lesson
+        , card WithRemove close (remove lesson.id) lesson
         ]
 
 
-card2 : a -> a -> Lesson -> Html a
-card2 close remove lesson =
-    div [ class "modal-card" ]
-        [ header close lesson
-        , body lesson
-        , footer2 remove
-        ]
+footer : DetailsOptions -> a -> Html a
+footer options select =
+    let
+        button =
+            case options of
+                WithAdd ->
+                    add select
 
-
-footer2 : a -> Html a
-footer2 remove =
+                WithRemove ->
+                    remove select
+    in
     Html.footer [ class "modal-card-foot" ]
-        [ button [ onClick remove, class "button is-info" ] [ Html.text "Remove" ]
-        ]
+        [ button ]
 
 
-card : a -> (Lesson -> a) -> Lesson -> Html a
-card close select lesson =
+add select =
+    button [ onClick select, class "button" ] [ Html.text "Add" ]
+
+
+remove remove =
+    button [ onClick remove, class "button is-info" ] [ Html.text "Remove" ]
+
+
+card : DetailsOptions -> a -> a -> Lesson -> Html a
+card options close select lesson =
     div [ class "modal-card" ]
         [ header close lesson
         , body lesson
-        , footer (select lesson)
+        , footer options select
         ]
 
 
@@ -76,14 +84,6 @@ list name elements =
     div [ class "content" ]
         [ Html.text name
         , ul [] items
-        ]
-
-
-footer : a -> Html a
-footer select =
-    Html.footer [ class "modal-card-foot" ]
-        [ button [ onClick select, class "button" ] [ Html.text "Add" ]
-        , button [ class "button is-info" ] [ Html.text "Remove" ]
         ]
 
 
