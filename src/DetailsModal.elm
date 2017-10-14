@@ -2,31 +2,32 @@ module DetailsModal exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (class)
+import Html.Events exposing (onClick)
 import Lesson exposing (Lesson)
 
 
 render : a -> Lesson -> Html a
-render msg lesson =
+render close lesson =
     div [ class "modal is-active" ]
         [ background
-        , card lesson
+        , card close lesson
         ]
 
 
-card : Lesson -> Html a
-card lesson =
+card : a -> Lesson -> Html a
+card close lesson =
     div [ class "modal-card" ]
-        [ header lesson
+        [ header close lesson
         , body lesson
         , footer
         ]
 
 
-header : Lesson -> Html a
-header lesson =
-    Html.header [ class "modal-card-header" ]
+header : a -> Lesson -> Html a
+header close lesson =
+    Html.header [ class "modal-card-head" ]
         [ p [ class "modal-card-title" ] [ Html.text lesson.title ]
-        , button [ class "delete" ] []
+        , button [ onClick close, class "delete" ] []
         ]
 
 

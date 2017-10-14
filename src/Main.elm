@@ -60,7 +60,7 @@ view model =
     let
         modal =
             model.lessonDetails
-                |> Maybe.map (DetailsModal.render None)
+                |> Maybe.map (DetailsModal.render CloseDetails)
                 |> Maybe.withDefault (div [] [])
     in
     div []
