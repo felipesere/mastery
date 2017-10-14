@@ -4,18 +4,19 @@ import Card
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Lesson exposing (Lesson)
+import Messages exposing (..)
 
 
-render : (Int -> a) -> List Lesson -> Html a
-render msg lessons =
+render : List Lesson -> Html Messages.Msg
+render lessons =
     case lessons of
         [] ->
             div [] []
 
         things ->
-            div [ class "path visibiity" ] (normal msg lessons)
+            div [ class "path visibiity" ] (normal lessons)
 
 
-normal : (Int -> a) -> List Lesson -> List (Html a)
-normal msg lessons =
-    List.indexedMap (\idx lesson -> Card.render (msg idx) lesson) lessons
+normal : List Lesson -> List (Html Messages.Msg)
+normal lessons =
+    List.map (\lesson -> Card.render (ShowDetails WithRemove lesson.id) lesson) lessons

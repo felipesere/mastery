@@ -3,7 +3,7 @@ module DetailsModal exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
-import Lesson exposing (Lesson)
+import Lesson exposing (Lesson, LessonId)
 import Markdown
 import ReadingList
 
@@ -13,6 +13,30 @@ render close select lesson =
     div [ class "modal is-active" ]
         [ background
         , card close select lesson
+        ]
+
+
+render2 : a -> (LessonId -> a) -> Lesson -> Html a
+render2 close remove lesson =
+    div [ class "modal is-active" ]
+        [ background
+        , card2 close (remove lesson.id) lesson
+        ]
+
+
+card2 : a -> a -> Lesson -> Html a
+card2 close remove lesson =
+    div [ class "modal-card" ]
+        [ header close lesson
+        , body lesson
+        , footer2 remove
+        ]
+
+
+footer2 : a -> Html a
+footer2 remove =
+    Html.footer [ class "modal-card-foot" ]
+        [ button [ onClick remove, class "button is-info" ] [ Html.text "Remove" ]
         ]
 
 

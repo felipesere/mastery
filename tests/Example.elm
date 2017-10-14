@@ -15,6 +15,7 @@ suite =
                     json =
                         """
                         {
+                          "id": 1,
                           "title":"Elixir Guilded Rose",
                           "subtitle":"Refactoring and pattern matching",
                           "language":"Elixir",
@@ -30,7 +31,8 @@ suite =
                 in
                 Expect.equal output
                     (Ok
-                        { title = "Elixir Guilded Rose"
+                        { id = Lesson.Id 1
+                        , title = "Elixir Guilded Rose"
                         , subtitle = "Refactoring and pattern matching"
                         , description = "Bla bla bla"
                         , outputs = []
@@ -44,6 +46,7 @@ suite =
                     json =
                         """
                         {
+                          "id": 1,
                           "title":"Elixir Guilded Rose",
                           "subtitle":"Refactoring and pattern matching",
                           "language":"Elixir",
@@ -58,7 +61,8 @@ suite =
                 in
                 Expect.equal output
                     (Ok
-                        { title = "Elixir Guilded Rose"
+                        { id = Lesson.Id 1
+                        , title = "Elixir Guilded Rose"
                         , subtitle = "Refactoring and pattern matching"
                         , description = "Bla bla bla"
                         , outputs = []

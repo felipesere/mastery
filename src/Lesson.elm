@@ -3,8 +3,13 @@ module Lesson exposing (..)
 import Json.Decode as Decode
 
 
+type LessonId
+    = Id Int
+
+
 type alias Lesson =
-    { title : String
+    { id : LessonId
+    , title : String
     , subtitle : String
     , description : String
     , outputs : List String
@@ -20,13 +25,19 @@ decodeList =
 
 decode : Decode.Decoder Lesson
 decode =
-    Decode.map6 Lesson
+    Decode.map7 Lesson
+        id
         (Decode.field "title" Decode.string)
         (Decode.field "subtitle" Decode.string)
         (Decode.field "description" Decode.string)
         (defaultedList "outputs")
         (defaultedList "outcomes")
         (defaultedList "reading")
+
+
+id : Decode.Decoder LessonId
+id =
+    Decode.map Id (Decode.field "id" Decode.int)
 
 
 defaultedList : String -> Decode.Decoder (List String)
