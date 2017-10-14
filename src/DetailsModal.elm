@@ -9,29 +9,29 @@ render : a -> Lesson -> Html a
 render msg lesson =
     div [ class "modal is-active" ]
         [ background
-        , card
+        , card lesson
         ]
 
 
-card : Html a
-card =
+card : Lesson -> Html a
+card lesson =
     div [ class "modal-card" ]
-        [ header
-        , body
+        [ header lesson
+        , body lesson
         , footer
         ]
 
 
-header : Html a
-header =
+header : Lesson -> Html a
+header lesson =
     Html.header [ class "modal-card-header" ]
-        [ p [ class "modal-card-title" ] [ Html.text "This is the title" ]
+        [ p [ class "modal-card-title" ] [ Html.text lesson.title ]
         , button [ class "delete" ] []
         ]
 
 
-body : Html a
-body =
+body : Lesson -> Html a
+body lesson =
     Html.section [ class "modal-card-body" ]
         [ p [ class "description" ] [ Html.text "The description" ]
         , p [] [ Html.text "Outputs" ]

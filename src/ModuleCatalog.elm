@@ -7,10 +7,10 @@ import Lesson exposing (..)
 import Style exposing (..)
 
 
-render : List Lesson.Lesson -> a -> Html a
-render lessons external =
+render : List Lesson.Lesson -> (Int -> a) -> Html a
+render lessons details =
     div [ class "container is-fluid", style flexible ]
-        (List.map (Card.render external) lessons)
+        (List.indexedMap (\idx lesson -> Card.render (details idx) lesson) lessons)
 
 
 flexible : List Style
