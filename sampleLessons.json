@@ -104,7 +104,7 @@
     "outcomes": [ "...else." ]
   },
   {
-    "id": 1,
+    "id": 8,
     "title": "Java HTTP server",
     "subtitle": "A challenge to be experienced!",
     "language": "Java",
@@ -120,7 +120,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Ruby 3x3 TTT",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
@@ -137,7 +137,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 10,
     "title": "Ruby 4x4 performance",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
@@ -149,7 +149,7 @@
     "outcomes" : []
   },
   {
-    "id": 10,
+    "id": 11,
     "title": "Ruby Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Ruby",
@@ -163,7 +163,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 12,
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Ruby",
@@ -173,7 +173,7 @@
 
   },
   {
-    "id": 12,
+    "id": 13,
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
     "language": "Ruby",
@@ -182,7 +182,7 @@
     "outcomes": []
   },
   {
-    "id": 13,
+    "id": 14,
     "title": "Ruby Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Ruby",
@@ -191,7 +191,7 @@
     "outcomes": []
   },
   {
-    "id": 14,
+    "id": 15,
     "title": "Clojure 3x3 TTT",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
@@ -208,7 +208,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 16,
     "title": "Clojure 4x4 performance",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
@@ -220,7 +220,7 @@
     "outcomes": []
   },
   {
-    "id": 16,
+    "id": 17,
     "title": "Clojure Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Clojure",
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 18,
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Clojure",
@@ -244,7 +244,7 @@
 
   },
   {
-    "id": 18,
+    "id": 19,
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
     "language": "Clojure",
@@ -253,7 +253,7 @@
     "outcomes": []
   },
   {
-    "id": 19,
+    "id": 20,
     "title": "Clojure Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Clojure",
@@ -262,7 +262,7 @@
     "outcomes": []
   },
   {
-    "id": 20,
+    "id": 21,
     "title": "JavaScript 3x3 TTT",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
@@ -279,7 +279,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 22,
     "title": "JavaScript 4x4 performance",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
@@ -291,7 +291,7 @@
     "outcomes": []
   },
   {
-    "id": 22,
+    "id": 23,
     "title": "JavaScript Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "JavaScript",
@@ -305,7 +305,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 24,
     "title": "JavaScript Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "JavaScript",
@@ -315,7 +315,7 @@
 
   },
   {
-    "id": 24,
+    "id": 25,
     "title": "JavaScript koans",
     "subtitle": "Basic syntax of the language",
     "description": "Bla bla bla",
@@ -324,7 +324,7 @@
     "outcomes": []
   },
   {
-    "id": 25,
+    "id": 26,
     "title": "JavaScript Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "JavaScript",
@@ -333,7 +333,7 @@
     "outcomes": []
   },
   {
-    "id": 26,
+    "id": 27,
     "title": "Elixir 3x3 TTT",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
@@ -350,7 +350,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 28,
     "title": "Elixir 4x4 performance",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
@@ -362,7 +362,7 @@
     "outcomes": []
   },
   {
-    "id": 28,
+    "id": 29,
     "title": "Elixir Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Elixir",
@@ -376,7 +376,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 30,
     "title": "Elixir Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Elixir",
@@ -386,7 +386,7 @@
 
   },
   {
-    "id": 30,
+    "id": 31,
     "title": "Elixir koans",
     "subtitle": "Basic syntax of the language",
     "language": "Elixir",
@@ -395,7 +395,7 @@
     "outcomes": []
   },
   {
-    "id": 31,
+    "id": 32,
     "title": "Elixir Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Elixir",
