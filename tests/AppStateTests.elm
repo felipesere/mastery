@@ -6,35 +6,29 @@ import Lesson exposing (..)
 import Test exposing (..)
 
 
-initialModel =
-    AppState.initial
-
-
 suite : Test
 suite =
+    let
+        initialModel =
+            AppState.initial
+
+        lesson1 =
+            sampleLesson 1 "foo"
+
+        lesson2 =
+            sampleLesson 2 "bar"
+    in
     describe "Progression of states through the app"
         [ test "select a lesson for the path to mastey" <|
             \_ ->
                 let
-                    lesson =
-                        sampleLesson 1 "foo"
-
-                    model =
-                        initialModel
-
                     nextModel =
-                        AppState.select lesson model
+                        AppState.select lesson1 initialModel
                 in
-                Expect.equal nextModel.selectedLessons [ lesson ]
+                Expect.equal nextModel.selectedLessons [ lesson1 ]
         , test "remove a previously selected lesson" <|
             \_ ->
                 let
-                    lesson1 =
-                        sampleLesson 1 "foo"
-
-                    lesson2 =
-                        sampleLesson 2 "bar"
-
                     model =
                         { initialModel | selectedLessons = [ lesson1, lesson2 ] }
 
