@@ -1,8 +1,7 @@
-module AppState exposing (..)
+module LandingPage.State exposing (..)
 
 import Lesson exposing (Lesson, LessonId)
 import List.Extra
-import Messages exposing (..)
 import Search exposing (..)
 
 
@@ -14,6 +13,25 @@ type alias Model =
     }
 
 
+type alias ModalState =
+    { lesson : Lesson
+    , options : DetailsOptions
+    }
+
+
+type DetailsOptions
+    = WithAdd
+    | WithRemove
+
+
+type Msg
+    = ShowDetails DetailsOptions LessonId
+    | CloseDetails
+    | Select Lesson
+    | Remove LessonId
+    | Search String
+
+
 initial : Model
 initial =
     { lessons = []
@@ -21,6 +39,30 @@ initial =
     , modal = Nothing
     , search = Search.init
     }
+
+
+load : Model -> List Lesson -> Model
+load model lessons =
+    { model | lessons = lessons }
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        ShowDetails options id ->
+            model |> openDetails id options
+
+        CloseDetails ->
+            model |> closeDetails
+
+        Select lesson ->
+            model |> select lesson |> closeDetails
+
+        Remove id ->
+            model |> remove id |> closeDetails
+
+        Search string ->
+            { model | search = string }
 
 
 remove : LessonId -> Model -> Model

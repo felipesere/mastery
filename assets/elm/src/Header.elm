@@ -6,7 +6,7 @@ import Messages exposing (..)
 import SearchBar
 
 
-view : Html Msg
+view : Html Messages.Msg
 view =
     Html.header [ class "top navbar" ]
         [ div [ class "navbar-brand" ]

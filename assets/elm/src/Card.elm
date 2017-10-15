@@ -3,9 +3,10 @@ module Card exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (class, style)
 import Html.Events exposing (onClick)
+import LandingPage.State exposing (DetailsOptions(..), Msg(..))
 import Language exposing (Language)
 import Lesson exposing (Lesson)
-import Messages exposing (DetailsOptions, Msg(..))
+import Messages exposing (..)
 import Style exposing (..)
 
 
@@ -14,7 +15,7 @@ type Display
     | Animated
 
 
-view : Display -> DetailsOptions -> Lesson -> Html Msg
+view : Display -> DetailsOptions -> Lesson -> Html Messages.Msg
 view display options lesson =
     let
         color =
@@ -29,7 +30,7 @@ view display options lesson =
             ]
         , div [ class "card-content content" ] [ text lesson.subtitle ]
         , footer [ class "card-footer" ]
-            [ a [ onClick (ShowDetails options lesson.id), class "button card-footer-item" ] [ text "Open" ]
+            [ a [ onClick (ForLandingPage (ShowDetails options lesson.id)), class "button card-footer-item" ] [ text "Open" ]
             ]
         ]
 

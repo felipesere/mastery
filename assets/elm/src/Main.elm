@@ -1,67 +1,60 @@
 module Main exposing (..)
 
-import AppState exposing (..)
 import Backend
 import Header
+import Healthcheck.Healthcheck as Healthcheck
 import Html
-import Messages exposing (..)
+import LandingPage.LandingPage as LandingPage
+import LandingPage.State exposing (Model)
+import Messages exposing (Msg(..))
 import Navigation exposing (Location)
-import Pages.Healthcheck
-import Pages.LandingPage
-import Routing exposing (parseLocation)
-
-
-type alias Msg =
-    Messages.Msg
+import Routing exposing (Route(..), parseLocation)
 
 
 type alias Config =
     { baseUrl : String }
 
 
-init : Config -> Location -> ( Model, Cmd Msg )
+type alias AppModel =
+    { route : Routing.Route
+    , landing : LandingPage.State.Model
+    }
+
+
+init : Config -> Location -> ( AppModel, Cmd Msg )
 init config location =
-    ( AppState.initial (parseLocation location)
+    ( { route = parseLocation location, landing = LandingPage.State.initial }
     , Backend.get config.baseUrl
     )
 
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> AppModel -> ( AppModel, Cmd Msg )
 update msg model =
     case msg of
-        LoadModules result ->
-            ( { model | lessons = Result.withDefault [] result }, Cmd.none )
+        ForLandingPage inner ->
+            ( { model | landing = LandingPage.State.update inner model.landing }, Cmd.none )
 
-        ShowDetails options id ->
-            ( model |> AppState.openDetails id options, Cmd.none )
-
-        CloseDetails ->
-            ( model |> AppState.closeDetails, Cmd.none )
-
-        Select lesson ->
-            ( model |> AppState.select lesson |> AppState.closeDetails, Cmd.none )
-
-        Remove id ->
-            ( model |> AppState.remove id |> AppState.closeDetails, Cmd.none )
-
-        Search string ->
-            ( { model | search = string }, Cmd.none )
+        ForHealthCheck ->
+            ( model, Cmd.none )
 
         ChangeLocation location ->
             ( { model | route = parseLocation location }, Cmd.none )
 
+        LoadModules result ->
+            ( { model | landing = LandingPage.State.load model.landing result }, Cmd.none )
 
-page : Model -> Html.Html Msg
+
+page : AppModel -> Html.Html Msg
 page model =
     case model.route of
         LandingPage ->
-            frame (Pages.LandingPage.view model)
+            frame (LandingPage.view model.landing)
 
         Healthcheck ->
-            frame (Pages.Healthcheck.view model)
+            frame Healthcheck.view
 
         NotFound ->
-            frame (Pages.LandingPage.view model)
+            frame (LandingPage.view model.landing)
 
 
 frame : Html.Html Msg -> Html.Html Msg

@@ -3,6 +3,7 @@ module Path exposing (..)
 import Card exposing (Display(..), view)
 import Html exposing (..)
 import Html.Attributes exposing (class)
+import LandingPage.State exposing (DetailsOptions(..))
 import Lesson exposing (Lesson)
 import Messages exposing (..)
 

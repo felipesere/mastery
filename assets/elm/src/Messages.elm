@@ -1,26 +1,12 @@
 module Messages exposing (..)
 
-import Http
+import LandingPage.State exposing (Msg)
 import Lesson exposing (..)
 import Navigation exposing (Location)
 
 
-type alias ModalState =
-    { lesson : Lesson
-    , options : DetailsOptions
-    }
-
-
-type DetailsOptions
-    = WithAdd
-    | WithRemove
-
-
 type Msg
-    = LoadModules (Result Http.Error (List Lesson))
-    | ShowDetails DetailsOptions LessonId
-    | CloseDetails
-    | Select Lesson
-    | Remove LessonId
-    | Search String
+    = ForLandingPage LandingPage.State.Msg
+    | ForHealthCheck
+    | LoadModules (List Lesson)
     | ChangeLocation Location

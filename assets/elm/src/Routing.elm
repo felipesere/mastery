@@ -1,8 +1,13 @@
 module Routing exposing (..)
 
-import AppState exposing (..)
 import Navigation exposing (Location)
 import UrlParser exposing (..)
+
+
+type Route
+    = LandingPage
+    | Healthcheck
+    | NotFound
 
 
 matchers : Parser (Route -> a) a

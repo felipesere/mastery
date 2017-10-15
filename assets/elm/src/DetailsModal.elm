@@ -3,20 +3,21 @@ module DetailsModal exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
+import LandingPage.State exposing (DetailsOptions(..), ModalState, Msg(..))
 import Lesson exposing (..)
 import Markdown
 import Messages exposing (..)
 import ReadingList
 
 
-view : Maybe ModalState -> Html Msg
+view : Maybe ModalState -> Html Messages.Msg
 view maybeState =
     maybeState
         |> Maybe.map real
         |> Maybe.withDefault (div [] [])
 
 
-real : ModalState -> Html Msg
+real : ModalState -> Html Messages.Msg
 real modal =
     div [ class "modal is-active" ]
         [ background
@@ -24,7 +25,7 @@ real modal =
         ]
 
 
-card : ModalState -> Html Msg
+card : ModalState -> Html Messages.Msg
 card { options, lesson } =
     let
         button =
@@ -42,21 +43,21 @@ card { options, lesson } =
         ]
 
 
-add : Msg -> Html Msg
+add : LandingPage.State.Msg -> Html Messages.Msg
 add select =
-    button [ onClick select, class "button" ] [ Html.text "Add" ]
+    button [ onClick (ForLandingPage select), class "button" ] [ Html.text "Add" ]
 
 
-remove : Msg -> Html Msg
+remove : LandingPage.State.Msg -> Html Messages.Msg
 remove remove =
-    button [ onClick remove, class "button is-info" ] [ Html.text "Remove" ]
+    button [ onClick (ForLandingPage remove), class "button is-info" ] [ Html.text "Remove" ]
 
 
-header : Lesson -> Html Msg
+header : Lesson -> Html Messages.Msg
 header lesson =
     Html.header [ class "modal-card-head" ]
         [ p [ class "modal-card-title" ] [ Html.text lesson.title ]
-        , button [ onClick CloseDetails, class "delete" ] []
+        , button [ onClick (ForLandingPage CloseDetails), class "delete" ] []
         ]
 
 
@@ -70,7 +71,7 @@ body lesson =
         ]
 
 
-footer : Html Msg -> Html Msg
+footer : Html Messages.Msg -> Html Messages.Msg
 footer button =
     Html.footer [ class "modal-card-foot" ]
         [ button ]

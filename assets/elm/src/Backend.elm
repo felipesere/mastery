@@ -7,7 +7,14 @@ import Messages exposing (Msg(..))
 
 get : String -> Cmd Msg
 get url =
-    Http.send LoadModules <| loadLessons url
+    let
+        default =
+            \result ->
+                result
+                    |> Result.withDefault []
+                    |> LoadModules
+    in
+    Http.send default <| loadLessons url
 
 
 loadLessons : String -> Http.Request (List Lesson.Lesson)
