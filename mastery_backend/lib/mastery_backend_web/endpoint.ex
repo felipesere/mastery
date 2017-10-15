@@ -3,13 +3,22 @@ defmodule MasteryBackendWeb.Endpoint do
 
   socket "/socket", MasteryBackendWeb.UserSocket
 
+  def forward_root(conn, _opts) do
+    if conn.request_path == "/" do
+      %{ conn | request_path: "/index.html", path_info: ["index.html"] }
+    else
+      conn
+    end
+  end
+
+  plug :forward_root
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :mastery_backend, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt index.html)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
