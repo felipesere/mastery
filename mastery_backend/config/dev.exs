@@ -11,7 +11,9 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: []
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+                    cd: Path.expand("../assets", __DIR__)]]
+
 
 config :mastery_backend, :lessons_file, "data/lessons.json"
 # ## SSL Support
