@@ -2,6 +2,7 @@ module Messages exposing (..)
 
 import Http
 import Lesson exposing (..)
+import Navigation exposing (Location)
 
 
 type alias ModalState =
@@ -22,3 +23,4 @@ type Msg
     | Select Lesson
     | Remove LessonId
     | Search String
+    | ChangeLocation Location

@@ -6,20 +6,28 @@ import Messages exposing (..)
 import Search exposing (..)
 
 
+type Route
+    = LandingPage
+    | Healthcheck
+    | NotFound
+
+
 type alias Model =
     { lessons : List Lesson
     , selectedLessons : List Lesson
     , modal : Maybe ModalState
     , search : SearchState
+    , route : Route
     }
 
 
-initial : Model
-initial =
+initial : Route -> Model
+initial route =
     { lessons = []
     , selectedLessons = []
     , modal = Nothing
     , search = Search.init
+    , route = route
     }
 
 

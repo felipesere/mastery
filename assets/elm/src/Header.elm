@@ -12,7 +12,14 @@ view =
         [ div [ class "navbar-brand" ]
             [ homelink
             , search
+            , healthcheck
             ]
+        ]
+
+
+healthcheck =
+    div [ class "navbar-item" ]
+        [ a [ href "/#healthcheck" ] [ text "Healthcheck" ]
         ]
 
 
