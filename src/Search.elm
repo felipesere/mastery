@@ -3,6 +3,15 @@ module Search exposing (..)
 import Lesson exposing (Lesson)
 
 
+type alias SearchState =
+    String
+
+
+init : SearchState
+init =
+    ""
+
+
 forTerm : String -> List Lesson -> List Lesson
 forTerm term lessons =
     List.filter (matches term) lessons

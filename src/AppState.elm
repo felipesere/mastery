@@ -3,12 +3,14 @@ module AppState exposing (..)
 import Lesson exposing (Lesson, LessonId)
 import List.Extra
 import Messages exposing (..)
+import Search exposing (..)
 
 
 type alias Model =
     { lessons : List Lesson
     , selectedLessons : List Lesson
     , modal : Maybe ModalState
+    , search : SearchState
     }
 
 
@@ -17,6 +19,7 @@ initial =
     { lessons = []
     , selectedLessons = []
     , modal = Nothing
+    , search = Search.init
     }
 
 

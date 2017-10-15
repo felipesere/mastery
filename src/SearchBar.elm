@@ -6,19 +6,10 @@ import Html.Events exposing (onInput)
 import Messages exposing (..)
 
 
-type alias SearchState =
-    String
-
-
-init : SearchState
-init =
-    ""
-
-
 view : Html Msg
 view =
     div [ class "field has-addons is-centered" ]
         [ div [ class "control" ]
-            [ Html.input [ type_ "text", class "input", placeholder "Search for anything" ] []
+            [ Html.input [ onInput Search, type_ "text", class "input", placeholder "Search for anything" ] []
             ]
         ]

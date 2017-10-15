@@ -21,3 +21,4 @@ type Msg
     | CloseDetails
     | Select Lesson
     | Remove LessonId
+    | Search String

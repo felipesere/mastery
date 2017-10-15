@@ -8,6 +8,7 @@ import Html
 import Messages exposing (..)
 import ModuleCatalog
 import Path
+import Search
 
 
 type alias Msg =
@@ -39,13 +40,16 @@ update msg model =
         Remove id ->
             ( model |> AppState.remove id |> AppState.closeDetails, Cmd.none )
 
+        Search string ->
+            ( { model | search = string }, Cmd.none )
+
 
 view : Model -> Html.Html Msg
 view model =
     Html.div []
         [ Header.view
         , Path.view model.selectedLessons
-        , ModuleCatalog.view model.lessons
+        , ModuleCatalog.view (Search.forTerm model.search model.lessons)
         , DetailsModal.view model.modal
         ]
 
