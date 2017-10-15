@@ -5,6 +5,7 @@ import Backend
 import DetailsModal
 import Header
 import Html
+import Html.Attributes exposing (class)
 import Messages exposing (..)
 import ModuleCatalog
 import Path
@@ -52,10 +53,17 @@ view : Model -> Html.Html Msg
 view model =
     Html.div []
         [ Header.view
-        , Path.view model.selectedLessons
-        , ModuleCatalog.view (Search.forTerm model.search model.lessons)
+        , columns
+            [ Path.view model.selectedLessons
+            , ModuleCatalog.view (Search.forTerm model.search model.lessons)
+            ]
         , DetailsModal.view model.modal
         ]
+
+
+columns : List (Html.Html Msg) -> Html.Html Msg
+columns elements =
+    Html.div [ class "columns" ] elements
 
 
 main =

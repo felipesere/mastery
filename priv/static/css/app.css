@@ -41,6 +41,10 @@
   margin-bottom: 20px;
 }
 
+.columns {
+  display: flex;
+}
+
 body {
   background: #f1f1f1;
 }
