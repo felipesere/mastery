@@ -2,17 +2,13 @@ module Main exposing (..)
 
 import AppState exposing (..)
 import Backend
-import DetailsModal
 import Header
-import Healthcheck
 import Html
-import Html.Attributes exposing (class)
 import Messages exposing (..)
-import ModuleCatalog
 import Navigation exposing (Location)
-import Path
+import Pages.Healthcheck
+import Pages.LandingPage
 import Routing exposing (parseLocation)
-import Search
 
 
 type alias Msg =
@@ -59,34 +55,18 @@ page : Model -> Html.Html Msg
 page model =
     case model.route of
         LandingPage ->
-            frame (home model)
+            frame (Pages.LandingPage.view model)
 
         Healthcheck ->
-            frame (Healthcheck.view model)
+            frame (Pages.Healthcheck.view model)
 
         NotFound ->
-            frame (home model)
+            frame (Pages.LandingPage.view model)
 
 
 frame : Html.Html Msg -> Html.Html Msg
 frame html =
     Html.div [] [ Header.view, html ]
-
-
-home : Model -> Html.Html Msg
-home model =
-    Html.div []
-        [ columns
-            [ Path.view model.selectedLessons
-            , ModuleCatalog.view (Search.forTerm model.search model.lessons)
-            ]
-        , DetailsModal.view model.modal
-        ]
-
-
-columns : List (Html.Html Msg) -> Html.Html Msg
-columns elements =
-    Html.div [ class "columns" ] elements
 
 
 main =

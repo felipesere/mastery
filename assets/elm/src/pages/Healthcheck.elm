@@ -1,4 +1,4 @@
-module Healthcheck exposing (..)
+module Pages.Healthcheck exposing (..)
 
 import AppState exposing (Model)
 import Html exposing (..)
