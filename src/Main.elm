@@ -3,6 +3,7 @@ module Main exposing (..)
 import AppState exposing (..)
 import Backend
 import DetailsModal
+import Header
 import Html
 import Messages exposing (..)
 import ModuleCatalog
@@ -42,7 +43,8 @@ update msg model =
 view : Model -> Html.Html Msg
 view model =
     Html.div []
-        [ Path.view model.selectedLessons
+        [ Header.view
+        , Path.view model.selectedLessons
         , ModuleCatalog.view model.lessons
         , DetailsModal.view model.modal
         ]
