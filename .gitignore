@@ -7,3 +7,5 @@ todos.org
 deps
 _build
 priv/static/**
+assets/vendor/*
+**/*.map
