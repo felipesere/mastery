@@ -10,8 +10,12 @@ import Style exposing (..)
 
 view : List Lesson -> Html Msg
 view lessons =
+    let
+        asCard =
+            Card.view Animated WithAdd
+    in
     div [ class "container is-fluid", style flexible ]
-        (List.map (\lesson -> Card.view Animated (ShowDetails WithAdd lesson.id) lesson) lessons)
+        (List.map asCard lessons)
 
 
 flexible : List Style

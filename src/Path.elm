@@ -19,4 +19,8 @@ view lessons =
 
 normal : List Lesson -> List (Html Messages.Msg)
 normal lessons =
-    List.map (\lesson -> Card.view Static (ShowDetails WithRemove lesson.id) lesson) lessons
+    let
+        card =
+            Card.view Static WithRemove
+    in
+    List.map card lessons
