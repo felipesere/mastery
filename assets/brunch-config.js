@@ -11,7 +11,8 @@ exports.config = {
   conventions: {
     assets: /^(static)/,
     ignored: [
-      /tests/
+      /tests/,
+      /node_modules/
     ]
   },
 
@@ -29,6 +30,11 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/, /elm/]
+    },
+    handlebars: {
+      locals: {
+        baseUrl: process.env.BASE_URL || 'http://localhost:4000'
+      }
     }
   },
 

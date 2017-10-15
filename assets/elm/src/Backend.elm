@@ -2,13 +2,14 @@ module Backend exposing (get)
 
 import Http
 import Lesson
+import Messages exposing (Msg(..))
 
 
-get : (Result Http.Error (List Lesson.Lesson) -> a) -> Cmd a
-get msg =
-    Http.send msg loadLessons
+get : String -> Cmd Msg
+get url =
+    Http.send LoadModules <| loadLessons url
 
 
-loadLessons : Http.Request (List Lesson.Lesson)
-loadLessons =
-    Http.get "http://localhost:4000/api/lessons" Lesson.decodeList
+loadLessons : String -> Http.Request (List Lesson.Lesson)
+loadLessons url =
+    Http.get (url ++ "/api/lessons") Lesson.decodeList

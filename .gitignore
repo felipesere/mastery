@@ -6,3 +6,4 @@ app.js
 todos.org
 deps
 _build
+priv/static/**

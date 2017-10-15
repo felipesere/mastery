@@ -15,10 +15,14 @@ type alias Msg =
     Messages.Msg
 
 
-init : ( Model, Cmd Msg )
-init =
+type alias Config =
+    { baseUrl : String }
+
+
+init : Config -> ( Model, Cmd Msg )
+init config =
     ( AppState.initial
-    , Backend.get LoadModules
+    , Backend.get config.baseUrl
     )
 
 
@@ -55,7 +59,7 @@ view model =
 
 
 main =
-    Html.program
+    Html.programWithFlags
         { init = init
         , view = view
         , update = update
