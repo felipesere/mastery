@@ -3,6 +3,7 @@ module AppStateTests exposing (..)
 import AppState
 import Expect exposing (Expectation)
 import Lesson exposing (..)
+import Messages exposing (..)
 import Test exposing (..)
 
 
@@ -36,8 +37,26 @@ suite =
                         AppState.remove lesson1.id model
                 in
                 Expect.equal nextModel.selectedLessons [ lesson2 ]
-        , todo "show the details of a lesson"
-        , todo "close the details of a lesson"
+        , test "show the details of a lesson" <|
+            \_ ->
+                let
+                    model =
+                        { initialModel | lessons = [ lesson1, lesson2 ] }
+
+                    nextModel =
+                        AppState.openDetails lesson1.id WithAdd model
+                in
+                Expect.equal nextModel.modal (Just { lesson = lesson1, options = WithAdd })
+        , test "close the details of a lesson" <|
+            \_ ->
+                let
+                    model =
+                        { initialModel | modal = Just { lesson = lesson1, options = WithAdd } }
+
+                    nextModel =
+                        AppState.closeDetails model
+                in
+                Expect.equal nextModel.modal Nothing
         ]
 
 
