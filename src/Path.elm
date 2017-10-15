@@ -20,7 +20,7 @@ view lessons =
 normal : List Lesson -> List (Html Messages.Msg)
 normal lessons =
     let
-        card =
+        asCard =
             Card.view Static WithRemove
     in
-    List.map card lessons
+    List.map asCard lessons

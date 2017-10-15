@@ -1,10 +1,12 @@
 module Card exposing (..)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, style)
 import Html.Events exposing (onClick)
+import Language exposing (Language)
 import Lesson exposing (Lesson)
 import Messages exposing (DetailsOptions, Msg(..))
+import Style exposing (..)
 
 
 type Display
@@ -14,7 +16,14 @@ type Display
 
 view : Display -> DetailsOptions -> Lesson -> Html Msg
 view display options lesson =
-    div [ class (animtion display) ]
+    let
+        color =
+            border lesson.language
+
+        animated =
+            animtion display
+    in
+    div [ class animated, style color ]
         [ header [ class "card-header" ]
             [ p [ class "card-header-title is-centered" ] [ text lesson.title ]
             ]
@@ -23,6 +32,12 @@ view display options lesson =
             [ a [ onClick (ShowDetails options lesson.id), class "button card-footer-item" ] [ text "Open" ]
             ]
         ]
+
+
+border : Language -> List Style
+border language =
+    [ Style.border <| "4px solid " ++ Language.toColor language
+    ]
 
 
 animtion : Display -> String

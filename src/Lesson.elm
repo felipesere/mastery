@@ -1,6 +1,7 @@
 module Lesson exposing (..)
 
 import Json.Decode as Decode
+import Language exposing (..)
 
 
 type LessonId
@@ -11,6 +12,7 @@ type alias Lesson =
     { id : LessonId
     , title : String
     , subtitle : String
+    , language : Language
     , description : String
     , outputs : List String
     , outcomes : List String
@@ -25,14 +27,24 @@ decodeList =
 
 decode : Decode.Decoder Lesson
 decode =
-    Decode.map7 Lesson
+    Decode.map8 Lesson
         id
         (Decode.field "title" Decode.string)
         (Decode.field "subtitle" Decode.string)
+        language
         (Decode.field "description" Decode.string)
         (defaultedList "outputs")
         (defaultedList "outcomes")
         (defaultedList "reading")
+
+
+language : Decode.Decoder Language
+language =
+    let
+        field =
+            Decode.field "language" Decode.string
+    in
+    Decode.map Language.fromString field
 
 
 id : Decode.Decoder LessonId
