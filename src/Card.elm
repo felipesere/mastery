@@ -6,9 +6,14 @@ import Html.Events exposing (onClick)
 import Lesson exposing (Lesson)
 
 
-view : a -> Lesson -> Html a
-view msg lesson =
-    div [ class "card" ]
+type Display
+    = Static
+    | Animated
+
+
+view : Display -> a -> Lesson -> Html a
+view display msg lesson =
+    div [ class (animtion display) ]
         [ header [ class "card-header" ]
             [ p [ class "card-header-title is-centered" ] [ text lesson.title ]
             ]
@@ -17,3 +22,13 @@ view msg lesson =
             [ a [ onClick msg, class "button card-footer-item" ] [ text "Open" ]
             ]
         ]
+
+
+animtion : Display -> String
+animtion display =
+    case display of
+        Static ->
+            "card"
+
+        Animated ->
+            "card card-animated"

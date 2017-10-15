@@ -1,6 +1,6 @@
 module ModuleCatalog exposing (..)
 
-import Card exposing (view)
+import Card exposing (Display(..), view)
 import Html exposing (..)
 import Html.Attributes exposing (class, style)
 import Lesson exposing (..)
@@ -11,7 +11,7 @@ import Style exposing (..)
 view : List Lesson -> Html Msg
 view lessons =
     div [ class "container is-fluid", style flexible ]
-        (List.map (\lesson -> Card.view (ShowDetails WithAdd lesson.id) lesson) lessons)
+        (List.map (\lesson -> Card.view Animated (ShowDetails WithAdd lesson.id) lesson) lessons)
 
 
 flexible : List Style

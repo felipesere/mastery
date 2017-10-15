@@ -1,6 +1,6 @@
 module Path exposing (..)
 
-import Card
+import Card exposing (Display(..), view)
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Lesson exposing (Lesson)
@@ -19,4 +19,4 @@ view lessons =
 
 normal : List Lesson -> List (Html Messages.Msg)
 normal lessons =
-    List.map (\lesson -> Card.view (ShowDetails WithRemove lesson.id) lesson) lessons
+    List.map (\lesson -> Card.view Static (ShowDetails WithRemove lesson.id) lesson) lessons
