@@ -15,7 +15,7 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
                     cd: Path.expand("../assets", __DIR__)]]
 
 
-config :mastery_backend, :lessons_file, "data/lessons.json"
+config :mastery_backend, :lessons_file, "sampleLessons.json"
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed
