@@ -5,7 +5,9 @@ defmodule MasteryBackendWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", MasteryBackendWeb do
+  scope "/", MasteryBackendWeb do
     pipe_through :api
+
+    get "/lessons", LessonsController, :index
   end
 end

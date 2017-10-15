@@ -13,6 +13,7 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
   check_origin: false,
   watchers: []
 
+config :mastery_backend, :lessons_file, "data/lessons.json"
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

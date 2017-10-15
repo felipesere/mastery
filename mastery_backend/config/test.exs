@@ -9,6 +9,8 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
+config :mastery_backend, :lessons_file, "test/data/sample_lessons.json"
+
 # Configure your database
 config :mastery_backend, MasteryBackend.Repo,
   adapter: Ecto.Adapters.Postgres,
