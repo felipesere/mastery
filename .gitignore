@@ -4,3 +4,5 @@ elm-stuff
 **/elm-stuff/*
 app.js
 todos.org
+deps
+_build
