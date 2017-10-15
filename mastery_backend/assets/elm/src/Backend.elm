@@ -11,4 +11,4 @@ get msg =
 
 loadLessons : Http.Request (List Lesson.Lesson)
 loadLessons =
-    Http.get "http://localhost:3000/modules" Lesson.decodeList
+    Http.get "http://localhost:4000/api/lessons" Lesson.decodeList

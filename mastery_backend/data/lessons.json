@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Java 3x3 TTT",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
@@ -19,6 +20,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "Java 4x4 performance",
     "subtitle": "Learn the basics of a Java CLI app",
     "language": "Java",
@@ -33,6 +35,7 @@
       "How to use Java performance measurement tools and what to be on the lookout for."]
   },
   {
+    "id": 3,
     "title": "Java Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Java",
@@ -46,6 +49,7 @@
     ]
   },
   {
+    "id": 4,
     "title": "Java Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Java",
@@ -60,6 +64,7 @@
     ]
   },
   {
+    "id": 5,
     "title": "Java koans",
     "subtitle": "Basic syntax of the language",
     "language": "Java",
@@ -73,6 +78,7 @@
     ]
   },
   {
+    "id": 6,
     "title": "Java Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Java",
@@ -89,6 +95,7 @@
     ]
   },
   {
+    "id": 7,
     "title": "Java Video Store Refactoring",
     "subtitle": "",
     "language": "Java",
@@ -97,6 +104,7 @@
     "outcomes": [ "...else." ]
   },
   {
+    "id": 8,
     "title": "Java HTTP server",
     "subtitle": "A challenge to be experienced!",
     "language": "Java",
@@ -112,6 +120,7 @@
     ]
   },
   {
+    "id": 9,
     "title": "Ruby 3x3 TTT",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
@@ -128,6 +137,7 @@
     ]
   },
   {
+    "id": 10,
     "title": "Ruby 4x4 performance",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
@@ -139,6 +149,7 @@
     "outcomes" : []
   },
   {
+    "id": 11,
     "title": "Ruby Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Ruby",
@@ -152,6 +163,7 @@
     ]
   },
   {
+    "id": 12,
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Ruby",
@@ -161,6 +173,7 @@
 
   },
   {
+    "id": 13,
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
     "language": "Ruby",
@@ -169,6 +182,7 @@
     "outcomes": []
   },
   {
+    "id": 14,
     "title": "Ruby Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Ruby",
@@ -177,6 +191,7 @@
     "outcomes": []
   },
   {
+    "id": 15,
     "title": "Clojure 3x3 TTT",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
@@ -193,6 +208,7 @@
     ]
   },
   {
+    "id": 16,
     "title": "Clojure 4x4 performance",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
@@ -204,6 +220,7 @@
     "outcomes": []
   },
   {
+    "id": 17,
     "title": "Clojure Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Clojure",
@@ -217,6 +234,7 @@
     ]
   },
   {
+    "id": 18,
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Clojure",
@@ -226,6 +244,7 @@
 
   },
   {
+    "id": 19,
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
     "language": "Clojure",
@@ -234,6 +253,7 @@
     "outcomes": []
   },
   {
+    "id": 20,
     "title": "Clojure Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Clojure",
@@ -242,6 +262,7 @@
     "outcomes": []
   },
   {
+    "id": 21,
     "title": "JavaScript 3x3 TTT",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
@@ -258,6 +279,7 @@
     ]
   },
   {
+    "id": 22,
     "title": "JavaScript 4x4 performance",
     "subtitle": "Learn the basics of a JavaScript CLI app",
     "language": "JavaScript",
@@ -269,6 +291,7 @@
     "outcomes": []
   },
   {
+    "id": 23,
     "title": "JavaScript Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "JavaScript",
@@ -282,6 +305,7 @@
     ]
   },
   {
+    "id": 24,
     "title": "JavaScript Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "JavaScript",
@@ -291,6 +315,7 @@
 
   },
   {
+    "id": 25,
     "title": "JavaScript koans",
     "subtitle": "Basic syntax of the language",
     "description": "Bla bla bla",
@@ -299,6 +324,7 @@
     "outcomes": []
   },
   {
+    "id": 26,
     "title": "JavaScript Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "JavaScript",
@@ -307,6 +333,7 @@
     "outcomes": []
   },
   {
+    "id": 27,
     "title": "Elixir 3x3 TTT",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
@@ -323,6 +350,7 @@
     ]
   },
   {
+    "id": 28,
     "title": "Elixir 4x4 performance",
     "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
@@ -334,6 +362,7 @@
     "outcomes": []
   },
   {
+    "id": 29,
     "title": "Elixir Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Elixir",
@@ -347,6 +376,7 @@
     ]
   },
   {
+    "id": 30,
     "title": "Elixir Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Elixir",
@@ -356,6 +386,7 @@
 
   },
   {
+    "id": 31,
     "title": "Elixir koans",
     "subtitle": "Basic syntax of the language",
     "language": "Elixir",
@@ -364,6 +395,7 @@
     "outcomes": []
   },
   {
+    "id": 32,
     "title": "Elixir Guilded Rose",
     "subtitle": "Refactoring and pattern matching",
     "language": "Elixir",

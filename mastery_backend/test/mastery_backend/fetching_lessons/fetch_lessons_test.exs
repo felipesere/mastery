@@ -19,17 +19,20 @@ defmodule MasteryBackend.FetchingLessons.FetchLessonsTest do
 
   test "reads lessons from a given json file", %{json_file: json_file} do
     lesson = [%Lesson{
+        id: 1,
         title: "Ruby TTT",
         subtitle: "subtitle",
         language: "ruby",
         description: "description",
         outputs: [],
-        outcomes: []
+        outcomes: [],
+        reading: []
       }] |> Poison.encode!
     File.write!(json_file, lesson)
 
     lesson = FetchLessons.execute(json_file) |> List.first
 
+    assert lesson.id == 1
     assert lesson.title
     assert lesson.subtitle
     assert lesson.language
