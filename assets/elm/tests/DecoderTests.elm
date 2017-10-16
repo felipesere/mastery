@@ -2,6 +2,7 @@ module DecoderTests exposing (..)
 
 import Expect exposing (Expectation)
 import Json.Decode as Decode
+import Language exposing (Language)
 import Lesson
 import Test exposing (..)
 
@@ -35,6 +36,7 @@ suite =
                         , title = "Elixir Guilded Rose"
                         , subtitle = "Refactoring and pattern matching"
                         , description = "Bla bla bla"
+                        , language = Language.fromString "Elixir"
                         , outputs = []
                         , outcomes = []
                         , readingMaterial = []
@@ -65,6 +67,7 @@ suite =
                         , title = "Elixir Guilded Rose"
                         , subtitle = "Refactoring and pattern matching"
                         , description = "Bla bla bla"
+                        , language = Language.fromString "Elixir"
                         , outputs = []
                         , outcomes = []
                         , readingMaterial = []

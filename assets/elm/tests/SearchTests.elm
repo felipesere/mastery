@@ -1,6 +1,7 @@
 module SearchTests exposing (..)
 
 import Expect exposing (Expectation)
+import Language
 import Lesson exposing (..)
 import Search
 import Test exposing (..)
@@ -58,6 +59,7 @@ sampleLesson id title =
     { id = Id id
     , title = title
     , subtitle = "Some subtitle"
+    , language = Language.fromString "Java"
     , description = "Some description"
     , outputs = []
     , outcomes = []

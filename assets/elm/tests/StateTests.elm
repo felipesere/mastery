@@ -1,9 +1,9 @@
-module AppStateTests exposing (..)
+module StateTests exposing (..)
 
-import AppState
 import Expect exposing (Expectation)
+import LandingPage.State as State
+import Language exposing (Language(..))
 import Lesson exposing (..)
-import Messages exposing (..)
 import Test exposing (..)
 
 
@@ -11,7 +11,7 @@ suite : Test
 suite =
     let
         initialModel =
-            AppState.initial
+            State.initial
 
         lesson1 =
             sampleLesson 1 "foo"
@@ -24,7 +24,7 @@ suite =
             \_ ->
                 let
                     nextModel =
-                        AppState.select lesson1 initialModel
+                        State.select lesson1 initialModel
                 in
                 Expect.equal nextModel.selectedLessons [ lesson1 ]
         , test "remove a previously selected lesson" <|
@@ -34,7 +34,7 @@ suite =
                         { initialModel | selectedLessons = [ lesson1, lesson2 ] }
 
                     nextModel =
-                        AppState.remove lesson1.id model
+                        State.remove lesson1.id model
                 in
                 Expect.equal nextModel.selectedLessons [ lesson2 ]
         , test "show the details of a lesson" <|
@@ -44,17 +44,17 @@ suite =
                         { initialModel | lessons = [ lesson1, lesson2 ] }
 
                     nextModel =
-                        AppState.openDetails lesson1.id WithAdd model
+                        State.openDetails lesson1.id State.WithAdd model
                 in
-                Expect.equal nextModel.modal (Just { lesson = lesson1, options = WithAdd })
+                Expect.equal nextModel.modal (Just { lesson = lesson1, options = State.WithAdd })
         , test "close the details of a lesson" <|
             \_ ->
                 let
                     model =
-                        { initialModel | modal = Just { lesson = lesson1, options = WithAdd } }
+                        { initialModel | modal = Just { lesson = lesson1, options = State.WithAdd } }
 
                     nextModel =
-                        AppState.closeDetails model
+                        State.closeDetails model
                 in
                 Expect.equal nextModel.modal Nothing
         ]
@@ -66,6 +66,7 @@ sampleLesson id title =
     , title = title
     , subtitle = "Some subtitle"
     , description = "Some description"
+    , language = Language.fromString "Java"
     , outputs = []
     , outcomes = []
     , readingMaterial = []
