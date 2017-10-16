@@ -7,8 +7,8 @@ import Html
 import LandingPage.LandingPage as LandingPage
 import LandingPage.State exposing (Model)
 import Messages exposing (Msg(..))
-import Navigation exposing (Location)
-import Routing exposing (Route(..), parseLocation)
+import Navigation exposing (..)
+import Routing exposing (Route(..), pageToUrl, parseLocation)
 
 
 type alias Config =
@@ -23,7 +23,11 @@ type alias AppModel =
 
 init : Config -> Location -> ( AppModel, Cmd Msg )
 init config location =
-    ( { route = parseLocation location, landing = LandingPage.State.initial }
+    let
+        route =
+            parseLocation location
+    in
+    ( { route = route, landing = LandingPage.State.initial }
     , Backend.get config.baseUrl
     )
 
@@ -40,6 +44,9 @@ update msg model =
         ChangeLocation location ->
             ( { model | route = parseLocation location }, Cmd.none )
 
+        ChangeRoute route ->
+            ( { model | route = route }, newUrl (pageToUrl route) )
+
         LoadModules result ->
             ( { model | landing = LandingPage.State.load model.landing result }, Cmd.none )
 
@@ -54,7 +61,7 @@ page model =
             frame Healthcheck.view
 
         NotFound ->
-            frame (LandingPage.view model.landing)
+            frame (Html.text "Not found :(")
 
 
 frame : Html.Html Msg -> Html.Html Msg

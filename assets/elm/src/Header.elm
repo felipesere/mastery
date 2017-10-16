@@ -3,6 +3,8 @@ module Header exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (alt, class, href, placeholder, src, type_)
 import Messages exposing (..)
+import OnClickPage exposing (onClickPage)
+import Routing exposing (..)
 import SearchBar
 
 
@@ -19,7 +21,7 @@ view =
 
 healthcheck =
     div [ class "navbar-item" ]
-        [ a [ href "/#healthcheck" ] [ text "Healthcheck" ]
+        [ a (onClickPage Healthcheck) [ text "Healthcheck" ]
         ]
 
 
@@ -28,4 +30,4 @@ search =
 
 
 homelink =
-    a [ class "navbar-item", href "/" ] [ Html.img [ src "https://8thlight.com/images/branding/8th-Light-Logo-Color-No-Text-28048670.png", alt "8th Light logo" ] [] ]
+    a (onClickPage LandingPage ++ [ class "navbar-item" ]) [ Html.img [ src "https://8thlight.com/images/branding/8th-Light-Logo-Color-No-Text-28048670.png", alt "8th Light logo" ] [] ]

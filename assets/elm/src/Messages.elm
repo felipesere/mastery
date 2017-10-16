@@ -3,6 +3,7 @@ module Messages exposing (..)
 import LandingPage.State exposing (Msg)
 import Lesson exposing (..)
 import Navigation exposing (Location)
+import Routing exposing (Route(..))
 
 
 type Msg
@@ -10,3 +11,4 @@ type Msg
     | ForHealthCheck
     | LoadModules (List Lesson)
     | ChangeLocation Location
+    | ChangeRoute Route

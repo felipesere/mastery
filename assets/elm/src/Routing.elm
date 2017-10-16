@@ -1,6 +1,6 @@
 module Routing exposing (..)
 
-import Navigation exposing (Location)
+import Navigation exposing (..)
 import UrlParser exposing (..)
 
 
@@ -21,5 +21,18 @@ matchers =
 parseLocation : Location -> Route
 parseLocation location =
     location
-        |> parseHash matchers
+        |> parsePath matchers
         |> Maybe.withDefault NotFound
+
+
+pageToUrl : Route -> String
+pageToUrl page =
+    case page of
+        LandingPage ->
+            "/"
+
+        Healthcheck ->
+            "/healthcheck"
+
+        NotFound ->
+            "/not-found"
