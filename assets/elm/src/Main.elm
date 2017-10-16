@@ -12,12 +12,16 @@ import Routing exposing (Route(..), pageToUrl, parseLocation)
 
 
 type alias Config =
-    { baseUrl : String }
+    { baseUrl : String
+    , buildTime : String
+    , commit : String
+    }
 
 
 type alias AppModel =
     { route : Routing.Route
     , landing : LandingPage.State.Model
+    , healthcheck : Healthcheck.Model
     }
 
 
@@ -27,7 +31,10 @@ init config location =
         route =
             parseLocation location
     in
-    ( { route = route, landing = LandingPage.State.initial }
+    ( { route = route
+      , landing = LandingPage.State.initial
+      , healthcheck = Healthcheck.initial config
+      }
     , Backend.get config.baseUrl
     )
 
@@ -58,7 +65,7 @@ page model =
             frame (LandingPage.view model.landing)
 
         Healthcheck ->
-            frame Healthcheck.view
+            frame (Healthcheck.view model.healthcheck)
 
         NotFound ->
             frame (Html.text "Not found :(")

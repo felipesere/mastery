@@ -3,6 +3,19 @@ module Healthcheck.Healthcheck exposing (..)
 import Html exposing (..)
 
 
-view : Html a
-view =
-    Html.div [] [ Html.text "Hi there" ]
+type alias Model =
+    { buildTime : String
+    , commit : String
+    }
+
+
+initial { buildTime, commit } =
+    { buildTime = buildTime, commit = commit }
+
+
+view : Model -> Html a
+view model =
+    Html.div []
+        [ p [] [ Html.text <| "Commit: " ++ model.commit ]
+        , p [] [ Html.text <| "BuildTime: " ++ model.buildTime ]
+        ]

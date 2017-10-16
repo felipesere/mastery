@@ -1,3 +1,6 @@
+var moment = require('moment')
+var gitRevision = require('git-revision')
+
 exports.config = {
   files: {
     javascripts: {
@@ -34,7 +37,9 @@ exports.config = {
     },
     handlebars: {
       locals: {
-        baseUrl: process.env.BASE_URL || 'http://localhost:4000'
+        baseUrl: process.env.BASE_URL || 'http://localhost:4000',
+        buildTime: moment().format('LLLL') || "No build time derived",
+        commit: gitRevision("long") || "No commit derived"
       }
     }
   },
