@@ -2,14 +2,13 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "deploy": "brunch build --production",
+    "deploy": "brunch build",
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
     "phoenix": "file:../deps/phoenix"
   },
   "devDependencies": {
-    "babel-brunch": "6.1.1",
     "brunch": "2.10.9",
     "clean-css-brunch": "2.10.0",
     "elm": "^0.18.0",

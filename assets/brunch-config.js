@@ -44,30 +44,12 @@ exports.config = {
       outputFolder: '../vendor',
       executablePath: '../node_modules/.bin'
     },
-    babel: {
-      // Do not use ES6 compiler in vendor code
-      ignore: [/\\*/, /elm/]
-    },
     handlebars: {
       locals: {
         baseUrl: baseUrl(),
         buildTime: moment().format('LLLL') || "No build time derived",
         commit: "No commit derived"
       }
-    }
-  },
-
-  overrides: {
-    production: {
-      optimize: false,
-      sourceMaps: false,
-      plugins: {autoReload: {enabled: false}}
-    },
-
-    staging: {
-      optimize: false,
-      sourceMaps: false,
-      plugins: {autoReload: {enabled: false}}
     }
   },
 
