@@ -3,15 +3,25 @@ defmodule MasteryBackendWeb.Endpoint do
 
   socket "/socket", MasteryBackendWeb.UserSocket
 
-  def forward_root(conn, _opts) do
-    if conn.request_path == "/" do
-      %{ conn | request_path: "/index.html", path_info: ["index.html"] }
+  def known_route(conn) do
+    List.first(conn.path_info) in ["api", "css", "js"]
+  end
+
+  def path_info(destination) do
+    destination
+    |> String.split("/")
+    |> Enum.drop(1)
+  end
+
+  def forward_unknwon(conn, [to: destination]) do
+    if not known_route(conn) do
+      %{ conn | request_path: destination, path_info: path_info(destination) }
     else
       conn
     end
   end
 
-  plug :forward_root
+  plug :forward_unknwon, to: "/index.html"
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
