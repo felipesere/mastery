@@ -9,6 +9,5 @@ import Routing exposing (Route(..))
 type Msg
     = ForLandingPage LandingPage.State.Msg
     | ForHealthCheck
-    | LoadModules (List Lesson)
     | ChangeLocation Location
     | ChangeRoute Route

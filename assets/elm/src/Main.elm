@@ -54,9 +54,6 @@ update msg model =
         ChangeRoute route ->
             ( { model | route = route }, newUrl (pageToUrl route) )
 
-        LoadModules result ->
-            ( { model | landing = LandingPage.State.load model.landing result }, Cmd.none )
-
 
 page : AppModel -> Html.Html Msg
 page model =
