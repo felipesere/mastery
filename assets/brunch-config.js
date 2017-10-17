@@ -1,6 +1,14 @@
 var moment = require('moment')
 var gitRevision = require('git-revision')
 
+var baseUrl = function() {
+  if (process.env.HEROKU_APP_NAME ) {
+    return process.env.HEROKU_APP_NAME + ".herokuapp.com";
+  } else {
+    return "http://localhost:4000";
+  }
+}
+
 exports.config = {
   files: {
     javascripts: {
@@ -37,7 +45,7 @@ exports.config = {
     },
     handlebars: {
       locals: {
-        baseUrl: process.env.BASE_URL || 'http://localhost:4000',
+        baseUrl: baseUrl(),
         buildTime: moment().format('LLLL') || "No build time derived",
         commit: "No commit derived"
       }
