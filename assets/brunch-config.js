@@ -41,7 +41,7 @@ exports.config = {
     },
     babel: {
       // Do not use ES6 compiler in vendor code
-      ignore: [/vendor/, /elm/]
+      ignore: [/\\*/, /elm/]
     },
     handlebars: {
       locals: {
