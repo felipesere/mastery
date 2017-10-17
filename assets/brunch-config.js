@@ -39,7 +39,7 @@ exports.config = {
       locals: {
         baseUrl: process.env.BASE_URL || 'http://localhost:4000',
         buildTime: moment().format('LLLL') || "No build time derived",
-        commit: gitRevision("long") || "No commit derived"
+        commit: "No commit derived"
       }
     }
   },
