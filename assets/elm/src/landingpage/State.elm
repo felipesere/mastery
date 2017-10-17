@@ -30,7 +30,6 @@ type Msg
     | Select Lesson
     | Remove LessonId
     | Search String
-    | LoadModules (List Lesson)
 
 
 initial : Model
@@ -64,9 +63,6 @@ update msg model =
 
         Search string ->
             { model | search = string }
-
-        LoadModules lessons ->
-            { model | lessons = lessons }
 
 
 remove : LessonId -> Model -> Model
