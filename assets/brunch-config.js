@@ -54,6 +54,20 @@ exports.config = {
     }
   },
 
+  overrides: {
+    production: {
+      optimize: false,
+      sourceMaps: false,
+      plugins: {autoReload: {enabled: false}}
+    },
+
+    staging: {
+      optimize: false,
+      sourceMaps: false,
+      plugins: {autoReload: {enabled: false}}
+    }
+  },
+
   npm: {
     enabled: true
   }
