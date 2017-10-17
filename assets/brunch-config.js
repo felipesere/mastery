@@ -19,6 +19,8 @@ exports.config = {
     }
   },
 
+  jsWrapper: 'raw',
+
   conventions: {
     assets: /^(static)/,
     ignored: [
