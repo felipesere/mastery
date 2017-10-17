@@ -19,7 +19,10 @@ exports.config = {
     }
   },
 
-  jsWrapper: 'raw',
+  modules:{
+    wrapper: false,
+    definition: false
+  },
 
   conventions: {
     assets: /^(static)/,
