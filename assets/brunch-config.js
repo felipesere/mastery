@@ -27,12 +27,6 @@ exports.config = {
     ]
   },
 
-	overrides: {
-	   production: {
-		   optimize: false
-		 }
-	},
-
   paths: {
     watched: ['static', 'css', 'js', 'vendor', 'elm'],
     public: '../priv/static'
