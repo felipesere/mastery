@@ -69,5 +69,9 @@ exports.config = {
       sourceMaps: false,
       plugins: {autoReload: {enabled: false}}
     }
+  },
+
+  npm: {
+    enabled: true
   }
 }
