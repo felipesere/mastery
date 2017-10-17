@@ -1,0 +1,3 @@
+cd assets
+
+brunch build
