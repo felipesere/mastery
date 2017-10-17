@@ -3,7 +3,7 @@ var gitRevision = require('git-revision')
 
 var baseUrl = function() {
   if (process.env.HEROKU_APP_NAME ) {
-    return process.env.HEROKU_APP_NAME + ".herokuapp.com";
+    return "https://" + process.env.HEROKU_APP_NAME + ".herokuapp.com";
   } else {
     return "http://localhost:4000";
   }
