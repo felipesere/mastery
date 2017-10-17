@@ -27,6 +27,12 @@ exports.config = {
     ]
   },
 
+	overrides: {
+	   production: {
+		   optimize: false
+		 }
+	},
+
   paths: {
     watched: ['static', 'css', 'js', 'vendor', 'elm'],
     public: '../priv/static'
@@ -41,7 +47,7 @@ exports.config = {
     },
     babel: {
       // Do not use ES6 compiler in vendor code
-      ignore: [/vendor/, /elm/]
+      ignore: [/\\*/, /elm/]
     },
     handlebars: {
       locals: {
