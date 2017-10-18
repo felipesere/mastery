@@ -3,9 +3,9 @@ var gitRevision = require('git-revision')
 
 var baseUrl = function() {
   if (process.env.HEROKU_APP_NAME ) {
-    return "https://" + process.env.HEROKU_APP_NAME + ".herokuapp.com";
+    return 'https://' + process.env.HEROKU_APP_NAME + '.herokuapp.com'
   } else {
-    return "http://localhost:4000";
+    return 'http://localhost:4000'
   }
 }
 
@@ -13,9 +13,6 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: 'js/app.js'
-    },
-    stylesheets: {
-      joinTo: 'css/app.css'
     }
   },
 
@@ -24,12 +21,17 @@ exports.config = {
     definition: false
   },
 
+  npm: {
+    enabled: false
+  },
+
   conventions: {
     assets: /^(static)/,
     ignored: [
       /tests/,
       /node_modules/
-    ]
+    ],
+    vendor: /^(vendor)/
   },
 
   paths: {
@@ -47,13 +49,9 @@ exports.config = {
     handlebars: {
       locals: {
         baseUrl: baseUrl(),
-        buildTime: moment().format('LLLL') || "No build time derived",
-        commit: "No commit derived"
+        buildTime: moment().format('LLLL') || 'No build time derived',
+        commit: 'No commit derived'
       }
     }
-  },
-
-  npm: {
-    enabled: false
   }
 }
