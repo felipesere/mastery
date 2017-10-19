@@ -1,3 +1,0 @@
-brunch build
-
-cp vendor/main.js ../priv/static/js/app.js
