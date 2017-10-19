@@ -73,6 +73,7 @@ frame html =
     Html.div [] [ Header.view, html ]
 
 
+main : Program Config AppModel Msg
 main =
     Navigation.programWithFlags
         ChangeLocation
