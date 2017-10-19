@@ -6,6 +6,9 @@
   },
   "dependencies": {
     "elm-webpack-loader": "^4.3.1",
+    "file-loader": "^1.1.5",
+    "git-revision-webpack-plugin": "^2.5.1",
+    "moment": "^2.19.1",
     "phoenix": "file:../deps/phoenix",
     "webpack": "^3.8.1"
   },
