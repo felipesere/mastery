@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const WebpackNotifierPlugin = require('webpack-notifier')
 const GitRevisionPlugin = require('git-revision-webpack-plugin')
 const moment = require('moment')
 const git = new GitRevisionPlugin()
@@ -26,7 +27,7 @@ module.exports = {
 
   module: {
     loaders: [
-      { 
+      {
         test: /\.elm$/,
         loader: 'elm-webpack-loader?cwd='+__dirname+'/elm&verbose=true&warn=true&forceWatch=true',
         exclude: [/elm-stuff/, /node-modules/]
@@ -45,6 +46,7 @@ module.exports = {
       'MODULES_URL': JSON.stringify(baseUrl()),
       'COMMIT_HASH': JSON.stringify(process.env.SOURCE_VERSION || JSON.stringify(git.commithash())),
       'BUILD_TIME': JSON.stringify(moment().format('LLLL') || "No build time derived")
-    })
+    }),
+    new WebpackNotifierPlugin()
   ]
 }
