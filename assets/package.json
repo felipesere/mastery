@@ -2,7 +2,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "watch": "node_modules/webpack/bin/webpack.js --watch-stdin"
+    "watch": "node_modules/webpack/bin/webpack.js --watch-stdin",
+    "build": "node_modules/webpack/bin/webpack.js"
   },
   "dependencies": {
     "elm-webpack-loader": "^4.3.1",

@@ -11,9 +11,8 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [ node: [ "node_modules/webpack/bin/webpack.js",
-                      "--watch-stdin",
-                      cd: Path.expand("../assets", __DIR__) ] ]
+  watchers: [ npm: [ "run", "watch",
+                     cd: Path.expand("../assets", __DIR__) ] ]
 
 config :mastery_backend, :lessons_file, "sampleLessons.json"
 # ## SSL Support
