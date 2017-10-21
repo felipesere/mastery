@@ -15,6 +15,7 @@ type alias Config =
     { baseUrl : String
     , buildTime : String
     , commit : String
+    , githubClientId : String
     }
 
 

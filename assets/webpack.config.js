@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-
+      'GITHUB_CLIENT_ID' : JSON.stringify(process.env.GITHUB_CLIENT_ID),
       'MODULES_URL': JSON.stringify(baseUrl()),
       'COMMIT_HASH': JSON.stringify(process.env.SOURCE_VERSION || JSON.stringify(git.commithash())),
       'BUILD_TIME': JSON.stringify(moment().format('LLLL') || "No build time derived")
