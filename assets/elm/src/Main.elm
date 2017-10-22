@@ -6,8 +6,8 @@ import Healthcheck.Healthcheck as Healthcheck
 import Html
 import LandingPage.LandingPage as LandingPage
 import LandingPage.State exposing (Model)
-import LoginPage.LoginPage as LoginPage exposing (Model)
-import Messages exposing (Msg(..))
+import LoginPage.LoginPage as LoginPage exposing (..)
+import Messages exposing (Auth(..), Msg(..))
 import Navigation exposing (..)
 import Routing exposing (Route(..), pageToUrl, parseLocation)
 
@@ -23,7 +23,7 @@ type alias AppModel =
     { route : Routing.Route
     , landing : LandingPage.State.Model
     , healthcheck : Healthcheck.Model
-    , login : LoginPage.Model
+    , login : Auth
     }
 
 
@@ -36,7 +36,7 @@ init config location =
     ( { route = route
       , landing = LandingPage.State.initial
       , healthcheck = Healthcheck.initial config
-      , login = LoginPage.initial
+      , login = Unauthenticated
       }
     , Cmd.batch [ Backend.get config.baseUrl, Backend.checkAuth config.baseUrl ]
     )
@@ -58,7 +58,7 @@ update msg model =
             ( { model | route = route }, newUrl (pageToUrl route) )
 
         ChangeAuth auth ->
-            ( { model | login = LoginPage.update model.login auth }, Cmd.none )
+            ( { model | login = auth }, Cmd.none )
 
 
 page : AppModel -> Html.Html Msg

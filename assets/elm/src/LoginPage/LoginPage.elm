@@ -1,34 +1,18 @@
-module LoginPage.LoginPage exposing (..)
+module LoginPage.LoginPage exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href)
 import Messages exposing (Auth(..), Msg(..))
 
 
-type alias Model =
-    { loginState : Auth
-    }
+view : Auth -> Html Msg
+view auth =
+    div [ class "container" ] [ loginButton auth ]
 
 
-initial : Model
-initial =
-    { loginState = Unauthenticated
-    }
-
-
-update : Model -> Auth -> Model
-update model auth =
-    { model | loginState = auth }
-
-
-view : Model -> Html Msg
-view model =
-    div [ class "container" ] [ loginButton model ]
-
-
-loginButton : Model -> Html Msg
-loginButton model =
-    case model.loginState of
+loginButton : Auth -> Html Msg
+loginButton auth =
+    case auth of
         Unauthenticated ->
             showLogin
 
