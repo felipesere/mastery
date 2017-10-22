@@ -32,14 +32,15 @@
     ],
     "outcomes": [
       "An understanding for design",
-      "How to use Java performance measurement tools and what to be on the lookout for."]
+      "How to use Java performance measurement tools and what to be on the lookout for."
+    ]
   },
   {
     "id": 3,
     "title": "Java Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Java",
-    "description": "Write simple server that simply _echoes anything_ that is sent to it, essentially a parrot. Seperately write a small client app, that takes and input and displays the output from the server.",
+    "description": "Write a program that simply _echoes anything_ that is sent to it, essentially a parrot. Separately write a small client app, that takes input and displays the output from the server.",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -53,10 +54,10 @@
     "title": "Java Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Write a chat server",
     "outputs": [
       "A single app that can be started and connected to a second instance of itself",
-      "Both apps should be take and display text like a regular chat"
+      "Both apps should be able to receive and display text like a regular chat"
     ],
     "outcomes": [
       "Deeper understanding of Sockets for back and forth communication",
@@ -68,23 +69,23 @@
     "title": "Java koans",
     "subtitle": "Basic syntax of the language",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Learn and practice the fundamentals of Java's syntax and constructs",
     "outputs": [
       "All passing koans from https://github.com/matyb/java-koans",
       "A blog post highlighting a different between Java and a previously known language"
     ],
     "outcomes": [
-      "Basic undstanding of the language, covering functions, classes, types"
+      "Basic undstanding of the language's syntax and constructs (i.e classes, loops, interfaces etc)"
     ]
   },
   {
     "id": 6,
     "title": "Java Guilded Rose",
-    "subtitle": "Refactoring and pattern matching",
+    "subtitle": "Practice Refactoring",
     "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Carefully and methodically refactor the code found in the Guilded Rose kata by adding tests and simplifying the production code",
     "outputs": [
-      "A repo with a refactored Guilded Rose",
+      "A repo with the refactored Guilded Rose",
       "A blog post highlighting which SOLID principles your solution adheres to",
       "A git history showing the refactoring-steps taken"
     ],
@@ -96,35 +97,27 @@
   },
   {
     "id": 7,
-    "title": "Java Video Store Refactoring",
-    "subtitle": "",
+    "title": "Java Video Store",
+    "subtitle": "Practice Refactoring",
     "language": "Java",
-    "description": "Bla bla bla",
-    "outputs": [ "Something..." ],
-    "outcomes": [ "...else." ]
-  },
-  {
-    "id": 8,
-    "title": "Java HTTP server",
-    "subtitle": "A challenge to be experienced!",
-    "language": "Java",
-    "description": "Bla bla bla",
+    "description": "Similar to the Guilded Rose kata, practice refactoring in small steps to improve the production code of a video store program",
     "outputs": [
-      "A server which passes all CobSpec tests",
-      "A repository with high-quality code that you'd be happy to show fellow crafters",
-      "Be prepared to moderate a 15min Q&A about the server and your approach"
+      "A repo with the refactored Video Store code",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
     ],
     "outcomes": [
-      "A sense for code-design for a project resembling real-life.",
-      "Appretiation for trade-offs that need to be taken balancing time and deliverables."
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
     ]
   },
   {
-    "id": 9,
+    "id": 8,
     "title": "Ruby 3x3 TTT",
     "subtitle": "Learn the basics of a Ruby CLI app",
     "language": "Ruby",
-    "description": "Bla bla bla",
+    "description": "Write a basic 3x3 Tic-Tac-Toe in Ruby. It is enough to support a human and a computer player. Make sure that the computer can not be beaten.",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -132,28 +125,35 @@
       "If possible, unbeatable"
     ],
     "outcomes": [
-      "Basic understanding of static typing",
+      "Basic understanding of dynamic languages",
       "Understand how a Ruby project is structured"
+    ],
+    "reading": [
+      "_Growing Object-Oriented Software Guided by Tests_ by Nat Pryce and Steve Freeman"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Ruby 4x4 performance",
+    "subtitle": "Learn the basics of a Ruby CLI app",
+    "language": "Ruby",
+    "description": "Expand your previous TTT to support 4x4. Make sure to *keep performance in mind*. How fast does it need to be usable? Also, which changes were anticipated and which came through testing?",
+    "outputs": [
+      "A TTT that responds to all user input in less than 2sec.",
+      "A blog post detailing what bottlenecks were found and how...",
+      "...or a blogpost about which design changes were needed."
+    ],
+    "outcomes": [
+      "An understanding for design",
+      "How to use Ruby performance measurement tools and what to be on the lookout for."
     ]
   },
   {
     "id": 10,
-    "title": "Ruby 4x4 performance",
-    "subtitle": "Learn the basics of a Ruby CLI app",
-    "language": "Ruby",
-    "description": "Bla bla bla",
-    "outputs": [
-      "A TTT that responds to all user input in less than 2sec.",
-      "A blog post detailing what bottlenecks were found and how."
-    ],
-    "outcomes" : []
-  },
-  {
-    "id": 11,
     "title": "Ruby Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Ruby",
-    "description": "Bla bla bla",
+    "description": "Write a program that simply _echoes anything_ that is sent to it, essentially a parrot. Separately write a small client app, that takes input and displays the output from the server.",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -163,39 +163,74 @@
     ]
   },
   {
-    "id": 12,
+    "id": 11,
     "title": "Ruby Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Ruby",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
-
+    "description": "Write a chat server",
+    "outputs": [
+      "A single app that can be started and connected to a second instance of itself",
+      "Both apps should be able to receive and display text like a regular chat"
+    ],
+    "outcomes": [
+      "Deeper understanding of Sockets for back and forth communication",
+      "AUndstand how to abstract away from IO"
+    ]
   },
   {
-    "id": 13,
+    "id": 12,
     "title": "Ruby koans",
     "subtitle": "Basic syntax of the language",
     "language": "Ruby",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Learn and practice the fundamentals of Ruby's syntax and constructs",
+    "outputs": [
+      "All passing koans from https://github.com/matyb/java-koans",
+      "A blog post highlighting a different between Ruby and a previously known language"
+    ],
+    "outcomes": [
+      "Basic undstanding of the language's syntax and constructs (i.e classes, loops, interfaces etc)"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Ruby Guilded Rose",
+    "subtitle": "Practice Refactoring",
+    "language": "Ruby",
+    "description": "Carefully and methodically refactor the code found in the Guilded Rose kata by adding tests and simplifying the production code",
+    "outputs": [
+      "A repo with the refactored Guilded Rose",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
   },
   {
     "id": 14,
-    "title": "Ruby Guilded Rose",
-    "subtitle": "Refactoring and pattern matching",
+    "title": "Ruby Video Store",
+    "subtitle": "Practice Refactoring",
     "language": "Ruby",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Similar to the Guilded Rose kata, practice refactoring in small steps to improve the production code of a video store program",
+    "outputs": [
+      "A repo with the refactored Video Store code",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
   },
   {
     "id": 15,
     "title": "Clojure 3x3 TTT",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
-    "description": "Bla bla bla",
+    "description": "Write a basic 3x3 Tic-Tac-Toe in Clojure. It is enough to support a human and a computer player. Make sure that the computer can not be beaten.",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -203,8 +238,11 @@
       "If possible, unbeatable"
     ],
     "outcomes": [
-      "Basic understanding of static typing",
+      "Basic understanding of functional dynamic languages",
       "Understand how a Clojure project is structured"
+    ],
+    "reading": [
+      "_Growing Object-Oriented Software Guided by Tests_ by Nat Pryce and Steve Freeman"
     ]
   },
   {
@@ -212,19 +250,23 @@
     "title": "Clojure 4x4 performance",
     "subtitle": "Learn the basics of a Clojure CLI app",
     "language": "Clojure",
-    "description": "Bla bla bla",
+    "description": "Expand your previous TTT to support 4x4. Make sure to *keep performance in mind*. How fast does it need to be usable? Also, which changes were anticipated and which came through testing?",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
-      "A blog post detailing what bottlenecks were found and how."
+      "A blog post detailing what bottlenecks were found and how...",
+      "...or a blogpost about which design changes were needed."
     ],
-    "outcomes": []
+    "outcomes": [
+      "An understanding for design",
+      "How to use Clojure performance measurement tools and what to be on the lookout for."
+    ]
   },
   {
     "id": 17,
     "title": "Clojure Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
     "language": "Clojure",
-    "description": "Bla bla bla",
+    "description": "Write a program that simply _echoes anything_ that is sent to it, essentially a parrot. Separately write a small client app, that takes input and displays the output from the server.",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -238,106 +280,70 @@
     "title": "Clojure Chat server",
     "subtitle": "Talking should be a fun exercise.",
     "language": "Clojure",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
-
+    "description": "Write a chat server",
+    "outputs": [
+      "A single app that can be started and connected to a second instance of itself",
+      "Both apps should be able to receive and display text like a regular chat"
+    ],
+    "outcomes": [
+      "Deeper understanding of Sockets for back and forth communication",
+      "AUndstand how to abstract away from IO"
+    ]
   },
   {
     "id": 19,
     "title": "Clojure koans",
     "subtitle": "Basic syntax of the language",
     "language": "Clojure",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Learn and practice the fundamentals of Clojure's syntax and constructs",
+    "outputs": [
+      "All passing koans from https://github.com/matyb/java-koans",
+      "A blog post highlighting a different between Clojure and a previously known language"
+    ],
+    "outcomes": [
+      "Basic undstanding of the language's syntax and constructs (i.e classes, loops, interfaces etc)"
+    ]
   },
   {
     "id": 20,
     "title": "Clojure Guilded Rose",
-    "subtitle": "Refactoring and pattern matching",
+    "subtitle": "Practice Refactoring",
     "language": "Clojure",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Carefully and methodically refactor the code found in the Guilded Rose kata by adding tests and simplifying the production code",
+    "outputs": [
+      "A repo with the refactored Guilded Rose",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
   },
   {
     "id": 21,
-    "title": "JavaScript 3x3 TTT",
-    "subtitle": "Learn the basics of a JavaScript CLI app",
-    "language": "JavaScript",
-    "description": "Bla bla bla",
+    "title": "Clojure Video Store",
+    "subtitle": "Practice Refactoring",
+    "language": "Clojure",
+    "description": "Similar to the Guilded Rose kata, practice refactoring in small steps to improve the production code of a video store program",
     "outputs": [
-      "A basic 3x3 TTT",
-      "100% code coverage",
-      "Human vs Computer",
-      "If possible, unbeatable"
+      "A repo with the refactored Video Store code",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
     ],
     "outcomes": [
-      "Basic understanding of static typing",
-      "Understand how a JavaScript project is structured"
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
     ]
   },
   {
     "id": 22,
-    "title": "JavaScript 4x4 performance",
-    "subtitle": "Learn the basics of a JavaScript CLI app",
-    "language": "JavaScript",
-    "description": "Bla bla bla",
-    "outputs": [
-      "A TTT that responds to all user input in less than 2sec.",
-      "A blog post detailing what bottlenecks were found and how."
-    ],
-    "outcomes": []
-  },
-  {
-    "id": 23,
-    "title": "JavaScript Echo Server",
-    "subtitle": "What are Sockets and why do they matter?",
-    "language": "JavaScript",
-    "description": "Bla bla bla",
-    "outputs": [
-      "A server app that will echo any message sent over a socket",
-      "A client app that will send its input to the server"
-    ],
-    "outcomes": [
-      "Understand sockets and how to separate your app from them"
-    ]
-  },
-  {
-    "id": 24,
-    "title": "JavaScript Chat server",
-    "subtitle": "Talking should be a fun exercise.",
-    "language": "JavaScript",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
-
-  },
-  {
-    "id": 25,
-    "title": "JavaScript koans",
-    "subtitle": "Basic syntax of the language",
-    "description": "Bla bla bla",
-    "language": "JavaScript",
-    "outputs": [],
-    "outcomes": []
-  },
-  {
-    "id": 26,
-    "title": "JavaScript Guilded Rose",
-    "subtitle": "Refactoring and pattern matching",
-    "language": "JavaScript",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
-  },
-  {
-    "id": 27,
-    "title": "Elixir 3x3 TTT",
-    "subtitle": "Learn the basics of a Elixir CLI app",
-    "language": "Elixir",
-    "description": "Bla bla bla",
+    "title": "Javascript 3x3 TTT",
+    "subtitle": "Learn the basics of a Javascript CLI app",
+    "language": "Javascript",
+    "description": "Write a basic 3x3 Tic-Tac-Toe in Javascript. It is enough to support a human and a computer player. Make sure that the computer can not be beaten.",
     "outputs": [
       "A basic 3x3 TTT",
       "100% code coverage",
@@ -345,28 +351,34 @@
       "If possible, unbeatable"
     ],
     "outcomes": [
-      "Basic understanding of static typing",
-      "Understand how a Elixir project is structured"
+      "Understand how a Javascript project is structured"
+    ],
+    "reading": [
+      "_Growing Object-Oriented Software Guided by Tests_ by Nat Pryce and Steve Freeman"
     ]
   },
   {
-    "id": 28,
-    "title": "Elixir 4x4 performance",
-    "subtitle": "Learn the basics of a Elixir CLI app",
-    "language": "Elixir",
-    "description": "Bla bla bla",
+    "id": 23,
+    "title": "Javascript 4x4 performance",
+    "subtitle": "Learn the basics of a Javascript CLI app",
+    "language": "Javascript",
+    "description": "Expand your previous TTT to support 4x4. Make sure to *keep performance in mind*. How fast does it need to be usable? Also, which changes were anticipated and which came through testing?",
     "outputs": [
       "A TTT that responds to all user input in less than 2sec.",
-      "A blog post detailing what bottlenecks were found and how."
+      "A blog post detailing what bottlenecks were found and how...",
+      "...or a blogpost about which design changes were needed."
     ],
-    "outcomes": []
+    "outcomes": [
+      "An understanding for design",
+      "How to use Javascript performance measurement tools and what to be on the lookout for."
+    ]
   },
   {
-    "id": 29,
-    "title": "Elixir Echo Server",
+    "id": 24,
+    "title": "Javascript Echo Server",
     "subtitle": "What are Sockets and why do they matter?",
-    "language": "Elixir",
-    "description": "Bla bla bla",
+    "language": "Javascript",
+    "description": "Write a program that simply _echoes anything_ that is sent to it, essentially a parrot. Separately write a small client app, that takes input and displays the output from the server.",
     "outputs": [
       "A server app that will echo any message sent over a socket",
       "A client app that will send its input to the server"
@@ -376,31 +388,179 @@
     ]
   },
   {
-    "id": 30,
-    "title": "Elixir Chat server",
+    "id": 25,
+    "title": "Javascript Chat server",
     "subtitle": "Talking should be a fun exercise.",
+    "language": "Javascript",
+    "description": "Write a chat server",
+    "outputs": [
+      "A single app that can be started and connected to a second instance of itself",
+      "Both apps should be able to receive and display text like a regular chat"
+    ],
+    "outcomes": [
+      "Deeper understanding of Sockets for back and forth communication",
+      "AUndstand how to abstract away from IO"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Javascript koans",
+    "subtitle": "Basic syntax of the language",
+    "language": "Javascript",
+    "description": "Learn and practice the fundamentals of Javascript's syntax and constructs",
+    "outputs": [
+      "All passing koans from https://github.com/matyb/java-koans",
+      "A blog post highlighting a different between Javascript and a previously known language"
+    ],
+    "outcomes": [
+      "Basic undstanding of the language's syntax and constructs (i.e classes, loops, interfaces etc)"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Javascript Guilded Rose",
+    "subtitle": "Practice Refactoring",
+    "language": "Javascript",
+    "description": "Carefully and methodically refactor the code found in the Guilded Rose kata by adding tests and simplifying the production code",
+    "outputs": [
+      "A repo with the refactored Guilded Rose",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Javascript Video Store",
+    "subtitle": "Practice Refactoring",
+    "language": "Javascript",
+    "description": "Similar to the Guilded Rose kata, practice refactoring in small steps to improve the production code of a video store program",
+    "outputs": [
+      "A repo with the refactored Video Store code",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Elixir 3x3 TTT",
+    "subtitle": "Learn the basics of a Elixir CLI app",
     "language": "Elixir",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
-
+    "description": "Write a basic 3x3 Tic-Tac-Toe in Elixir. It is enough to support a human and a computer player. Make sure that the computer can not be beaten.",
+    "outputs": [
+      "A basic 3x3 TTT",
+      "100% code coverage",
+      "Human vs Computer",
+      "If possible, unbeatable"
+    ],
+    "outcomes": [
+      "Basic understanding of functional dynamic languages",
+      "Understand how a Elixir project is structured"
+    ],
+    "reading": [
+      "_Growing Object-Oriented Software Guided by Tests_ by Nat Pryce and Steve Freeman"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Elixir 4x4 performance",
+    "subtitle": "Learn the basics of a Elixir CLI app",
+    "language": "Elixir",
+    "description": "Expand your previous TTT to support 4x4. Make sure to *keep performance in mind*. How fast does it need to be usable? Also, which changes were anticipated and which came through testing?",
+    "outputs": [
+      "A TTT that responds to all user input in less than 2sec.",
+      "A blog post detailing what bottlenecks were found and how...",
+      "...or a blogpost about which design changes were needed."
+    ],
+    "outcomes": [
+      "An understanding for design",
+      "How to use Elixir performance measurement tools and what to be on the lookout for."
+    ]
   },
   {
     "id": 31,
-    "title": "Elixir koans",
-    "subtitle": "Basic syntax of the language",
+    "title": "Elixir Echo Server",
+    "subtitle": "What are Sockets and why do they matter?",
     "language": "Elixir",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Write a program that simply _echoes anything_ that is sent to it, essentially a parrot. Separately write a small client app, that takes input and displays the output from the server.",
+    "outputs": [
+      "A server app that will echo any message sent over a socket",
+      "A client app that will send its input to the server"
+    ],
+    "outcomes": [
+      "Understand sockets and how to separate your app from them"
+    ]
   },
   {
     "id": 32,
-    "title": "Elixir Guilded Rose",
-    "subtitle": "Refactoring and pattern matching",
+    "title": "Elixir Chat server",
+    "subtitle": "Talking should be a fun exercise.",
     "language": "Elixir",
-    "description": "Bla bla bla",
-    "outputs": [],
-    "outcomes": []
+    "description": "Write a chat server",
+    "outputs": [
+      "A single app that can be started and connected to a second instance of itself",
+      "Both apps should be able to receive and display text like a regular chat"
+    ],
+    "outcomes": [
+      "Deeper understanding of Sockets for back and forth communication",
+      "AUndstand how to abstract away from IO"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Elixir koans",
+    "subtitle": "Basic syntax of the language",
+    "language": "Elixir",
+    "description": "Learn and practice the fundamentals of Elixir's syntax and constructs",
+    "outputs": [
+      "All passing koans from https://github.com/matyb/java-koans",
+      "A blog post highlighting a different between Elixir and a previously known language"
+    ],
+    "outcomes": [
+      "Basic undstanding of the language's syntax and constructs (i.e classes, loops, interfaces etc)"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "Elixir Guilded Rose",
+    "subtitle": "Practice Refactoring",
+    "language": "Elixir",
+    "description": "Carefully and methodically refactor the code found in the Guilded Rose kata by adding tests and simplifying the production code",
+    "outputs": [
+      "A repo with the refactored Guilded Rose",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Elixir Video Store",
+    "subtitle": "Practice Refactoring",
+    "language": "Elixir",
+    "description": "Similar to the Guilded Rose kata, practice refactoring in small steps to improve the production code of a video store program",
+    "outputs": [
+      "A repo with the refactored Video Store code",
+      "A blog post highlighting which SOLID principles your solution adheres to",
+      "A git history showing the refactoring-steps taken"
+    ],
+    "outcomes": [
+      "Understanding the practicality of the SOLID principles",
+      "An appreciation for refactoring techniques",
+      "An appreciation for a workflow that allows you to alwasy 'stay green'"
+    ]
   }
 ]
