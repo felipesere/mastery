@@ -3,7 +3,7 @@ defmodule MasteryBackendWeb.AuthorizationController do
 
   def login(conn, _params) do
     conn
-    |> redirect(external: MasteryBackend.Github.Client.authorization_url)
+    |> redirect(external: MasteryBackend.Github.authorization_url)
   end
 
   def index(conn, %{"code" => code} ) do

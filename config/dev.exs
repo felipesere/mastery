@@ -17,10 +17,13 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
 config :mastery_backend, :lessons_file, "sampleLessons.json"
 
 
+#config :mastery_backend, :github,
+#  module: MasteryBackend.Github.Client,
+#  client_id: System.get_env("GITHUB_CLIENT_ID"),
+#  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
 config :mastery_backend, :github,
-  module: MasteryBackend.Github.Client,
-  client_id: System.get_env("GITHUB_CLIENT_ID"),
-  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+  module: MasteryBackend.Github.LocalClient
 
 
 config :mastery_backend, :secure,

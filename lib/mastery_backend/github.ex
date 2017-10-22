@@ -24,15 +24,19 @@ defmodule MasteryBackend.Github do
     end
   end
 
+  def authorization_url() do
+    client().authorization_url()
+  end
+
   def exchange_for_token(code) do
     code
-    |> MasteryBackend.Github.Client.raw_token!()
+    |> client().raw_token!()
     |> parse_token()
   end
 
   def user(token) do
     token
-    |> MasteryBackend.Github.Client.raw_user!()
+    |> client().raw_user!()
     |> parse_user()
   end
 
@@ -41,4 +45,10 @@ defmodule MasteryBackend.Github do
 
   def parse_token({:ok, %{body: body}} ), do: MasteryBackend.Github.Token.parse(body)
   def parse_token(response), do: {:failed, response}
+
+
+  def client() do
+    Application.get_env(:mastery_backend, :github)
+    |> Keyword.get(:module)
+  end
 end
