@@ -21,6 +21,19 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
   secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
 
 config :mastery_backend, :lessons_file, "sampleLessons.json"
+
+
+config :mastery_backend, :github,
+  module: MasteryBackend.Github.Client,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET"),
+  auth_url: "https://github.com/login/oauth/authorize"
+
+
+config :mastery_backend, :secure,
+  base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+  cookie_salt: "GAZTya3HhgZdhhERAn3XNM7pWXMB6J6E/",
+  sign_salt: "Icxn58V6ClWrCS88XeKDPbg0X97lNb6A"
 #
 # Configure your database
 config :mastery_backend, MasteryBackend.Repo,
