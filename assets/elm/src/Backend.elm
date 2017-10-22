@@ -70,6 +70,7 @@ decodeUser =
     Decode.field "name" Decode.string
 
 
+stateToAuth : String -> Maybe String -> Auth
 stateToAuth state maybe_user =
     case Debug.log "login: " ( state, maybe_user ) of
         ( "authenticated", Just user ) ->
