@@ -17,7 +17,7 @@ defmodule MasteryBackendWeb.AuthorizationController do
     encrypted = MasteryBackend.Secure.encrypt(token)
 
     conn
-    |> Plug.Conn.put_resp_cookie("auth", encrypted, domain: "path2mastery.eu.ngrok.io")
+    |> Plug.Conn.put_resp_cookie("auth", encrypted)
     |> redirect(to: "/")
   end
 
