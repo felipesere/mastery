@@ -9,10 +9,10 @@ defmodule MasteryBackend.Github.LocalClient do
   end
 
   def raw_user!(token) do
-    {:ok, %{body: "{\"name\":\"Fake Person\"}"}}
+    {:ok, %{body: "{\"name\":\"Ron Swanson\"}"}}
   end
 
   def authorization_url() do
-    "https://path2mastery.eu.ngrok.io/api/authorization/callback?code=ABC"
+    Application.get_env(:mastery_backend, :github)[:auth_url]
   end
 end

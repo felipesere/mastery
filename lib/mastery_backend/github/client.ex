@@ -23,8 +23,7 @@ defmodule MasteryBackend.Github.Client do
   end
 
   def authorization_url() do
-    %{client_id: client_id} = Agent.get(__MODULE__, &(&1))
-
-    "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=user%20read:org"
+    %{client_id: client_id, auth_url: auth_url} = Agent.get(__MODULE__, &(&1))
+    "#{auth_url}?client_id=#{client_id}&scope=user%20read:org"
   end
 end

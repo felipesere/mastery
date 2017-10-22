@@ -20,10 +20,12 @@ config :mastery_backend, :lessons_file, "sampleLessons.json"
 #config :mastery_backend, :github,
 #  module: MasteryBackend.Github.Client,
 #  client_id: System.get_env("GITHUB_CLIENT_ID"),
-#  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+#  client_secret: System.get_env("GITHUB_CLIENT_SECRET"),
+#  auth_url: "https://github.com/login/oauth/authorize"
 
 config :mastery_backend, :github,
-  module: MasteryBackend.Github.LocalClient
+  module: MasteryBackend.Github.LocalClient,
+  auth_url: "http://localhost:4000/api/authorization/callback?code=ABC"
 
 
 config :mastery_backend, :secure,
