@@ -4,12 +4,12 @@ defmodule MasteryBackend.Github.LocalClient do
     {:ok, spawn fn -> 1 end}
   end
 
-  def raw_token!(code) do
+  def raw_token!(_code) do
     {:ok, %{body: "access_token=fake_token&scope=read%3Aorg%2Cuser&token_type=bearer"}}
   end
 
-  def raw_user!(token) do
-    {:ok, %{body: "{\"name\":\"Ron Swanson\"}"}}
+  def raw_user!(_token) do
+    {:ok, %{body: "{\"name\":\"Ron Swanson\", \"id\": 1}"}}
   end
 
   def authorization_url() do

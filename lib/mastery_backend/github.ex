@@ -1,9 +1,12 @@
 defmodule MasteryBackend.Github do
 
   defmodule User do
-    defstruct [:name]
+    defstruct [:name, :id, :github_token]
 
-    def parse(content), do: Poison.decode!(content, as: %__MODULE__{})
+    def parse(content) do
+      user = Poison.decode!(content, as: %__MODULE__{})
+      %{ user | id: Integer.to_string(user.id) }
+    end
   end
 
   defmodule Token do
@@ -34,11 +37,14 @@ defmodule MasteryBackend.Github do
     |> parse_token()
   end
 
-  def user(token) do
-    token
+  def user(%MasteryBackend.Github.Token{} = token) do
+    token.access_token
     |> client().raw_user!()
     |> parse_user()
+    |> add_token(token)
   end
+
+  def add_token(user, token), do: %{ user | github_token: token}
 
   defp parse_user({:ok, %{body: body}}), do: MasteryBackend.Github.User.parse(body)
   defp parse_user(response), do: {:error, response}
@@ -48,7 +54,8 @@ defmodule MasteryBackend.Github do
 
 
   def client() do
-    Application.get_env(:mastery_backend, :github)
+    :mastery_backend
+    |> Application.get_env(:github)
     |> Keyword.get(:module)
   end
 end

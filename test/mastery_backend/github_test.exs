@@ -10,9 +10,9 @@ defmodule MasteryBackend.GithubTest do
 
   test "parses a user" do
     json = ~s"""
-    { "name" : "Bob" }
+    { "name" : "Bob", "id" : 123 }
     """
-    assert %Github.User{name: "Bob"} == Github.User.parse(json)
+    assert %Github.User{name: "Bob", id: "123"} == Github.User.parse(json)
   end
 
 end

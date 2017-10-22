@@ -13,6 +13,10 @@ config :mastery_backend, :lessons_file, "test/data/sample_lessons.json"
 
 config :mastery_backend, :secure, base: "abc", cookie_salt: "123", sign_salt: "987"
 
+config :mastery_backend, :github,
+  module: MasteryBackend.Github.LocalClient,
+  auth_url: "http://localhost:4000/api/authorization/callback?code=ABC"
+
 # Configure your database
 config :mastery_backend, MasteryBackend.Repo,
   adapter: Ecto.Adapters.Postgres,

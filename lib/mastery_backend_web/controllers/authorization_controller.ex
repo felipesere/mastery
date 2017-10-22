@@ -7,14 +7,12 @@ defmodule MasteryBackendWeb.AuthorizationController do
   end
 
   def index(conn, %{"code" => code} ) do
-    token = MasteryBackend.Github.exchange_for_token(code).access_token
-    IO.puts("The token was: #{token}")
+    user = code
+           |> MasteryBackend.Github.exchange_for_token()
+           |> MasteryBackend.Github.user()
+           |> MasteryBackend.Users.save()
 
-    user = MasteryBackend.Github.user(token)
-
-    MasteryBackend.Users.save(token, user)
-
-    encrypted = MasteryBackend.Secure.encrypt(token)
+    encrypted = MasteryBackend.Secure.encrypt(user.id)
 
     conn
     |> Plug.Conn.put_resp_cookie("auth", encrypted)
@@ -23,24 +21,27 @@ defmodule MasteryBackendWeb.AuthorizationController do
 
   def check(conn, _parms) do
     conn
-    |> fetch_cookies()
-    |> find_cookie()
-    |> decrypt()
+    |> verify_cookie()
     |> find_user()
     |> respond(conn)
   end
 
-  defp find_cookie(conn) do
-    conn.cookies["auth"]
+  defp verify_cookie(conn) do
+    conn
+    |> fetch_cookies()
+    |> auth()
+    |> decrypt()
   end
+
+  def auth(conn), do: conn.cookies["auth"]
 
   defp decrypt(nil), do: :no_cookie
   defp decrypt(value) do
     MasteryBackend.Secure.decrypt(value)
   end
 
-  def find_user({:ok, value}) do
-    MasteryBackend.Users.find(value)
+  def find_user({:ok, id}) do
+    MasteryBackend.Users.find(id)
   end
   def find_user(_), do: :no_user
 
@@ -48,7 +49,7 @@ defmodule MasteryBackendWeb.AuthorizationController do
     json conn, state(user)
   end
 
-  def state(%MasteryBackend.Github.User{} = user) do
+  def state({_, %MasteryBackend.Github.User{} = user}) do
     %{"state" => "authenticated", "user" => user}
   end
   def state(_), do: %{"state" => "unauthorized" }
