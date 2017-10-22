@@ -1,6 +1,11 @@
 defmodule MasteryBackendWeb.AuthorizationController do
   use MasteryBackendWeb, :controller
 
+  def login(conn, _params) do
+    conn
+    |> redirect(external: MasteryBackend.Github.Client.authorization_url)
+  end
+
   def index(conn, %{"code" => code} ) do
     token = MasteryBackend.Github.exchange_for_token(code).access_token
     IO.puts("The token was: #{token}")

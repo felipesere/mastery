@@ -6,14 +6,13 @@ import Messages exposing (Auth(..), Msg(..))
 
 
 type alias Model =
-    { clientId : String
-    , loginState : Auth
+    { loginState : Auth
     }
 
 
-initial { githubClientId } =
-    { clientId = githubClientId
-    , loginState = Unauthenticated
+initial : Model
+initial =
+    { loginState = Unauthenticated
     }
 
 
@@ -27,23 +26,21 @@ view model =
     div [ class "container" ] [ loginButton model ]
 
 
+loginButton : Model -> Html Msg
 loginButton model =
     case model.loginState of
         Unauthenticated ->
-            showLogin model.clientId
+            showLogin
 
         LoggedIn username ->
             greet username
 
 
+greet : String -> Html Msg
 greet username =
     div [] [ text username ]
 
 
-showLogin clientId =
-    a [ class "button", href (link clientId) ] [ Html.text "Github" ]
-
-
-link : String -> String
-link clientId =
-    "https://github.com/login/oauth/authorize?client_id=" ++ clientId ++ "&scope=user%20read:org"
+showLogin : Html Msg
+showLogin =
+    a [ class "button", href "/api/authorization/login" ] [ Html.text "Github" ]

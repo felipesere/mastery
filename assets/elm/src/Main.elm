@@ -16,7 +16,6 @@ type alias Config =
     { baseUrl : String
     , buildTime : String
     , commit : String
-    , githubClientId : String
     }
 
 
@@ -37,7 +36,7 @@ init config location =
     ( { route = route
       , landing = LandingPage.State.initial
       , healthcheck = Healthcheck.initial config
-      , login = LoginPage.initial config
+      , login = LoginPage.initial
       }
     , Cmd.batch [ Backend.get config.baseUrl, Backend.checkAuth config.baseUrl ]
     )

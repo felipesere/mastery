@@ -11,6 +11,7 @@ defmodule MasteryBackendWeb.Router do
     get "/lessons", LessonsController, :index
 
     scope "/authorization" do
+      get "/login", AuthorizationController, :login
       get "/callback", AuthorizationController, :index
       get "/check", AuthorizationController, :check
     end

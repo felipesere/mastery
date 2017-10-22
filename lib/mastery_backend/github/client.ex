@@ -17,4 +17,10 @@ defmodule MasteryBackend.Github.Client do
     %{client_id: id, client_secret: secret} = Agent.get(__MODULE__, &(&1))
     Poison.encode!(%{"client_id" => id, "client_secret" => secret, "code" => code})
   end
+
+  def authorization_url() do
+    %{client_id: client_id} = Agent.get(__MODULE__, &(&1))
+
+    "https://github.com/login/oauth/authorize?client_id=#{client_id}&scope=user%20read:org"
+  end
 end
