@@ -63,23 +63,27 @@ update msg model =
 
 page : AppModel -> Html.Html Msg
 page model =
+    let
+        framed =
+            frame model.login
+    in
     case model.route of
         LandingPage ->
-            frame <| LandingPage.view model.landing
+            framed <| LandingPage.view model.landing
 
         Healthcheck ->
-            frame <| Healthcheck.view model.healthcheck
+            framed <| Healthcheck.view model.healthcheck
 
         Login ->
-            frame <| LoginPage.view model.login
+            framed <| LoginPage.view model.login
 
         NotFound ->
-            frame <| Html.text "Not found :("
+            framed <| Html.text "Not found :("
 
 
-frame : Html.Html Msg -> Html.Html Msg
-frame html =
-    Html.div [] [ Header.view, html ]
+frame : Auth -> Html.Html Msg -> Html.Html Msg
+frame auth html =
+    Html.div [] [ Header.view auth, html ]
 
 
 main : Program Config AppModel Msg
