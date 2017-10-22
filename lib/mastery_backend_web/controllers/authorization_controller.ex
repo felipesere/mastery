@@ -2,7 +2,7 @@ defmodule MasteryBackendWeb.AuthorizationController do
   use MasteryBackendWeb, :controller
 
   def index(conn, %{"code" => code} ) do
-    token = MasteryBackend.Github.exchange_for_token(code)
+    token = MasteryBackend.Github.exchange_for_token(code).access_token
     IO.puts("The token was: #{token}")
 
     user = MasteryBackend.Github.user(token)

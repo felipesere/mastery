@@ -13,7 +13,8 @@ defmodule MasteryBackend.Application do
       # Start the endpoint when the application starts
       supervisor(MasteryBackendWeb.Endpoint, []),
       supervisor(MasteryBackend.Users, []),
-      supervisor(MasteryBackend.Secure, [])
+      supervisor(MasteryBackend.Secure, []),
+      supervisor(MasteryBackend.Github.Client, [])
       # Start your own worker by calling: MasteryBackend.Worker.start_link(arg1, arg2, arg3)
       # worker(MasteryBackend.Worker, [arg1, arg2, arg3]),
     ]
