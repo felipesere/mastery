@@ -9,5 +9,10 @@ defmodule MasteryBackendWeb.Router do
     pipe_through :api
 
     get "/lessons", LessonsController, :index
+
+    scope "/authorization" do
+      get "/callback", AuthorizationController, :index
+      get "/check", AuthorizationController, :check
+    end
   end
 end

@@ -15,6 +15,16 @@ config :mastery_backend, MasteryBackendWeb.Endpoint,
                      cd: Path.expand("../assets", __DIR__) ] ]
 
 config :mastery_backend, :lessons_file, "sampleLessons.json"
+
+
+config :mastery_backend, :github, client_id: System.get_env("GITHUB_CLIENT_ID"), client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
+
+config :mastery_backend, :secure,
+  base: "d5ve9K8v1gYpEYxT",
+  cookie_salt: "DcMHpk8VRRtD3EB/",
+  sign_salt: "FmuTKePnzZ2jtR2A"
+
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

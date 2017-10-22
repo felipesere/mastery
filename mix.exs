@@ -20,7 +20,7 @@ defmodule MasteryBackend.Mixfile do
   def application do
     [
       mod: {MasteryBackend.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :httpoison]
     ]
   end
 
@@ -37,6 +37,8 @@ defmodule MasteryBackend.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:phoenix_ecto, "~> 3.2"},
       {:postgrex, ">= 0.0.0"},
+      {:httpoison, "~> 0.13.0"},
+      {:poison, "~> 3.1"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
