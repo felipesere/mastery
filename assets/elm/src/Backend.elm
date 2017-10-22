@@ -1,9 +1,11 @@
-module Backend exposing (get)
+module Backend exposing (checkAuth, decode_auth, get)
 
+import Debug
 import Http
+import Json.Decode as Decode
 import LandingPage.State
 import Lesson
-import Messages exposing (Msg(..))
+import Messages exposing (Auth(..), Msg(..))
 
 
 get : String -> Cmd Msg
@@ -26,3 +28,52 @@ default result =
 packageMessage : List Lesson.Lesson -> Msg
 packageMessage lessons =
     ForLandingPage (LandingPage.State.LoadModules lessons)
+
+
+checkAuth : String -> Cmd Msg
+checkAuth url =
+    Http.send message <| buildRequest url
+
+
+buildRequest : String -> Http.Request Auth
+buildRequest url =
+    Http.request
+        { method = "GET"
+        , headers = []
+        , url = url ++ "/api/authorization/check"
+        , body = Http.emptyBody
+        , expect = Http.expectJson decode_auth
+        , timeout = Nothing
+        , withCredentials = True
+        }
+
+
+message : Result Http.Error Auth -> Msg
+message result =
+    case result of
+        Ok auth ->
+            ChangeAuth auth
+
+        _ ->
+            ChangeAuth Unauthenticated
+
+
+decode_auth : Decode.Decoder Auth
+decode_auth =
+    Decode.map2 stateToAuth
+        (Decode.field "state" Decode.string)
+        (Decode.maybe (Decode.field "user" decodeUser))
+
+
+decodeUser : Decode.Decoder String
+decodeUser =
+    Decode.field "name" Decode.string
+
+
+stateToAuth state maybe_user =
+    case Debug.log "login: " ( state, maybe_user ) of
+        ( "authenticated", Just user ) ->
+            LoggedIn user
+
+        _ ->
+            Unauthenticated

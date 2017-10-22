@@ -15,7 +15,15 @@ view =
             [ homelink
             , search
             , healthcheck
+            , login
             ]
+        ]
+
+
+login : Html Messages.Msg
+login =
+    div [ class "navbar-item navbar-end" ]
+        [ a (onClickPage Login) [ text "Login" ]
         ]
 
 
