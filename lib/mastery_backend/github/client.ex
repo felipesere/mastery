@@ -6,11 +6,15 @@ defmodule MasteryBackend.Github.Client do
 
   def raw_token!(code) do
     payload = payload(code)
-    HTTPoison.post('https://github.com/login/oauth/access_token?scope=user%20read:org', payload, [{"Content-Type", "application/json"}])
+    'https://github.com/login/oauth/access_token?scope=user%20read:org'
+    |> :binary.list_to_bin()
+    |> HTTPoison.post(payload, [{"Content-Type", "application/json"}])
   end
 
   def raw_user!(token) do
-    HTTPoison.get('https://api.github.com/user', ["Authorization": "Bearer #{token}"])
+    'https://api.github.com/user'
+    |> :binary.list_to_bin()
+    |> HTTPoison.get([{"Authorization", "Bearer #{token}"}])
   end
 
   defp payload(code) do

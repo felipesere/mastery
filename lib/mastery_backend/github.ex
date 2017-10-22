@@ -27,7 +27,7 @@ defmodule MasteryBackend.Github do
   def exchange_for_token(code) do
     code
     |> MasteryBackend.Github.Client.raw_token!()
-    |> parse()
+    |> parse_token()
   end
 
   def user(token) do
@@ -39,6 +39,6 @@ defmodule MasteryBackend.Github do
   defp parse_user({:ok, %{body: body}}), do: MasteryBackend.Github.User.parse(body)
   defp parse_user(response), do: {:error, response}
 
-  def parse({:ok, %{body: body}} ), do: MasteryBackend.Github.Token.parse(body)
-  def parse(response), do: {:failed, response}
+  def parse_token({:ok, %{body: body}} ), do: MasteryBackend.Github.Token.parse(body)
+  def parse_token(response), do: {:failed, response}
 end
