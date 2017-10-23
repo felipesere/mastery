@@ -50,7 +50,7 @@ defmodule MasteryBackendWeb.AuthorizationController do
   end
 
   def state({_, %MasteryBackend.Github.User{} = user}) do
-    %{"state" => "authenticated", "user" => user}
+    %{"state" => "authenticated", "user" => %{"name" => user.name}}
   end
   def state(_), do: %{"state" => "unauthorized" }
 end
