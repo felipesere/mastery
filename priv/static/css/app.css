@@ -1,3 +1,14 @@
+.module {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.login {
+  width: 200px;
+  margin: 10px auto;
+}
+
 .card {
   margin: 1em;
   width: 250px;

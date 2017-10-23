@@ -27,4 +27,8 @@ greet username =
 
 showLogin : Html Msg
 showLogin =
-    a [ class "button", href "/api/authorization/login" ] [ Html.text "Github" ]
+    div [ class "module" ]
+        [ div [ class "login" ]
+            [ a [ class "button", href "/api/authorization/login" ] [ Html.text "Login with GitHub" ]
+            ]
+        ]
