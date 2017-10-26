@@ -14,10 +14,22 @@ view auth =
         [ div [ class "navbar-brand" ]
             [ homelink
             , search
+            , myPath auth
             , healthcheck
             , login auth
             ]
         ]
+
+
+myPath auth =
+    case auth of
+        Unauthenticated ->
+            Html.text "Shouldn't have gotten here"
+
+        LoggedIn username ->
+            div [ class "navbar-item" ]
+                [ a (onClickPage MyPath) [ text "MyPath" ]
+                ]
 
 
 login : Messages.Auth -> Html Messages.Msg
