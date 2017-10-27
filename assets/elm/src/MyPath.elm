@@ -7,6 +7,7 @@ import LandingPage.State exposing (DetailsOptions(..))
 import Lesson exposing (..)
 import List.Extra
 import Messages exposing (..)
+import SmallCard exposing (State(..), view)
 
 
 type alias Path =
@@ -19,13 +20,16 @@ type alias Path =
 initial : List Lesson -> Maybe Path
 initial lessons =
     let
+        completed_nr =
+            5
+
         completed =
-            List.take 3 lessons
+            List.take completed_nr lessons
 
         todo =
             lessons
-                |> List.drop 5
-                |> List.take 2
+                |> List.drop (completed_nr + 3)
+                |> List.take 7
 
         current =
             List.Extra.getAt 4 lessons
@@ -35,6 +39,10 @@ initial lessons =
         , current = current
         , todo = todo
         }
+
+
+
+-- Super rough and dirty... needs love
 
 
 view : Maybe Path -> Html.Html Msg
@@ -58,7 +66,7 @@ view maybe_model =
                 |> Maybe.map completedHtml
                 |> Maybe.withDefault (Html.div [] [])
     in
-    Html.div [ class "mdule" ]
+    Html.div [ class "module centered" ]
         [ todos
         , current
         , completed
@@ -66,12 +74,12 @@ view maybe_model =
 
 
 todoHtml todos =
-    Html.div [ class "todo" ] ([ Html.text "Todo: " ] ++ List.map (Card.view Static WithAdd) todos)
+    Html.div [ class "mypath-todo" ] (List.map (SmallCard.view Todo) todos)
 
 
 currentHtml current =
-    Html.div [ class "current" ] [ Html.text "Current: ", Card.view Static WithAdd current ]
+    Html.div [ class "mypath-current" ] [ Card.view Static WithAdd current ]
 
 
 completedHtml completed =
-    Html.div [ class "completed" ] ([ Html.text "Completed: " ] ++ List.map (Card.view Static WithAdd) completed)
+    Html.div [ class "mypath-completed" ] (List.map (SmallCard.view Done) completed)
