@@ -8,9 +8,18 @@ import Lesson
 import Messages exposing (Auth(..), Msg(..))
 
 
-get : String -> Cmd Msg
-get url =
-    Http.send lessonOrDefault <| loadLessons url
+loadLessons : String -> Cmd Msg
+loadLessons url =
+    let
+        mapping result =
+            result
+                |> Result.withDefault []
+                |> (\lessons -> ForLandingPage (LandingPage.State.LoadModules lessons))
+
+        request =
+            Http.get (url ++ "/api/lessons") Lesson.decodeList
+    in
+    Http.send mapping request
 
 
 loadPath : String -> Cmd Msg
@@ -27,26 +36,15 @@ loadPath url =
     Debug.log "This is what I am sending" <| Http.send mapping request
 
 
-loadLessons : String -> Http.Request (List Lesson.Lesson)
-loadLessons url =
-    Http.get (url ++ "/api/lessons") Lesson.decodeList
-
-
-lessonOrDefault : Result Http.Error (List Lesson.Lesson) -> Msg
-lessonOrDefault result =
-    result
-        |> Result.withDefault []
-        |> forLandingPage
-
-
-forLandingPage : List Lesson.Lesson -> Msg
-forLandingPage lessons =
-    ForLandingPage (LandingPage.State.LoadModules lessons)
-
-
 checkAuth : String -> Cmd Msg
 checkAuth url =
-    Http.send message <| buildRequest url
+    let
+        mapping result =
+            result
+                |> Result.map ChangeAuth
+                |> Result.withDefault (ChangeAuth Unauthenticated)
+    in
+    Http.send mapping <| buildRequest url
 
 
 buildRequest : String -> Http.Request Auth
@@ -60,16 +58,6 @@ buildRequest url =
         , timeout = Nothing
         , withCredentials = True
         }
-
-
-message : Result Http.Error Auth -> Msg
-message result =
-    case result of
-        Ok auth ->
-            ChangeAuth auth
-
-        _ ->
-            ChangeAuth Unauthenticated
 
 
 decode_auth : Decode.Decoder Auth
