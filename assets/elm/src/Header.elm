@@ -24,7 +24,7 @@ view auth =
 myPath auth =
     case auth of
         Unauthenticated ->
-            Html.text "Shouldn't have gotten here"
+            Html.text ""
 
         LoggedIn username ->
             div [ class "navbar-item" ]
