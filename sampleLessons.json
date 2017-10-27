@@ -639,5 +639,37 @@
       "Better Vim skills",
       "Better Java skills"
     ]
+  },
+  {
+    "id": 40,
+    "title": "Java Contact Manager",
+    "subtitle": "Duplicate your Smartphone's contact functionality",
+    "language": "Java",
+    "description": "Build an app to manage contact details",
+    "outputs": [
+      "Create, Read, Update, Delete records",
+      "Persist between sessions",
+      "Create a usable UI"
+    ],
+    "outcomes": [
+      "Exposure to writing to files and/or databases",
+      "Clean code"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Build a Ruby Gem",
+    "subtitle": "Extract Core Logic from Ruby Tic Tac Toe",
+    "language": "Ruby",
+    "description": "Build your very first Ruby gem, and use it in your CLI and Web games",
+    "outputs": [
+      "Extract core functionality",
+      "Build and publish a gem",
+      "Use your own gem in a playable app"
+    ],
+    "outcomes": [
+      "Exposure to open source",
+      "Exposure to Ruby gems"
+    ]
   }
 ]
