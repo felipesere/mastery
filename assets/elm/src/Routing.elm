@@ -8,6 +8,7 @@ type Route
     = LandingPage
     | Healthcheck
     | NotFound
+    | Login
 
 
 matchers : Parser (Route -> a) a
@@ -15,6 +16,7 @@ matchers =
     oneOf
         [ map LandingPage top
         , map Healthcheck (s "healthcheck")
+        , map Login (s "login")
         ]
 
 
@@ -36,3 +38,6 @@ pageToUrl page =
 
         NotFound ->
             "/not-found"
+
+        Login ->
+            "/login"

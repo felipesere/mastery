@@ -5,7 +5,9 @@ const moment = require('moment')
 const git = new GitRevisionPlugin()
 
 var baseUrl = function() {
-  if (process.env.HEROKU_APP_NAME) {
+  if (process.env.MODULES_URL) {
+    return process.env.MODULES_URL
+  } else if (process.env.HEROKU_APP_NAME) {
     return 'https://' + process.env.HEROKU_APP_NAME + '.herokuapp.com'
   } else {
     return 'http://localhost:4000'
@@ -42,7 +44,6 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-
       'MODULES_URL': JSON.stringify(baseUrl()),
       'COMMIT_HASH': JSON.stringify(process.env.SOURCE_VERSION || JSON.stringify(git.commithash())),
       'BUILD_TIME': JSON.stringify(moment().format('LLLL') || "No build time derived")

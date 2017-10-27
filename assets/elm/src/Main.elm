@@ -6,7 +6,8 @@ import Healthcheck.Healthcheck as Healthcheck
 import Html
 import LandingPage.LandingPage as LandingPage
 import LandingPage.State exposing (Model)
-import Messages exposing (Msg(..))
+import LoginPage.LoginPage as LoginPage exposing (..)
+import Messages exposing (Auth(..), Msg(..))
 import Navigation exposing (..)
 import Routing exposing (Route(..), pageToUrl, parseLocation)
 
@@ -22,6 +23,7 @@ type alias AppModel =
     { route : Routing.Route
     , landing : LandingPage.State.Model
     , healthcheck : Healthcheck.Model
+    , login : Auth
     }
 
 
@@ -34,8 +36,9 @@ init config location =
     ( { route = route
       , landing = LandingPage.State.initial
       , healthcheck = Healthcheck.initial config
+      , login = Unauthenticated
       }
-    , Backend.get config.baseUrl
+    , Cmd.batch [ Backend.get config.baseUrl, Backend.checkAuth config.baseUrl ]
     )
 
 
@@ -54,23 +57,33 @@ update msg model =
         ChangeRoute route ->
             ( { model | route = route }, newUrl (pageToUrl route) )
 
+        ChangeAuth auth ->
+            ( { model | login = auth }, Cmd.none )
+
 
 page : AppModel -> Html.Html Msg
 page model =
+    let
+        framed =
+            frame model.login
+    in
     case model.route of
         LandingPage ->
-            frame (LandingPage.view model.landing)
+            framed <| LandingPage.view model.landing
 
         Healthcheck ->
-            frame (Healthcheck.view model.healthcheck)
+            framed <| Healthcheck.view model.healthcheck
+
+        Login ->
+            framed <| LoginPage.view model.login
 
         NotFound ->
-            frame (Html.text "Not found :(")
+            framed <| Html.text "Not found :("
 
 
-frame : Html.Html Msg -> Html.Html Msg
-frame html =
-    Html.div [] [ Header.view, html ]
+frame : Auth -> Html.Html Msg -> Html.Html Msg
+frame auth html =
+    Html.div [] [ Header.view auth, html ]
 
 
 main : Program Config AppModel Msg

@@ -8,14 +8,31 @@ import Routing exposing (..)
 import SearchBar
 
 
-view : Html Messages.Msg
-view =
+view : Messages.Auth -> Html Messages.Msg
+view auth =
     Html.header [ class "top navbar" ]
         [ div [ class "navbar-brand" ]
             [ homelink
             , search
             , healthcheck
+            , login auth
             ]
+        ]
+
+
+login : Messages.Auth -> Html Messages.Msg
+login auth =
+    case auth of
+        Unauthenticated ->
+            link
+
+        LoggedIn username ->
+            div [ class "navbar-item navbar-end" ] [ text username ]
+
+
+link =
+    div [ class "navbar-item navbar-end" ]
+        [ a (onClickPage Login) [ text "Login" ]
         ]
 
 

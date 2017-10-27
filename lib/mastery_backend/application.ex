@@ -12,6 +12,9 @@ defmodule MasteryBackend.Application do
       supervisor(MasteryBackend.Repo, []),
       # Start the endpoint when the application starts
       supervisor(MasteryBackendWeb.Endpoint, []),
+      supervisor(MasteryBackend.Users, []),
+      supervisor(MasteryBackend.Secure, []),
+      github_client()
       # Start your own worker by calling: MasteryBackend.Worker.start_link(arg1, arg2, arg3)
       # worker(MasteryBackend.Worker, [arg1, arg2, arg3]),
     ]
@@ -21,6 +24,15 @@ defmodule MasteryBackend.Application do
     opts = [strategy: :one_for_one, name: MasteryBackend.Supervisor]
     Supervisor.start_link(children, opts)
   end
+
+  def github_client() do
+    import Supervisor.Spec
+
+    Application.get_env(:mastery_backend, :github)
+    |> Keyword.get(:module)
+    |> supervisor([])
+  end
+
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
