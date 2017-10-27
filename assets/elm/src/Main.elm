@@ -41,7 +41,7 @@ init config location =
       , login = Unauthenticated
       , path = Nothing
       }
-    , Cmd.batch [ Backend.get config.baseUrl, Backend.checkAuth config.baseUrl, Backend.loadPath config.baseUrl ]
+    , Cmd.batch [ Backend.loadLessons config.baseUrl, Backend.checkAuth config.baseUrl, Backend.loadPath config.baseUrl ]
     )
 
 
