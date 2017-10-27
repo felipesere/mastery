@@ -609,22 +609,6 @@
     ]
   },
   {
-    "id": 38,
-    "title": "Java Hangman",
-    "subtitle": "Get exposure to Java",
-    "language": "Java",
-    "description": "Build your first Java app!",
-    "outputs": [
-      "Build a basic command line Hangman app",
-      "Make it playable by the user",
-      "Choose random words to play"
-    ],
-    "outcomes": [
-      "Working Java app",
-      "Use Maven or Gradle"
-    ]
-  },
-  {
     "id": 39,
     "title": "Java Word Wrap",
     "subtitle": "Perform a kata in under 10 minutes",
