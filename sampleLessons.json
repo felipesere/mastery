@@ -562,5 +562,82 @@
       "An appreciation for refactoring techniques",
       "An appreciation for a workflow that allows you to alwasy 'stay green'"
     ]
+  },
+  {
+    "id": 36,
+    "title": "Unbeatable Computer Player Lambda",
+    "subtitle": "Get started with AWS",
+    "language": "Any",
+    "description": "Get the best move via an API call",
+    "outputs": [
+      "Build an AWS Lambda that takes the board state and returns the best move",
+      "Get the best move via an API call"
+    ],
+    "outcomes": [
+      "Demonstrate basic understanding of AWS Lambda and API Gateway"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "Pub/Sub Tic Tac Toe",
+    "subtitle": "Improve your AWS skills",
+    "language": "Any",
+    "description": "Improve AWS knowledge by creating a spectator Tic Tac Toe",
+    "outputs": [
+      "Update Tic Tac Toe to have Player and Subscriber user types",
+      "Player sends the board state after each move to AWS SQS",
+      "Subscriber gets the latest message from the queue via AWS SNS"
+    ],
+    "outcomes": [
+      "Demonstrate basic understanding of AWS SQS and SNS"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Java Hangman",
+    "subtitle": "Get exposure to Java",
+    "language": "Java",
+    "description": "Build your first Java app!",
+    "outputs": [
+      "Build a basic command line Hangman app",
+      "Make it playable by the user",
+      "Choose random words to play"
+    ],
+    "outcomes": [
+      "Working Java app",
+      "Use Maven or Gradle"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "Java Hangman",
+    "subtitle": "Get exposure to Java",
+    "language": "Java",
+    "description": "Build your first Java app!",
+    "outputs": [
+      "Build a basic command line Hangman app",
+      "Make it playable by the user",
+      "Choose random words to play"
+    ],
+    "outcomes": [
+      "Working Java app",
+      "Use Maven or Gradle"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Java Word Wrap",
+    "subtitle": "Perform a kata in under 10 minutes",
+    "language": "Java",
+    "description": "Perform the word wrap kata in under 10 minutes",
+    "outputs": [
+      "Practice the word wrap kata",
+      "Practice Vim skills",
+      "Record with keystrokes"
+    ],
+    "outcomes": [
+      "Better Vim skills",
+      "Better Java skills"
+    ]
   }
 ]
