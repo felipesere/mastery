@@ -2,11 +2,10 @@ module PersonalPath exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import LandingPage.State exposing (DetailsOptions(..))
+import Json.Decode as Decode
 import Language exposing (Language(..))
 import Lesson exposing (..)
 import List.Extra
-import Messages exposing (..)
 import SmallCard exposing (State(..), view)
 import Style exposing (..)
 
@@ -18,35 +17,15 @@ type alias Path =
     }
 
 
-initial : List Lesson -> Maybe Path
-initial lessons =
-    let
-        completed_nr =
-            5
-
-        completed =
-            List.take completed_nr lessons
-
-        todo =
-            lessons
-                |> List.drop (completed_nr + 3)
-                |> List.take 7
-
-        current =
-            List.Extra.getAt 4 lessons
-    in
-    Just
-        { completed = completed
-        , current = current
-        , todo = todo
-        }
+decode : Decode.Decoder Path
+decode =
+    Decode.map3 Path
+        (Decode.field "completed" (Decode.list Lesson.decode))
+        (Decode.field "current" (Decode.nullable Lesson.decode))
+        (Decode.field "todo" (Decode.list Lesson.decode))
 
 
-
--- Super rough and dirty... needs love
-
-
-view : Maybe Path -> Html.Html Msg
+view : Maybe Path -> Html.Html a
 view maybe_model =
     let
         todos =
