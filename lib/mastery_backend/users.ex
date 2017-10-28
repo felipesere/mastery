@@ -1,5 +1,5 @@
 defmodule MasteryBackend.Users do
-  # token -> User
+  # user_id -> User
 
   def start_link do
     Agent.start_link(fn -> Map.new end, name: __MODULE__)
