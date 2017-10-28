@@ -31,7 +31,7 @@ config :mastery_backend, :github,
 
 
 config :mastery_backend, :secure,
-  base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+  base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE"),
   cookie_salt: "GAZTya3HhgZdhhERAn3XNM7pWXMB6J6E/",
   sign_salt: "Icxn58V6ClWrCS88XeKDPbg0X97lNb6A"
 #
