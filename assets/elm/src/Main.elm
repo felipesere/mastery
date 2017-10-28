@@ -8,7 +8,7 @@ import LandingPage.LandingPage as LandingPage
 import LandingPage.State exposing (Model)
 import LoginPage.LoginPage as LoginPage exposing (..)
 import Messages exposing (Auth(..), Msg(..))
-import MyPath
+import PersonalPath
 import Navigation exposing (..)
 import Routing exposing (Route(..), pageToUrl, parseLocation)
 
@@ -25,7 +25,7 @@ type alias AppModel =
     , landing : LandingPage.State.Model
     , healthcheck : Healthcheck.Model
     , login : Auth
-    , path : Maybe MyPath.Path
+    , path : Maybe PersonalPath.Path
     }
 
 
@@ -64,7 +64,7 @@ update msg model =
             ( { model | login = auth }, Cmd.none )
 
         LoadPath lessons ->
-            ( { model | path = MyPath.initial lessons }, Cmd.none )
+            ( { model | path = PersonalPath.initial lessons }, Cmd.none )
 
 
 page : AppModel -> Html.Html Msg
@@ -86,8 +86,8 @@ page model =
         NotFound ->
             framed <| Html.text "Not found :("
 
-        MyPath ->
-            framed <| MyPath.view model.path
+        PersonalPath ->
+            framed <| PersonalPath.view model.path
 
 
 frame : Auth -> Html.Html Msg -> Html.Html Msg
