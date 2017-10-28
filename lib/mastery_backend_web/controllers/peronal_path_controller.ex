@@ -5,6 +5,8 @@ defmodule MasteryBackendWeb.PersonalPathController do
     {_, user} = conn
                 |> verify_cookie()
                 |> find_user()
+                |> IO.inspect()
+
 
     path = create_path(params)
     MasteryBackend.Paths.upsert(user, path)
