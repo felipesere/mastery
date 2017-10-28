@@ -1,13 +1,14 @@
-module MyPath exposing (..)
+module PersonalPath exposing (..)
 
-import Card exposing (..)
-import Html
+import Html exposing (..)
 import Html.Attributes exposing (..)
 import LandingPage.State exposing (DetailsOptions(..))
+import Language exposing (Language(..))
 import Lesson exposing (..)
 import List.Extra
 import Messages exposing (..)
 import SmallCard exposing (State(..), view)
+import Style exposing (..)
 
 
 type alias Path =
@@ -78,8 +79,29 @@ todoHtml todos =
 
 
 currentHtml current =
-    Html.div [ class "mypath-current" ] [ Card.view Static WithAdd current ]
+    Html.div [ class "mypath-current" ] [ viewLesson current ]
 
 
 completedHtml completed =
     Html.div [ class "mypath-completed" ] (List.map (SmallCard.view Done) completed)
+
+
+viewLesson : Lesson -> Html a
+viewLesson lesson =
+    let
+        color =
+            border lesson.language
+    in
+    div [ class "card", style color ]
+        [ header [ class "card-header" ]
+            [ p [ class "card-header-title is-centered" ] [ text lesson.title ]
+            ]
+        , div [ class "card-content content" ] [ text lesson.subtitle ]
+        , footer [ class "card-footer" ] []
+        ]
+
+
+border : Language -> List Style
+border language =
+    [ Style.border <| "4px solid " ++ Language.toColor language
+    ]

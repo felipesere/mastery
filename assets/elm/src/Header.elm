@@ -28,7 +28,7 @@ myPath auth =
 
         LoggedIn username ->
             div [ class "navbar-item" ]
-                [ a (onClickPage MyPath) [ text "MyPath" ]
+                [ a (onClickPage PersonalPath) [ text "PersonalPath" ]
                 ]
 
 
