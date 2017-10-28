@@ -680,7 +680,7 @@
     "language": "Ruby",
     "description": "Practise writing a basic CRUD app with validations.",
     "outputs": [
-      "A programm that allows a user to add, view, edit and delete a contact",
+      "A program that allows a user to add, view, edit and delete a contact",
       "A contact should have a name, phone number, address, email address",
       "Each input field should have validation and not allow wrong inputs"
     ],
@@ -927,6 +927,538 @@
       "Understand how web applications work",
       "Bonus: deploy to heroku!",
       "Learn some basic styling"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Java Coin Changer Kata",
+    "subtitle": "Solve the coin changer kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the coin changer kata",
+    "outputs": [
+      "Your program should accept an amount of money and return the smallest denomination of coins for this amount",
+      "Example: 38 pence --> 20p, 10p, 5p, 2p, 1p",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Learn how to deal with a stressful situation",
+      "Internalise certain refactorings",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Ruby Coin Changer Kata",
+    "subtitle": "Solve the coin changer kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the coin changer kata",
+    "outputs": [
+      "Your program should accept an amount of money and return the smallest denomination of coins for this amount",
+      "Example: 38 pence --> 20p, 10p, 5p, 2p, 1p",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Internalise certain refactorings",
+      "Improve typing skills",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Elixir Coin Changer Kata",
+    "subtitle": "Solve the coin changer kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the coin changer kata",
+    "outputs": [
+      "Your program should accept an amount of money and return the smallest denomination of coins for this amount",
+      "Example: 38 pence --> 20p, 10p, 5p, 2p, 1p",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Clojure Coin Changer Kata",
+    "subtitle": "Solve the coin changer kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the coin changer kata",
+    "outputs": [
+      "Your program should accept an amount of money and return the smallest denomination of coins for this amount",
+      "Example: 38 pence --> 20p, 10p, 5p, 2p, 1p",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Learn how to deal with a stressful situation",
+      "Internalise certain refactorings",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "Java Roman Numerals Kata",
+    "subtitle": "Solve the roman numerals kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the roman numerals kata",
+    "outputs": [
+      "Your program should accept an arabic number and return the corresponding roman numeral",
+      "Example: 15 --> XV",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "Ruby Roman Numerals Kata",
+    "subtitle": "Solve the roman numerals kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the roman numerals kata",
+    "outputs": [
+      "Your program should accept an arabic number and return the corresponding roman numeral",
+      "Example: 15 --> XV",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "Clojure Roman Numerals Kata",
+    "subtitle": "Solve the roman numerals kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the roman numerals kata",
+    "outputs": [
+      "Your program should accept an arabic number and return the corresponding roman numeral",
+      "Example: 15 --> XV",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Elixir Roman Numerals Kata",
+    "subtitle": "Solve the roman numerals kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the roman numerals kata",
+    "outputs": [
+      "Your program should accept an arabic number and return the corresponding roman numeral",
+      "Example: 15 --> XV",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Java Word Wrap Kata",
+    "subtitle": "Solve the word wrap kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the word wrap kata",
+    "outputs": [
+      "Your program should accept a bit of text and a column width",
+      "It should return the text broken up into columns based on the wdith",
+      "Put a line break after each column",
+      "Do not chop up words",
+      "There should be no space at the beginning or end of a column",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Ruby Word Wrap Kata",
+    "subtitle": "Solve the word wrap kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the word wrap kata",
+    "outputs": [
+      "Your program should accept a bit of text and a column width",
+      "It should return the text broken up into columns based on the wdith",
+      "Put a line break after each column",
+      "Do not chop up words",
+      "There should be no space at the beginning or end of a column",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Elixir Word Wrap Kata",
+    "subtitle": "Solve the word wrap kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the word wrap kata",
+    "outputs": [
+      "Your program should accept a bit of text and a column width",
+      "It should return the text broken up into columns based on the wdith",
+      "Put a line break after each column",
+      "Do not chop up words",
+      "There should be no space at the beginning or end of a column",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "Clojure Word Wrap Kata",
+    "subtitle": "Solve the word wrap kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the word wrap kata",
+    "outputs": [
+      "Your program should accept a bit of text and a column width",
+      "It should return the text broken up into columns based on the wdith",
+      "Put a line break after each column",
+      "Do not chop up words",
+      "There should be no space at the beginning or end of a column",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "Java Berlin Clock Kata",
+    "subtitle": "Solve the Berlin clock kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the Berlin clock kata",
+    "outputs": [
+      "Instructions to the Berlin clock kata are here: http://agilekatas.co.uk/katas/BerlinClock-Kata",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Ruby Berlin Clock Kata",
+    "subtitle": "Solve the Berlin clock kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the Berlin clock kata",
+    "outputs": [
+      "Instructions to the Berlin clock kata are here: http://agilekatas.co.uk/katas/BerlinClock-Kata",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "Elixir Berlin Clock Kata",
+    "subtitle": "Solve the Berlin clock kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the Berlin clock kata",
+    "outputs": [
+      "Instructions to the Berlin clock kata are here: http://agilekatas.co.uk/katas/BerlinClock-Kata",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "Clojure Berlin Clock Kata",
+    "subtitle": "Solve the Berlin clock kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the Berlin clock kata",
+    "outputs": [
+      "Instructions to the Berlin clock kata are here: http://agilekatas.co.uk/katas/BerlinClock-Kata",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Java Fizz Buzz Kata",
+    "subtitle": "Solve the Fizz Buzz kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the Fizz Buzz kata",
+    "outputs": [
+      "Your program should return the numbers from 1 - 100",
+      "Replace all numbers divisble by 3 with the word Fizz",
+      "Replace all numbers divisble by 5 with the word Buzz",
+      "Example: 15 will be FizzBuzz",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "Ruby Fizz Buzz Kata",
+    "subtitle": "Solve the Fizz Buzz kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the Fizz Buzz kata",
+    "outputs": [
+      "Your program should return the numbers from 1 - 100",
+      "Replace all numbers divisble by 3 with the word Fizz",
+      "Replace all numbers divisble by 5 with the word Buzz",
+      "Example: 15 will be FizzBuzz",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "Elixir Fizz Buzz Kata",
+    "subtitle": "Solve the Fizz Buzz kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the Fizz Buzz kata",
+    "outputs": [
+      "Your program should return the numbers from 1 - 100",
+      "Replace all numbers divisble by 3 with the word Fizz",
+      "Replace all numbers divisble by 5 with the word Buzz",
+      "Example: 15 will be FizzBuzz",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "Clojure Fizz Buzz Kata",
+    "subtitle": "Solve the Fizz Buzz kata and perform it in under 10 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the Fizz Buzz kata",
+    "outputs": [
+      "Your program should return the numbers from 1 - 100",
+      "Replace all numbers divisble by 3 with the word Fizz",
+      "Replace all numbers divisble by 5 with the word Buzz",
+      "Example: 15 will be FizzBuzz",
+      "Perform your solution in under 10 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Java Bowling Kata",
+    "subtitle": "Solve the Bowling kata and perform it in under 13 minutes. Alternatively, do a screen recording.",
+    "language": "Java",
+    "description": "Perform or screen record your solution to the Bowling kata",
+    "outputs": [
+      "Code the rules of a bowling game",
+      "Instructions and rules can be found here: http://kata-log.rocks/bowling-game-kata",
+      "Perform your solution in under 13 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Ruby Bowling Kata",
+    "subtitle": "Solve the Bowling kata and perform it in under 13 minutes. Alternatively, do a screen recording.",
+    "language": "Ruby",
+    "description": "Perform or screen record your solution to the Bowling kata",
+    "outputs": [
+      "Code the rules of a bowling game",
+      "Instructions and rules can be found here: http://kata-log.rocks/bowling-game-kata",
+      "Perform your solution in under 13 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Elixir Bowling Kata",
+    "subtitle": "Solve the Bowling kata and perform it in under 13 minutes. Alternatively, do a screen recording.",
+    "language": "Elixir",
+    "description": "Perform or screen record your solution to the Bowling kata",
+    "outputs": [
+      "Code the rules of a bowling game",
+      "Instructions and rules can be found here: http://kata-log.rocks/bowling-game-kata",
+      "Perform your solution in under 13 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Clojure Bowling Kata",
+    "subtitle": "Solve the Bowling kata and perform it in under 13 minutes. Alternatively, do a screen recording.",
+    "language": "Clojure",
+    "description": "Perform or screen record your solution to the Bowling kata",
+    "outputs": [
+      "Code the rules of a bowling game",
+      "Instructions and rules can be found here: http://kata-log.rocks/bowling-game-kata",
+      "Perform your solution in under 13 minutes"
+    ],
+    "outcomes": [
+      "Improve vim skills",
+      "Improve typing skills",
+      "Internalise certain refactorings",
+      "Learn how to deal with a stressful situation",
+      "Increase confidence when presenting in front of people"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "Java Conway's Game of Life",
+    "subtitle": "Solve the Conway's Game of Life kata.",
+    "language": "Java",
+    "description": "Solve the Conway's Game of Life kata",
+    "outputs": [
+      "Find the rules on Wikipedia",
+      "Bonus: create a visualisation of how the world changes in each generation"
+    ],
+    "outcomes": [
+      "Familiarise yourself with Java",
+      "Learn about certain refactorings"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Ruby Conway's Game of Life",
+    "subtitle": "Solve the Conway's Game of Life kata.",
+    "language": "Ruby",
+    "description": "Solve the Conway's Game of Life kata",
+    "outputs": [
+      "Find the rules on Wikipedia",
+      "Bonus: create a visualisation of how the world changes in each generation"
+    ],
+    "outcomes": [
+      "Familiarise yourself with Java",
+      "Learn about certain refactorings"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Elixir Conway's Game of Life",
+    "subtitle": "Solve the Conway's Game of Life kata.",
+    "language": "Elixir",
+    "description": "Solve the Conway's Game of Life kata",
+    "outputs": [
+      "Find the rules on Wikipedia",
+      "Bonus: create a visualisation of how the world changes in each generation"
+    ],
+    "outcomes": [
+      "Familiarise yourself with Java",
+      "Learn about certain refactorings"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Clojure Conway's Game of Life",
+    "subtitle": "Solve the Conway's Game of Life kata.",
+    "language": "Clojure",
+    "description": "Solve the Conway's Game of Life kata",
+    "outputs": [
+      "Find the rules on Wikipedia",
+      "Bonus: create a visualisation of how the world changes in each generation"
+    ],
+    "outcomes": [
+      "Familiarise yourself with Java",
+      "Learn about certain refactorings"
     ]
   }
 ]
