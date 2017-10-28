@@ -9,7 +9,7 @@ type Route
     | Healthcheck
     | NotFound
     | Login
-    | MyPath
+    | PersonalPath
 
 
 matchers : Parser (Route -> a) a
@@ -18,7 +18,7 @@ matchers =
         [ map LandingPage top
         , map Healthcheck (s "healthcheck")
         , map Login (s "login")
-        , map MyPath (s "path")
+        , map PersonalPath (s "path")
         ]
 
 
@@ -44,5 +44,5 @@ pageToUrl page =
         Login ->
             "/login"
 
-        MyPath ->
+        PersonalPath ->
             "/path"
