@@ -19,9 +19,9 @@ type alias Path =
 decode : Decode.Decoder Path
 decode =
     Decode.map3 Path
-        (Decode.field "completed" (Decode.list Lesson.decode))
-        (Decode.field "current" (Decode.nullable Lesson.decode))
         (Decode.field "todo" (Decode.list Lesson.decode))
+        (Decode.field "current" (Decode.nullable Lesson.decode))
+        (Decode.field "done" (Decode.list Lesson.decode))
 
 
 view : Maybe Path -> Html.Html a
