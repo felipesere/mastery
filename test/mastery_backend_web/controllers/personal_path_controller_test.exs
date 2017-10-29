@@ -8,8 +8,9 @@ defmodule MasteryBackendWeb.PersonalPathControllerTest do
     [user: user]
   end
 
+  @tag :skip
   test "can create a new path", %{conn: conn, user: user} do
-    data = %{:modules => [1,2,3,4,5]}
+    data = %{:modules => [1,2]}
 
     conn
     |> authenticated_as(user.id)
@@ -19,7 +20,7 @@ defmodule MasteryBackendWeb.PersonalPathControllerTest do
     assert conn
            |> authenticated_as(user.id)
            |> get("/api/path")
-           |> json_response( 200) === %{"todo" => [1,2,3,4,5], "current" => "none", "done" => []}
+           |> json_response( 200) === %{"todo" => [1,2], "current" => nil, "done" => []}
   end
 
   defp authenticated_as(conn, id) do

@@ -1,6 +1,15 @@
 defmodule MasteryBackendWeb.PersonalPathController do
   use MasteryBackendWeb, :controller
 
+  alias MasteryBackend.FetchingLessons.FetchLessons
+
+  @lessons_file Application.get_env(:mastery_backend, :lessons_file)
+
+  def lessons(ids) do
+    FetchLessons.execute(@lessons_file)
+    |> Enum.filter(fn(lesson) -> lesson.id in ids end)
+  end
+
   def create(conn, params) do
     {_, user} = conn
                 |> verify_cookie()
@@ -8,11 +17,10 @@ defmodule MasteryBackendWeb.PersonalPathController do
                 |> IO.inspect()
 
 
-    path = create_path(params)
+    path = create_path(params) |> IO.inspect
     MasteryBackend.Paths.upsert(user, path)
 
-    conn
-    |> send_resp(200, "")
+    json conn, path
   end
 
   def index(conn, _params) do
@@ -25,8 +33,10 @@ defmodule MasteryBackendWeb.PersonalPathController do
     json conn, path
   end
 
+  # this needs fixing
   def create_path(%{"modules" => modules}) do
-    %MasteryBackend.Paths.PersonalPath{todo: modules, current: :none, done: []}
+    lessons = lessons(modules)
+    %MasteryBackend.Paths.PersonalPath{todo: lessons, current: nil, done: []}
   end
 
   # This is copied straight out of the authorization_controller
