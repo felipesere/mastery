@@ -4,7 +4,6 @@ import Html exposing (..)
 import Html.Attributes exposing (class, style)
 import Language exposing (Language)
 import Lesson exposing (Lesson)
-import Style exposing (..)
 
 
 type State
@@ -35,7 +34,7 @@ todo lesson =
 
 
 checkmark =
-    span [ class "icon", style [ Style.color "green" ] ]
+    span [ class "icon", style [ ( "color", "green" ) ] ]
         [ i [ class "fa fa-check fa-fw" ] [] ]
 
 
@@ -43,7 +42,7 @@ title lesson =
     Html.div [ class "small-card-title" ] [ Html.text lesson.title ]
 
 
-border : Language -> List Style
+border : Language -> List ( String, String )
 border language =
-    [ Style.border <| "1px solid " ++ Language.toColor language
+    [ ( "border", "1px solid " ++ Language.toColor language )
     ]

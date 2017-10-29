@@ -6,7 +6,6 @@ import Html.Attributes exposing (class, style)
 import LandingPage.State exposing (DetailsOptions(..))
 import Lesson exposing (..)
 import Messages exposing (..)
-import Style exposing (..)
 
 
 view : List Lesson -> Html Messages.Msg
@@ -15,14 +14,5 @@ view lessons =
         asCard =
             Card.view Animated WithAdd
     in
-    div [ class "container is-fluid", style flexible ]
+    div [ class "container is-fluid module-catalog" ]
         (List.map asCard lessons)
-
-
-flexible : List Style
-flexible =
-    [ display "flex"
-    , flexWrap wrap
-    , alignContent flexStart
-    , justifyContent center
-    ]

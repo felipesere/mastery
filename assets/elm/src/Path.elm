@@ -7,7 +7,6 @@ import Html.Events exposing (..)
 import LandingPage.State exposing (DetailsOptions(..))
 import Lesson exposing (Lesson)
 import Messages exposing (..)
-import Style
 
 
 view : List Lesson -> Html Messages.Msg
