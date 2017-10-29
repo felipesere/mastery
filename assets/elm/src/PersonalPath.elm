@@ -7,7 +7,6 @@ import Language exposing (Language(..))
 import Lesson exposing (..)
 import List.Extra
 import SmallCard exposing (State(..), view)
-import Style exposing (..)
 
 
 type alias Path =
@@ -80,7 +79,11 @@ viewLesson lesson =
         ]
 
 
-border : Language -> List Style
+
+-- dupplicated
+
+
+border : Language -> List ( String, String )
 border language =
-    [ Style.border <| "4px solid " ++ Language.toColor language
+    [ ( "border", "4px solid " ++ Language.toColor language )
     ]
