@@ -10,7 +10,7 @@ import Messages exposing (Auth(..), Msg(..))
 import PersonalPath
 
 
--- do something with it here
+-- Move these away!
 
 
 encodeSelected : List Lesson.Lesson -> Encode.Value
@@ -39,15 +39,17 @@ savePath url lessons =
                 , headers = []
                 , url = url ++ "/api/path"
                 , body = Http.jsonBody (encodeSelected lessons)
-                , expect = Http.expectStringResponse (\_ -> Ok ())
+                , expect = Http.expectJson PersonalPath.decode
                 , timeout = Nothing
                 , withCredentials = True
                 }
 
-        ignore =
-            \x -> NoOp
+        mapping result =
+            result
+                |> Result.toMaybe
+                |> LoadPath
     in
-    Http.send ignore request
+    Http.send mapping request
 
 
 loadLessons : String -> Cmd Msg

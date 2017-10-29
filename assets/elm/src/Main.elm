@@ -1,6 +1,7 @@
 module Main exposing (..)
 
 import Backend
+import Debug
 import Header
 import Healthcheck.Healthcheck as Healthcheck
 import Html
@@ -43,16 +44,13 @@ init config location =
       , path = Nothing
       , config = config
       }
-    , Cmd.batch [ Backend.loadLessons config.baseUrl, Backend.checkAuth config.baseUrl, Backend.loadPath config.baseUrl ]
+    , Cmd.batch [ Backend.loadLessons config.baseUrl, Backend.checkAuth config.baseUrl ]
     )
 
 
 update : Msg -> AppModel -> ( AppModel, Cmd Msg )
 update msg model =
-    case msg of
-        NoOp ->
-            ( model, Cmd.none )
-
+    case Debug.log "message: " msg of
         ForLandingPage inner ->
             ( { model | landing = LandingPage.State.update inner model.landing }, Cmd.none )
 

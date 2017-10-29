@@ -1,4 +1,4 @@
-module DecoderTests exposing (..)
+module LessonsTests exposing (..)
 
 import Expect exposing (Expectation)
 import Json.Decode as Decode
