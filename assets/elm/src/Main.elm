@@ -8,8 +8,8 @@ import LandingPage.LandingPage as LandingPage
 import LandingPage.State exposing (Model)
 import LoginPage.LoginPage as LoginPage exposing (..)
 import Messages exposing (Auth(..), Msg(..))
-import PersonalPath
 import Navigation exposing (..)
+import PersonalPath
 import Routing exposing (Route(..), pageToUrl, parseLocation)
 
 
@@ -26,6 +26,7 @@ type alias AppModel =
     , healthcheck : Healthcheck.Model
     , login : Auth
     , path : Maybe PersonalPath.Path
+    , config : Config
     }
 
 
@@ -40,6 +41,7 @@ init config location =
       , healthcheck = Healthcheck.initial config
       , login = Unauthenticated
       , path = Nothing
+      , config = config
       }
     , Cmd.batch [ Backend.loadLessons config.baseUrl, Backend.checkAuth config.baseUrl, Backend.loadPath config.baseUrl ]
     )
@@ -48,6 +50,9 @@ init config location =
 update : Msg -> AppModel -> ( AppModel, Cmd Msg )
 update msg model =
     case msg of
+        NoOp ->
+            ( model, Cmd.none )
+
         ForLandingPage inner ->
             ( { model | landing = LandingPage.State.update inner model.landing }, Cmd.none )
 
@@ -63,8 +68,13 @@ update msg model =
         ChangeAuth auth ->
             ( { model | login = auth }, Cmd.none )
 
-        LoadPath lessons ->
-            ( { model | path = PersonalPath.initial lessons }, Cmd.none )
+        LoadPath path ->
+            ( { model | path = path }, Cmd.none )
+
+        SavePath ->
+            ( model
+            , Backend.savePath model.config.baseUrl model.landing.selectedLessons
+            )
 
 
 page : AppModel -> Html.Html Msg

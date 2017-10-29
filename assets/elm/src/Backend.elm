@@ -3,9 +3,51 @@ module Backend exposing (..)
 import Debug
 import Http
 import Json.Decode as Decode
+import Json.Encode as Encode exposing (..)
 import LandingPage.State
-import Lesson
+import Lesson exposing (..)
 import Messages exposing (Auth(..), Msg(..))
+import PersonalPath
+
+
+-- do something with it here
+
+
+encodeSelected : List Lesson.Lesson -> Encode.Value
+encodeSelected lessons =
+    object [ ( "modules", modules lessons ) ]
+
+
+modules : List Lesson.Lesson -> Encode.Value
+modules lessons =
+    list (List.map encodeId lessons)
+
+
+encodeId : Lesson.Lesson -> Encode.Value
+encodeId lesson =
+    case lesson.id of
+        Id v ->
+            int v
+
+
+savePath : String -> List Lesson.Lesson -> Cmd Msg
+savePath url lessons =
+    let
+        request =
+            Http.request
+                { method = "POST"
+                , headers = []
+                , url = url ++ "/api/path"
+                , body = Http.jsonBody (encodeSelected lessons)
+                , expect = Http.expectStringResponse (\_ -> Ok ())
+                , timeout = Nothing
+                , withCredentials = True
+                }
+
+        ignore =
+            \x -> NoOp
+    in
+    Http.send ignore request
 
 
 loadLessons : String -> Cmd Msg
@@ -27,13 +69,13 @@ loadPath url =
     let
         mapping result =
             result
-                |> Result.withDefault []
+                |> Result.toMaybe
                 |> LoadPath
 
         request =
-            Http.get (url ++ "/api/path") Lesson.decodeList
+            Http.get (url ++ "/api/path") PersonalPath.decode
     in
-    Debug.log "This is what I am sending" <| Http.send mapping request
+    Http.send mapping request
 
 
 checkAuth : String -> Cmd Msg
