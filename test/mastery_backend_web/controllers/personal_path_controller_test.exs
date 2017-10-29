@@ -2,6 +2,7 @@ defmodule MasteryBackendWeb.PersonalPathControllerTest do
   use MasteryBackendWeb.ConnCase
   alias MasteryBackend.CreatingAPath.CreatePersonalPath
   alias MasteryBackend.Lesson
+  import TestExtra
 
   test "creates a personal path" do
     params = %{modules: [1]}
@@ -20,11 +21,5 @@ defmodule MasteryBackendWeb.PersonalPathControllerTest do
       "current" => nil,
       "done" => []
     }
-  end
-
-  def deconstruct(struct) do
-    struct
-    |> Map.delete(:__struct__)
-    |> Enum.reduce(%{}, fn({k,v}, acc) -> Map.put(acc, Atom.to_string(k), v) end)
   end
 end
