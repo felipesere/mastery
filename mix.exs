@@ -41,7 +41,8 @@ defmodule MasteryBackend.Mixfile do
       {:poison, "~> 3.1"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+      {:meck, "~> 0.8.8", only: :test}
     ]
   end
 
