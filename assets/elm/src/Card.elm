@@ -7,7 +7,6 @@ import LandingPage.State exposing (DetailsOptions(..), Msg(..))
 import Language exposing (Language)
 import Lesson exposing (Lesson)
 import Messages exposing (..)
-import Style exposing (..)
 
 
 type Display
@@ -39,9 +38,9 @@ view display options lesson =
         ]
 
 
-border : Language -> List Style
+border : Language -> List ( String, String )
 border language =
-    [ Style.border <| "4px solid " ++ Language.toColor language
+    [ ( "border", "4px solid " ++ Language.toColor language )
     ]
 
 

@@ -1,3 +1,10 @@
+.module-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+}
 .small-card {
   background-color: #fff;
   border-radius: 5px;
