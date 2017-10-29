@@ -15,6 +15,10 @@ type Display
     | Animated
 
 
+
+-- Split this into two, so there is pure rendering in and the addition stuffs inside
+
+
 view : Display -> DetailsOptions -> Lesson -> Html Messages.Msg
 view display options lesson =
     let

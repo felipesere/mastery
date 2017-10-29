@@ -1,4 +1,4 @@
-module Backend exposing (checkAuth, decode_auth, get)
+module Backend exposing (..)
 
 import Debug
 import Http
@@ -10,7 +10,21 @@ import Messages exposing (Auth(..), Msg(..))
 
 get : String -> Cmd Msg
 get url =
-    Http.send default <| loadLessons url
+    Http.send lessonOrDefault <| loadLessons url
+
+
+loadPath : String -> Cmd Msg
+loadPath url =
+    let
+        mapping result =
+            result
+                |> Result.withDefault []
+                |> LoadPath
+
+        request =
+            Http.get (url ++ "/api/path") Lesson.decodeList
+    in
+    Debug.log "This is what I am sending" <| Http.send mapping request
 
 
 loadLessons : String -> Http.Request (List Lesson.Lesson)
@@ -18,15 +32,15 @@ loadLessons url =
     Http.get (url ++ "/api/lessons") Lesson.decodeList
 
 
-default : Result Http.Error (List Lesson.Lesson) -> Msg
-default result =
+lessonOrDefault : Result Http.Error (List Lesson.Lesson) -> Msg
+lessonOrDefault result =
     result
         |> Result.withDefault []
-        |> packageMessage
+        |> forLandingPage
 
 
-packageMessage : List Lesson.Lesson -> Msg
-packageMessage lessons =
+forLandingPage : List Lesson.Lesson -> Msg
+forLandingPage lessons =
     ForLandingPage (LandingPage.State.LoadModules lessons)
 
 
