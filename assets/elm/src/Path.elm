@@ -23,7 +23,7 @@ view lessons =
 
 
 saveButton =
-    button [ class "button", onClick SavePath ] [ Html.text "Save" ]
+    button [ class "button is-info save-path", onClick SavePath ] [ Html.text "Save" ]
 
 
 viewLesson : List Lesson -> List (Html Messages.Msg)
