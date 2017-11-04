@@ -28,8 +28,4 @@ saveButton =
 
 viewLesson : List Lesson -> List (Html Messages.Msg)
 viewLesson lessons =
-    let
-        asCard =
-            Card.view Static WithRemove
-    in
-    List.map asCard lessons
+    List.map (Card.view Static WithRemove) lessons

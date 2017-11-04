@@ -5,12 +5,11 @@ import Html.Attributes exposing (..)
 import Json.Decode as Decode
 import Language exposing (Language(..))
 import Lesson exposing (..)
-import List.Extra
 import SmallCard exposing (State(..), view)
 
 
 type alias Path =
-    { completed : List Lesson
+    { done : List Lesson
     , current : Maybe Lesson
     , todo : List Lesson
     }
@@ -19,35 +18,35 @@ type alias Path =
 decode : Decode.Decoder Path
 decode =
     Decode.map3 Path
-        (Decode.field "todo" (Decode.list Lesson.decode))
-        (Decode.field "current" (Decode.nullable Lesson.decode))
         (Decode.field "done" (Decode.list Lesson.decode))
+        (Decode.field "current" (Decode.nullable Lesson.decode))
+        (Decode.field "todo" (Decode.list Lesson.decode))
 
 
 view : Maybe Path -> Html.Html a
 view maybe_model =
+    maybe_model
+        |> Maybe.map viewPath
+        |> Maybe.withDefault (Html.text "No path yet")
+
+
+viewPath : Path -> Html.Html a
+viewPath { done, current, todo } =
     let
         todos =
-            maybe_model
-                |> Maybe.map .todo
-                |> Maybe.map todoHtml
-                |> Maybe.withDefault (Html.div [] [])
+            todoHtml todo
 
-        current =
-            maybe_model
-                |> Maybe.andThen .current
+        current_task =
+            current
                 |> Maybe.map currentHtml
-                |> Maybe.withDefault (Html.div [] [])
+                |> Maybe.withDefault (Html.text "")
 
         completed =
-            maybe_model
-                |> Maybe.map .completed
-                |> Maybe.map completedHtml
-                |> Maybe.withDefault (Html.div [] [])
+            doneHtml done
     in
     Html.div [ class "module centered" ]
         [ todos
-        , current
+        , current_task
         , completed
         ]
 
@@ -60,7 +59,7 @@ currentHtml current =
     Html.div [ class "mypath-current" ] [ viewLesson current ]
 
 
-completedHtml completed =
+doneHtml completed =
     Html.div [ class "mypath-completed" ] (List.map (SmallCard.view Done) completed)
 
 

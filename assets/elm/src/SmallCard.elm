@@ -21,25 +21,29 @@ view state lesson =
             todo lesson
 
 
+done : Lesson -> Html a
 done lesson =
     Html.div [ class "small-card", style (border lesson.language) ]
         [ Html.div [ class "small-card-title" ] [ Html.text lesson.title, checkmark ]
         ]
 
 
+todo : Lesson -> Html a
 todo lesson =
     Html.div [ class "small-card", style (border lesson.language) ]
         [ title lesson
         ]
 
 
+checkmark : Html a
 checkmark =
     span [ class "icon", style [ ( "color", "green" ) ] ]
         [ i [ class "fa fa-check fa-fw" ] [] ]
 
 
-title lesson =
-    Html.div [ class "small-card-title" ] [ Html.text lesson.title ]
+title : Lesson -> Html a
+title { title } =
+    Html.div [ class "small-card-title" ] [ Html.text title ]
 
 
 border : Language -> List ( String, String )

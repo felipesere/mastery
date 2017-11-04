@@ -14,14 +14,15 @@ view auth =
         [ div [ class "navbar-brand" ]
             [ homelink
             , search
-            , myPath auth
+            , personal_path auth
             , healthcheck
             , login auth
             ]
         ]
 
 
-myPath auth =
+personal_path : Messages.Auth -> Html Msg
+personal_path auth =
     case auth of
         Unauthenticated ->
             Html.text ""
@@ -36,16 +37,12 @@ login : Messages.Auth -> Html Messages.Msg
 login auth =
     case auth of
         Unauthenticated ->
-            link
+            div [ class "navbar-item navbar-end" ]
+                [ a (onClickPage Login) [ text "Login" ]
+                ]
 
         LoggedIn username ->
             div [ class "navbar-item navbar-end" ] [ text username ]
-
-
-link =
-    div [ class "navbar-item navbar-end" ]
-        [ a (onClickPage Login) [ text "Login" ]
-        ]
 
 
 healthcheck : Html Messages.Msg

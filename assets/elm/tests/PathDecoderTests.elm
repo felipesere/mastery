@@ -28,7 +28,7 @@ suite =
                 in
                 Expect.equal output
                     (Ok
-                        { completed = []
+                        { done = []
                         , current = Nothing
                         , todo = []
                         }
