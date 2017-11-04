@@ -1,5 +1,5 @@
 defmodule MasteryBackend.Users do
-  # token -> User
+  alias MasteryBackend.Error
 
   def start_link do
     Agent.start_link(fn -> Map.new end, name: __MODULE__)
@@ -12,6 +12,6 @@ defmodule MasteryBackend.Users do
 
   def find(id) do
     Agent.get(__MODULE__, &(&1))
-    |> Enum.find({:not_found, id}, fn({key, _}) -> key == id end)
+    |> Map.get(id, %Error{error: :user_not_found, message: "User #{id} not found"})
   end
 end

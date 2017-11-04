@@ -81,7 +81,7 @@ list : String -> List String -> Html a
 list name elements =
     let
         items =
-            List.map (\e -> Html.li [] [ Html.text e ]) elements
+            List.map (\e -> Html.li [] [ Markdown.toHtml [] e ]) elements
     in
     div [ class "content" ]
         [ Html.text name

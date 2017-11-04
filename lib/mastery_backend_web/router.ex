@@ -10,6 +10,9 @@ defmodule MasteryBackendWeb.Router do
 
     get "/lessons", LessonsController, :index
 
+    post "/path", PersonalPathController, :create
+    get  "/path", PersonalPathController, :index
+
     scope "/authorization" do
       get "/login", AuthorizationController, :login
       get "/callback", AuthorizationController, :index
