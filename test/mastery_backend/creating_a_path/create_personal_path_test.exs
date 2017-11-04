@@ -9,9 +9,11 @@ defmodule MasteryBackend.CreatingAPath.CreatePersonalPathTest do
     :meck.new(FetchLessons)
     :meck.expect(FetchLessons, :fetch, fn(_modules) -> lessons() end)
 
-    {:ok, path} = CreatePersonalPath.execute(modules)
+    {:ok, path} = CreatePersonalPath.execute("1", modules)
 
-    assert path == %{ todo: lessons(), current: nil, done: []}
+    assert path.todo == lessons()
+    assert path.done == []
+    assert path.current == nil
   end
 
   defp lessons do

@@ -1,9 +1,15 @@
 defmodule MasteryBackend.CreatingAPath.CreatePersonalPath do
   alias MasteryBackend.CreatingAPath.FetchLessons
+  alias MasteryBackend.PersonalPath
+  alias MasteryBackend.Paths
+  alias MasteryBackend.Users
 
-  def execute(modules) do
+  def execute(user_id, modules) do
+    user = Users.find(user_id)
     lessons = FetchLessons.fetch(modules)
 
-    {:ok, %{todo: lessons, current: nil, done: []}}
+    path = Paths.save(user, PersonalPath.new(lessons))
+
+    {:ok, path}
   end
 end

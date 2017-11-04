@@ -10,13 +10,11 @@ defmodule MasteryBackend.Application do
     children = [
       # Start the Ecto repository
       supervisor(MasteryBackend.Repo, []),
-      # Start the endpoint when the application starts
       supervisor(MasteryBackendWeb.Endpoint, []),
       supervisor(MasteryBackend.Users, []),
+      supervisor(MasteryBackend.Paths, []),
       supervisor(MasteryBackend.Secure, []),
       github_client()
-      # Start your own worker by calling: MasteryBackend.Worker.start_link(arg1, arg2, arg3)
-      # worker(MasteryBackend.Worker, [arg1, arg2, arg3]),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
