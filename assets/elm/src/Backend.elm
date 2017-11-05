@@ -3,31 +3,10 @@ module Backend exposing (..)
 import Debug
 import Http
 import Json.Decode as Decode
-import Json.Encode as Encode exposing (..)
 import LandingPage.State
 import Lesson exposing (..)
 import Messages exposing (Auth(..), Msg(..))
 import PersonalPath
-
-
--- Move these away!
-
-
-encodeSelected : List Lesson.Lesson -> Encode.Value
-encodeSelected lessons =
-    object [ ( "modules", modules lessons ) ]
-
-
-modules : List Lesson.Lesson -> Encode.Value
-modules lessons =
-    list (List.map encodeId lessons)
-
-
-encodeId : Lesson.Lesson -> Encode.Value
-encodeId lesson =
-    case lesson.id of
-        Id v ->
-            int v
 
 
 savePath : String -> List Lesson.Lesson -> Cmd Msg
@@ -38,7 +17,7 @@ savePath url lessons =
                 { method = "POST"
                 , headers = []
                 , url = url ++ "/api/path"
-                , body = Http.jsonBody (encodeSelected lessons)
+                , body = Http.jsonBody (PersonalPath.encodeSelected lessons)
                 , expect = Http.expectJson PersonalPath.decode
                 , timeout = Nothing
                 , withCredentials = True
