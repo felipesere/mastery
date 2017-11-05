@@ -10,6 +10,7 @@ import LandingPage.State exposing (Model)
 import LoginPage.LoginPage as LoginPage exposing (..)
 import Messages exposing (Auth(..), Msg(..))
 import Navigation exposing (..)
+import PathView exposing (view)
 import PersonalPath
 import Routing exposing (Route(..), pageToUrl, parseLocation)
 
@@ -95,7 +96,7 @@ page model =
             framed <| Html.text "Not found :("
 
         PersonalPath ->
-            framed <| PersonalPath.view model.path
+            framed <| PathView.view model.path
 
 
 frame : Auth -> Html.Html Msg -> Html.Html Msg
