@@ -1,5 +1,6 @@
 defmodule MasteryBackendWeb.PersonalPathControllerTest do
   use MasteryBackendWeb.ConnCase
+
   alias MasteryBackend.CreatingAPath.CreatePersonalPath
   alias MasteryBackend.FetchingAPath.FetchingPersonalPath
   alias MasteryBackend.Lesson

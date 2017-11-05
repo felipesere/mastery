@@ -8,7 +8,7 @@ defmodule MasteryBackend.CreatingAPath.CreatePersonalPath do
     user = Users.find(user_id)
     lessons = FetchLessons.fetch(modules["todo"])
 
-    path = Paths.save(user, PersonalPath.new(lessons))
+    path = Paths.save(user, PersonalPath.todo(lessons))
 
     {:ok, path}
   end
