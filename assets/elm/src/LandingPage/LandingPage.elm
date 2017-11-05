@@ -6,15 +6,15 @@ import Html.Attributes exposing (class)
 import LandingPage.State exposing (Model)
 import Messages exposing (..)
 import ModuleCatalog
-import Path
 import Search
+import SelectedModules
 
 
 view : Model -> Html.Html Messages.Msg
 view model =
     Html.div []
         [ columns
-            [ Path.view model.selectedLessons
+            [ SelectedModules.view model.selectedLessons
             , ModuleCatalog.view (Search.forTerm model.search model.lessons)
             ]
         , DetailsModal.view model.modal

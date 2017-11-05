@@ -1,4 +1,4 @@
-module Path exposing (..)
+module SelectedModules exposing (..)
 
 import Card exposing (Display(..), view)
 import Html exposing (..)
