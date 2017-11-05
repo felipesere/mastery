@@ -4,6 +4,7 @@ import Expect exposing (Expectation)
 import LandingPage.State as State
 import Language exposing (Language(..))
 import Lesson exposing (..)
+import PersonalPath exposing (..)
 import Test exposing (..)
 
 
@@ -26,17 +27,20 @@ suite =
                     nextModel =
                         State.select lesson1 initialModel
                 in
-                Expect.equal nextModel.selectedLessons [ lesson1 ]
+                Expect.equal nextModel.path.todo [ lesson1 ]
         , test "remove a previously selected lesson" <|
             \_ ->
                 let
+                    path =
+                        PersonalPath.empty
+
                     model =
-                        { initialModel | selectedLessons = [ lesson1, lesson2 ] }
+                        { initialModel | path = { path | todo = [ lesson1, lesson2 ] } }
 
                     nextModel =
                         State.remove lesson1.id model
                 in
-                Expect.equal nextModel.selectedLessons [ lesson2 ]
+                Expect.equal nextModel.path.todo [ lesson2 ]
         , test "show the details of a lesson" <|
             \_ ->
                 let

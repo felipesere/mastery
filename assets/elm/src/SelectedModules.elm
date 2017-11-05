@@ -22,6 +22,7 @@ view lessons =
                 )
 
 
+saveButton : Html Msg
 saveButton =
     button [ class "button is-info save-path", onClick SavePath ] [ Html.text "Save" ]
 

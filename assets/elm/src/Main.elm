@@ -72,7 +72,7 @@ update msg model =
 
         SavePath ->
             ( model
-            , Backend.savePath model.config.baseUrl model.landing.selectedLessons
+            , Backend.savePath model.config.baseUrl model.landing.path
             )
 
 

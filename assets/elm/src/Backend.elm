@@ -6,18 +6,18 @@ import Json.Decode as Decode
 import LandingPage.State
 import Lesson exposing (..)
 import Messages exposing (Auth(..), Msg(..))
-import PersonalPath
+import PersonalPath exposing (Path)
 
 
-savePath : String -> List Lesson.Lesson -> Cmd Msg
-savePath url lessons =
+savePath : String -> Path -> Cmd Msg
+savePath url path =
     let
         request =
             Http.request
                 { method = "POST"
                 , headers = []
                 , url = url ++ "/api/path"
-                , body = Http.jsonBody (PersonalPath.encodeSelected lessons)
+                , body = Http.jsonBody (PersonalPath.encode path)
                 , expect = Http.expectJson PersonalPath.decode
                 , timeout = Nothing
                 , withCredentials = True

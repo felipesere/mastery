@@ -2,12 +2,13 @@ module LandingPage.State exposing (..)
 
 import Lesson exposing (Lesson, LessonId)
 import List.Extra
+import PersonalPath exposing (..)
 import Search exposing (..)
 
 
 type alias Model =
     { lessons : List Lesson
-    , selectedLessons : List Lesson
+    , path : Path
     , modal : Maybe ModalState
     , search : SearchState
     }
@@ -36,7 +37,7 @@ type Msg
 initial : Model
 initial =
     { lessons = []
-    , selectedLessons = []
+    , path = PersonalPath.empty
     , modal = Nothing
     , search = Search.init
     }
@@ -72,15 +73,19 @@ update msg model =
 remove : LessonId -> Model -> Model
 remove id model =
     let
-        selectedLessons =
-            List.filter (\l -> l.id /= id) model.selectedLessons
+        new_path =
+            PersonalPath.remove id model.path
     in
-    { model | selectedLessons = selectedLessons }
+    { model | path = new_path }
 
 
 select : Lesson -> Model -> Model
 select lesson model =
-    { model | selectedLessons = lesson :: model.selectedLessons }
+    let
+        new_path =
+            PersonalPath.select lesson model.path
+    in
+    { model | path = new_path }
 
 
 closeDetails : Model -> Model

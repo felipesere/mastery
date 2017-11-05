@@ -14,7 +14,7 @@ view : Model -> Html.Html Messages.Msg
 view model =
     Html.div []
         [ columns
-            [ SelectedModules.view model.selectedLessons
+            [ SelectedModules.view model.path.todo
             , ModuleCatalog.view (Search.forTerm model.search model.lessons)
             ]
         , DetailsModal.view model.modal
