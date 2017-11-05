@@ -3,9 +3,10 @@ defmodule MasteryBackend.CreatingAPath.CreatePersonalPathTest do
   alias MasteryBackend.CreatingAPath.CreatePersonalPath
   alias MasteryBackend.CreatingAPath.FetchLessons
   alias MasteryBackend.Lesson
+  alias MasteryBackend.PersonalPath
 
   test "creates a personal path" do
-    path = %{"todo" => [1], "current" => nil, "done" => []}
+    path = %PersonalPath{todo: [1], current: nil, done: []}
     :meck.new(FetchLessons)
     :meck.expect(FetchLessons, :fetch, fn(_path) -> lessons() end)
 

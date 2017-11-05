@@ -6,7 +6,7 @@ defmodule MasteryBackend.PersonalPath do
 
   def cast(data) do
     if valid?(data) do
-      __MODULE__.new(data)
+      {:ok, __MODULE__.new(data)}
     else
       %Error{error: :missing_data, message: inspect(data) }
     end

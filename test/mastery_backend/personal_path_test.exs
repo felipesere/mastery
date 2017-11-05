@@ -4,7 +4,7 @@ defmodule MasteryBackend.PersonalPathTest do
 
   test "valid data" do
     data = %{"todo" => [], "current" => nil, "done" => []}
-    assert %PersonalPath{todo: [], current: nil, done: []} == PersonalPath.cast(data)
+    assert {:ok, %PersonalPath{todo: [], current: nil, done: []}} == PersonalPath.cast(data)
   end
 
   test "missing data" do

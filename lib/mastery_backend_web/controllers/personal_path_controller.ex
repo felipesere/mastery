@@ -4,13 +4,14 @@ defmodule MasteryBackendWeb.PersonalPathController do
   alias MasteryBackend.CreatingAPath.CreatePersonalPath
   alias MasteryBackend.FetchingAPath.FetchingPersonalPath
 
-  def create(conn, path) do
+  def create(conn, params) do
     with {:ok, user_id} <- MasteryBackendWeb.Gatekeeper.verify(conn),
-         {:ok, path} <- CreatePersonalPath.execute(user_id, path)
+         {:ok, path}    <- MasteryBackend.PersonalPath.cast(params),
+         {:ok, saved}   <- CreatePersonalPath.execute(user_id, path)
     do
-      json conn, path
+      json conn, saved
     else
-      e -> json conn, e
+      e -> conn |> put_status(400) |> json(e)
     end
   end
 
@@ -20,7 +21,7 @@ defmodule MasteryBackendWeb.PersonalPathController do
     do
       json conn, path
     else
-      e -> json conn, e
+      e -> conn |> put_status(400) |> json(e)
     end
   end
 end
