@@ -4,9 +4,9 @@ defmodule MasteryBackendWeb.PersonalPathController do
   alias MasteryBackend.CreatingAPath.CreatePersonalPath
   alias MasteryBackend.FetchingAPath.FetchingPersonalPath
 
-  def create(conn, %{"modules" => modules}) do
+  def create(conn, path) do
     with {:ok, user_id} <- MasteryBackendWeb.Gatekeeper.verify(conn),
-         {:ok, path} <- CreatePersonalPath.execute(user_id, modules)
+         {:ok, path} <- CreatePersonalPath.execute(user_id, path)
     do
       json conn, path
     else

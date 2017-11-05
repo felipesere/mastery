@@ -5,11 +5,11 @@ defmodule MasteryBackend.CreatingAPath.CreatePersonalPathTest do
   alias MasteryBackend.Lesson
 
   test "creates a personal path" do
-    modules = [1]
+    path = %{"todo" => [1], "current" => nil, "done" => []}
     :meck.new(FetchLessons)
-    :meck.expect(FetchLessons, :fetch, fn(_modules) -> lessons() end)
+    :meck.expect(FetchLessons, :fetch, fn(_path) -> lessons() end)
 
-    {:ok, path} = CreatePersonalPath.execute("1", modules)
+    {:ok, path} = CreatePersonalPath.execute("1", path)
 
     assert path.todo == lessons()
     assert path.done == []
