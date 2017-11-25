@@ -3,6 +3,7 @@ module PersonalPath exposing (..)
 import Json.Decode as Decode
 import Json.Encode as Encode exposing (..)
 import Lesson exposing (..)
+import ListHelper exposing (moveItemUp)
 
 
 type alias Path =
@@ -10,6 +11,14 @@ type alias Path =
     , current : Maybe Lesson
     , todo : List Lesson
     }
+
+
+moveTodoLessonUp : Maybe Path -> Lesson -> Maybe Path
+moveTodoLessonUp maybePath lesson =
+  maybePath
+  |> Maybe.map (\path ->
+      { path | todo =
+        Maybe.withDefault path.todo (moveItemUp path.todo lesson) })
 
 
 empty : Path
