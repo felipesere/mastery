@@ -9,11 +9,11 @@ suite =
   describe "moveItemUp"
     [ test "moves item up one place in list" <|
         \_ ->
-          Expect.equal (Just [1, 3, 2, 4]) (moveItemUp [1, 2, 3, 4] 3)
+          Expect.equal ([1, 3, 2, 4]) (moveItemUp [1, 2, 3, 4] 3)
     , test "returns nothing when item is already first" <|
         \_ ->
-          Expect.equal Nothing (moveItemUp [1, 2, 3, 4] 1)
+          Expect.equal [1, 2, 3, 4] (moveItemUp [1, 2, 3, 4] 1)
     , test "returns nothing when item not in list" <|
         \_ ->
-          Expect.equal Nothing (moveItemUp [1, 2, 3, 4] 5)
+          Expect.equal [1, 2, 3, 4] (moveItemUp [1, 2, 3, 4] 5)
     ]

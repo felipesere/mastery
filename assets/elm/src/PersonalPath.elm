@@ -17,8 +17,7 @@ moveTodoLessonUp : Maybe Path -> Lesson -> Maybe Path
 moveTodoLessonUp maybePath lesson =
   maybePath
   |> Maybe.map (\path ->
-      { path | todo =
-        Maybe.withDefault path.todo (moveItemUp path.todo lesson) })
+      { path | todo = moveItemUp path.todo lesson })
 
 
 empty : Path

@@ -2,10 +2,11 @@ module ListHelper exposing (moveItemUp)
 
 import List.Extra exposing (findIndex, swapAt)
 
-moveItemUp : List a -> a -> Maybe (List a)
+moveItemUp : List a -> a -> List a
 moveItemUp list item =
   getSwapIndices list item
   |> Maybe.andThen (\(a, b) -> swapAt a b list)
+  |> Maybe.withDefault list
 
 getSwapIndices : List a -> a -> Maybe (Int, Int)
 getSwapIndices  list item =
