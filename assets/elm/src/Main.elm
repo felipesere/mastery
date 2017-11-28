@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Backend
-import Debug
 import Header
 import Healthcheck.Healthcheck as Healthcheck
 import Html
@@ -51,29 +50,35 @@ init config location =
 
 update : Msg -> AppModel -> ( AppModel, Cmd Msg )
 update msg model =
-    case Debug.log "message: " msg of
-        ForLandingPage inner ->
-            ( { model | landing = LandingPage.State.update inner model.landing }, Cmd.none )
+  case msg of
+      ForLandingPage inner ->
+          ( { model | landing = LandingPage.State.update inner model.landing }, Cmd.none )
 
-        ForHealthCheck ->
-            ( model, Cmd.none )
+      ForHealthCheck ->
+          ( model, Cmd.none )
 
-        ChangeLocation location ->
-            ( { model | route = parseLocation location }, Cmd.none )
+      ChangeLocation location ->
+          ( { model | route = parseLocation location }, Cmd.none )
 
-        ChangeRoute route ->
-            ( { model | route = route }, newUrl (pageToUrl route) )
+      ChangeRoute route ->
+          ( { model | route = route }, newUrl (pageToUrl route) )
 
-        ChangeAuth auth ->
-            ( { model | login = auth }, Cmd.none )
+      MoveUp lesson ->
+        let
+            path = PersonalPath.moveTodoLessonUp model.path lesson
+        in
+        ({ model | path = path }, Cmd.none)
 
-        LoadPath path ->
-            ( { model | path = path }, Cmd.none )
+      ChangeAuth auth ->
+          ( { model | login = auth }, Cmd.none )
 
-        SavePath ->
-            ( model
-            , Backend.savePath model.config.baseUrl model.landing.path
-            )
+      LoadPath path ->
+          ( { model | path = path }, Cmd.none )
+
+      SavePath ->
+          ( model
+          , Backend.savePath model.config.baseUrl model.landing.path
+          )
 
 
 page : AppModel -> Html.Html Msg
